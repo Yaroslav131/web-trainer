@@ -1,0 +1,119 @@
+.sidenav {
+    height: 100%;
+    width: 400px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #111;
+    overflow-x: hidden;
+    padding: 15px;
+}
+
+.level-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    height: 30px;
+    margin-bottom: 10px;
+}
+
+.level-counter {
+    display: flex;
+    flex-direction: row;
+}
+
+.counter {
+
+    color: #818181;
+    display: block;
+    word-spacing: -11px;
+}
+
+.checkmark {
+    width: 20px;
+    height: 10px;
+    border-top: 5px solid rgb(34, 157, 73) !important;
+    border-right: 5px solid rgb(34, 157, 73) !important;
+    transform: rotate(130deg);
+    transition: 0.15;
+    margin-top: 1px;
+    margin-left: 5px;
+}
+
+.nav-level-bar {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 90px;
+}
+
+.arrows {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 40px;
+}
+
+
+.arrow-div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.arrow_right,
+.arrow_left {
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid gray !important;
+    border-right: 3px solid gray !important;
+    transition: 0.15s;
+}
+
+.arrow_left {
+    transform: rotate(-135deg);
+}
+
+.arrow_right {
+    transform: rotate(45deg);
+}
+
+.arrow_left:hover,
+.arrow_right:hover {
+    border-top: 5px solid white !important;
+    border-right: 5px solid rgb(255, 255, 255) !important;
+    width: 20px;
+    height: 20px;
+}
+
+.arrow_right:active,
+.arrow_left:active {
+    width: 15px;
+    height: 15px;
+    border-top: 3px solid gray !important;
+    border-right: 3px solid gray !important;
+}
+
+.hamburger-menu {
+    width: 32px;
+    height: 32px;
+    background-size: cover;
+    /* <------ */
+    background-repeat: no-repeat;
+    background-position: center center;
+    transition: 0.15s;
+}
+
+.hamburger-menu:hover {
+    opacity: 0.7;
+    width: 35px;
+    height: 35px;
+}
+
+.hamburger-menu:active {
+    width: 30px;
+    height: 30px;
+    opacity: 1;
+}
