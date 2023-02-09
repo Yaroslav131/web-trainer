@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
 import "./Sidebar.css"
 import '../../reset.css'
-import './ProgressBar.scss'
+import './ProgressBar.css'
 import humburgerIcon from '../../imgs/icons8-circled-menu-100.png'
 import Exercise from "../../Classes/Execirse";
 import CssSelectorExercise from "../../Classes/CSSExercise";
