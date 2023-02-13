@@ -5,8 +5,7 @@ import SideBar from "./Sidebar/Sidebar"
 import './MainPage.css'
 import JobBlock from "./JobBlock/JobBlock";
 import ImgBlock from "./ImgBlock/ImgBlock";
-import { url } from "inspector";
-import TextInput from "./CodeInput/CodeInput";
+
 import CodeInput from "./CodeInput/CodeInput";
 
 interface Iprops {
@@ -55,7 +54,7 @@ export default function MainPage(props: Iprops) {
                 <Header />
                 <JobBlock text={props.excersises[curentExIndex].task} />
                 <ImgBlock imgURL={props.excersises[curentExIndex].imgURL} />
-
+                <CodeInput/>
             </div>
             <div className="Sidebar">
                 <SideBar
