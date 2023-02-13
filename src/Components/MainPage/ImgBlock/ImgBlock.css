@@ -1,0 +1,17 @@
+.task-img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 35px;
+   max-width: 35%;
+   min-width: 300px;
+   border-radius: 15px;
+   overflow: hidden;
+}
+
+.img-contaiter {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
