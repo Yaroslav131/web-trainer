@@ -10,10 +10,6 @@ hr {
 .sidenav {
     width: 400px;
     height: 100vh;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
     background-color: #1F1F1F;
     overflow-x: hidden;
     padding-top: 20px;
@@ -184,6 +180,21 @@ hr {
 
 .level-nav-close {
     margin-right: -400px;
+}
+
+.level-nav-open {
+    width: 400px;
+    height: 100vh;
+    position: fixed;
+    z-index: 4;
+    top: 0;
+    right: 0;
+    background-color: #1F1F1F;
+    overflow-x: hidden;
+    padding-top: 20px;
+    padding-left: 15px;
+    padding-right: 15px;
+    transition: 0.5s;
 }
 
 .level-header {

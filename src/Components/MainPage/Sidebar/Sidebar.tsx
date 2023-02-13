@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
 import "./Sidebar.css"
-import '../../reset.css'
+import '../../../reset.css'
 import './ProgressBar.css'
-import humburgerIcon from '../../imgs/icons8-circled-menu-100.png'
-import Exercise from "../../Classes/Execirse";
-import CssSelectorExercise from "../../Classes/CSSExercise";
+import humburgerIcon from '../../../imgs/icons8-circled-menu-100.png'
+import Exercise from "../../../Classes/Execirse";
+import CssSelectorExercise from "../../../Classes/CSSExercise";
 
 interface Iprops {
     exercises: Exercise[]
@@ -15,11 +15,12 @@ interface Iprops {
     closeLevelsNav: () => void
     onNextEx: () => void
     onPreviousEx: () => void
-    OnCurrentLevelChange: (event: any) => void
+    onCurrentLevelChange: (event: any) => void
 }
 
 export default function SideBar(props: Iprops) {
     let helpBlock;
+    const displayIncriment = 1;
 
     const ex = props.exercises[props.curentExIndex];
 
@@ -34,13 +35,13 @@ export default function SideBar(props: Iprops) {
                 <LevelCounter
                     isCompleted={props.exercises[props.curentExIndex].isCompleted}
                     curentExIndex={props.curentExIndex}
-                    excersisesCount={props.exercises.length - 1}
-                    OnNextEx={props.onNextEx}
-                    OnPreviousEx={props.onPreviousEx}
-                    OpenLevelsNav={props.openLevelsNav} />
+                    excersisesCount={props.exercises.length - displayIncriment}
+                    onNextEx={props.onNextEx}
+                    onPreviousEx={props.onPreviousEx}
+                    openLevelsNav={props.openLevelsNav} />
                 <ProgressBar
                     completed={props.curentExIndex}
-                    maxCompleted={props.exercises.length - 1}
+                    maxCompleted={props.exercises.length - displayIncriment}
                     className="progress-bar"
                     baseBgColor='#808080'
                     height='6px'
@@ -51,8 +52,11 @@ export default function SideBar(props: Iprops) {
                 />
                 {helpBlock}
             </div>
-            <div className={props.isLevelListOpen ? "sidenav" : "sidenav level-nav-close"}>
-                <LevelList OnCurrentLevelChange={props.OnCurrentLevelChange} CloseLevelseNav={props.closeLevelsNav} exercises={props.exercises} />
+            <div className={props.isLevelListOpen ? "level-nav-open" : "level-nav-open level-nav-close"}>
+                <LevelList onCurrentLevelChange={
+                    props.onCurrentLevelChange}
+                    closeLevelseNav={props.closeLevelsNav}
+                    exercises={props.exercises} />
             </div>
         </>
     )
@@ -89,9 +93,9 @@ interface ILevelCounterProps {
     excersisesCount: number,
     isCompleted: Boolean
 
-    OnNextEx: () => void
-    OnPreviousEx: () => void
-    OpenLevelsNav: () => void
+    onNextEx: () => void
+    onPreviousEx: () => void
+    openLevelsNav: () => void
 }
 
 function LevelCounter(props: ILevelCounterProps) {
@@ -111,14 +115,14 @@ function LevelCounter(props: ILevelCounterProps) {
             <div className="nav-level-bar">
                 <div className="arrows">
                     <div className="arrow-div">
-                        <div onClick={props.OnPreviousEx} className="arrow_left" ></div>
+                        <div onClick={props.onPreviousEx} className="arrow_left" ></div>
                     </div>
                     <div className="arrow-div">
-                        <div onClick={props.OnNextEx} className="arrow_right" ></div>
+                        <div onClick={props.onNextEx} className="arrow_right" ></div>
                     </div>
                 </div>
 
-                <div onClick={props.OpenLevelsNav}>
+                <div onClick={props.openLevelsNav}>
                     <img className="hamburger-menu" src={humburgerIcon} alt="Задания" />
                 </div>
             </div>
@@ -128,19 +132,19 @@ function LevelCounter(props: ILevelCounterProps) {
 
 interface ILevelListProps {
     exercises: Exercise[]
-    CloseLevelseNav: () => void
-    OnCurrentLevelChange: (event: any) => void
+    closeLevelseNav: () => void
+    onCurrentLevelChange: (event: any) => void
 }
 
 
 function LevelList(props: ILevelListProps) {
 
-    const levelList = props.exercises.map((x, index) => <ListItem key={index} onClick={props.OnCurrentLevelChange} exercise={x} index={++index} />)
+    const levelList = props.exercises.map((x, index) => <ListItem key={index} onClick={props.onCurrentLevelChange} exercise={x} index={++index} />)
     return (
         <>
             <div className="level-header">
                 <p className="counter-head">Выберите задание</p>
-                <div onClick={props.CloseLevelseNav} className="close"></div>
+                <div onClick={props.closeLevelseNav} className="close"></div>
             </div>
             <div className="level-list">
                 {levelList}
