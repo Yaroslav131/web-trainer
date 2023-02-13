@@ -1,0 +1,41 @@
+.job-block {
+    display: flex;
+    justify-content: center;
+    margin-top: 35px;
+  
+}
+
+#content {
+    width: auto;
+    display: flex;  
+    flex-wrap: wrap;
+    max-width: 80%;
+}
+
+span {
+    animation: .3s 0s 1 text normal both running linear;
+    display: block;
+    color: #c8c8c8;
+    font-size: 17px;
+}
+
+@keyframes text {
+    0% {
+        opacity: 0;
+    }
+
+    99% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+.cursor
+{
+    background-color: rgb(158, 158, 158);
+    width: 10px;
+    height: 20px;
+}
