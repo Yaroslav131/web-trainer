@@ -1,0 +1,50 @@
+.text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 35px;
+}
+
+.submit-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+}
+
+.submit {
+    border-radius: 10px;
+    border: none;
+    background-color: #2e2e2e;
+    color: #c8c8c8;
+    box-shadow: 7px 5px 5px rgb(0, 0, 0);
+    transition: 0.15s;
+    height: 40px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.submit:hover {
+    color: rgb(0, 0, 0);
+}
+
+.submit:active {
+    color: rgb(0, 0, 0);
+    height: 30px;
+    padding-left: 7px;
+    padding-right: 7px;
+}
+
+textarea {
+    width: 500px;
+    font-size: 20px;
+    line-height: 24px;
+    color: black;
+    padding: 20px;
+    padding-left: 25px;
+    min-height: 200px;
+    resize: none;
+    overflow: hidden;
+    border: none;
+}
