@@ -1,0 +1,11 @@
+.MainPage {
+    background-color: #171717;
+    display: grid;
+    grid-template-columns: 1fr 400px;
+}
+
+.Main {
+    height: 100vh;
+    overflow-x: hidden;
+    overflow-y: auto;
+}

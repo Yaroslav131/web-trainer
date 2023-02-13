@@ -10,21 +10,25 @@ function App() {
   for (let index = 0; index <= 31; index++) {
     if (index % 2 == 0) {
       excersises.push(new CssSelectorExercise(
-        "The Universal Selector",
+        "d65a08a6beac3d9a1d7a5cfa15513fa5.png",
+        "Type Selector",
+        "Select the plates",
         true,
-        "You can select everything!",
-        "*",
-        "You can select all elements with the universal selector!",
-        ["p* selects any element inside all p elements.", "p* selects any element inside all p elements."]))
+        "Select elements by their type",
+        "A",
+        "Selects all elements of type A. Type refers to the type of tag, so div, p and ul are all different element types.",
+        ["div selects all div elements.", "p selects all p elements."]))
     }
     else {
       excersises.push(new CssSelectorExercise(
-        "Test",
+        "",
+        "Combine the Descendant & ID Selectors",
+        "Select the pickle on the fancy plate",
         false,
-        "Test",
-        "*",
-        "Test",
-        ["Test"]))
+        "",
+        "#id  A",
+        "You can combine any selector with the descendent selector.",
+        ["#cool span selects all span elements that are inside of elements with id='cool'"]))
     }
 
   }

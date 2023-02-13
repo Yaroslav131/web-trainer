@@ -1,6 +1,13 @@
 import React, { useState } from "react";
 import Exercise from "../../Classes/Execirse"
-import SideBar from "../Sidebar/Sidebar"
+import Header from "./Header/Header";
+import SideBar from "./Sidebar/Sidebar"
+import './MainPage.css'
+import JobBlock from "./JobBlock/JobBlock";
+import ImgBlock from "./ImgBlock/ImgBlock";
+import { url } from "inspector";
+import TextInput from "./CodeInput/CodeInput";
+import CodeInput from "./CodeInput/CodeInput";
 
 interface Iprops {
     excersises: Exercise[]
@@ -12,11 +19,11 @@ export default function MainPage(props: Iprops) {
 
     const [isLevelListOpen, SetLevelListOpen] = useState(false);
 
-    function openLevelsNav() {
+    function OpenLevelsNav() {
         SetLevelListOpen(true)
     }
 
-    function closeLevelseNav() {
+    function CloseLevelseNav() {
         SetLevelListOpen(false)
     }
 
@@ -45,18 +52,21 @@ export default function MainPage(props: Iprops) {
     return (
         <div className="MainPage">
             <div className="Main">
+                <Header />
+                <JobBlock text={props.excersises[curentExIndex].task} />
+                <ImgBlock imgURL={props.excersises[curentExIndex].imgURL} />
 
             </div>
             <div className="Sidebar">
                 <SideBar
-                    closeLevelsNav={closeLevelseNav}
-                    openLevelsNav={openLevelsNav}
                     isLevelListOpen={isLevelListOpen}
-                    OnCurrentLevelChange={OnCurrentLevelChange}
                     exercises={props.excersises}
                     curentExIndex={curentExIndex}
                     onNextEx={OnNextEx}
-                    onPreviousEx={OnPreviousEx} />
+                    onPreviousEx={OnPreviousEx}
+                    closeLevelsNav={CloseLevelseNav}
+                    openLevelsNav={OpenLevelsNav}
+                    onCurrentLevelChange={OnCurrentLevelChange} />
             </div>
         </div>
     )
