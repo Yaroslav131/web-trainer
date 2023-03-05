@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ProgressBar from "@ramonak/react-progress-bar";
 import "./Sidebar.css"
 import '../../../reset.css'
@@ -22,18 +22,19 @@ export default function SideBar(props: Iprops) {
     let helpBlock;
     const displayIncriment = 1;
 
-    const ex = props.exercises[props.curentExIndex];
+    let ex = props.exercises[props.curentExIndex];
 
     if (ex instanceof CssSelectorExercise) {
         helpBlock = <CssSelectorHelpBlock exercise={ex} />
     }
+
 
     return (
         <>
             <div className="sidenav">
 
                 <LevelCounter
-                    isCompleted={props.exercises[props.curentExIndex].isCompleted}
+                    ex={props.exercises[props.curentExIndex]}
                     curentExIndex={props.curentExIndex}
                     excersisesCount={props.exercises.length - displayIncriment}
                     onNextEx={props.onNextEx}
@@ -91,7 +92,7 @@ function Example(props: any) {
 interface ILevelCounterProps {
     curentExIndex: number,
     excersisesCount: number,
-    isCompleted: Boolean
+    ex: Exercise
 
     onNextEx: () => void
     onPreviousEx: () => void
@@ -103,12 +104,15 @@ function LevelCounter(props: ILevelCounterProps) {
     current++;
     let length = props.excersisesCount;
     length++;
+
+   
     return (
 
         <div className="level-bar">
             <div className="level-counter">
                 <p className="counter-head">Задание {current} из {length}</p>
-                <div className={props.isCompleted ? "checkmark" : ""} >
+
+                <div className={props.ex.isCompleted ? "checkmark" : ""} >
                 </div>
             </div>
 
