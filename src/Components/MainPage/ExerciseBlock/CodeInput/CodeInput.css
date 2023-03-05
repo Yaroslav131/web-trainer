@@ -1,0 +1,37 @@
+
+
+#editing {
+    /* Both elements need the same text and space styling so they are directly on top of each other */
+    margin: 10px;
+    padding: 10px;
+    border: 0;
+    width: calc(50% - 32px);
+    height: 150px;
+    background: #2e2e2e;
+    color: #c8c8c8;
+    border: none;
+    border-radius: 15px;
+    resize: none;
+}
+
+
+#editing {
+    /* Also add text styles to highlighting tokens */
+    font-size: 15pt;
+    font-family: monospace;
+    line-height: 20pt;
+}
+
+.text-container {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    height: 150px;
+    margin-top: 35px;
+}
+
+
+#editing:focus {
+    outline: none !important;
+    border: 2px solid  rgb(0, 0, 0);        
+}

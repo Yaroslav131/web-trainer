@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import '../../../reset.css'
+import '../../../../reset.css'
 import './ImgBlock.css'
 
 export default function ImgBlock(props: any) {
@@ -7,7 +7,7 @@ export default function ImgBlock(props: any) {
     let img = "";
     let body;
     try {
-        img = require(`../../../imgs/${props.imgURL}`);
+        img = require(`../../../../imgs/${props.imgURL}`);
     }
     catch (e) {
         console.log(e);
