@@ -1,7 +1,14 @@
 import React from 'react';
+
 import MainPage from './Components/MainPage/MainPage';
-import Exercise from './Classes/Execirse';
-import CssSelectorExercise from './Classes/CSSExercise';
+import CssExercise from './Classes/CSSExercise';
+
+import NotFound from "./Components/ErrorPage/NotFound"
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+import MenuPage from './Components/MenuPage/MenuPage';
 
 function App() {
 
@@ -9,31 +16,53 @@ function App() {
 
   for (let index = 0; index <= 31; index++) {
     if (index % 2 == 0) {
-      excersises.push(new CssSelectorExercise(
+      excersises.push(new CssExercise(
+        "Сам узанаешь, не маленький",
+        ["1234"],
         "d65a08a6beac3d9a1d7a5cfa15513fa5.png",
-        "Type Selector",
-        "Select the plates",
-        true,
-        "Select elements by their type",
-        "A",
-        "Selects all elements of type A. Type refers to the type of tag, so div, p and ul are all different element types.",
-        ["div selects all div elements.", "p selects all p elements."]))
+        "Тестовое задание",
+        "Напиши 1 2 3 4",
+        false,
+        "Напиши числа",
+        "Число",
+        "Всегото нужно написать числа",
+        ["1 это число", "2 это число"]))
     }
     else {
-      excersises.push(new CssSelectorExercise(
+      excersises.push(new CssExercise(
+        "Ладно, тебе нужно нажать на 0 четыре раза",
+        ["0000"],
         "",
-        "Combine the Descendant & ID Selectors",
-        "Select the pickle on the fancy plate",
+        "Тестовое задание",
+        "Напиши 0000",
         false,
-        "",
-        "#id  A",
-        "You can combine any selector with the descendent selector.",
-        ["#cool span selects all span elements that are inside of elements with id='cool'"]))
+        "Напиши числа",
+        "Число",
+        "Всегото нужно написать числа",
+        ["0 это число"]))
     }
 
   }
+
+  const router = createBrowserRouter([
+    {
+      path: "*",
+      element: <NotFound />
+    }
+    ,
+    {
+
+      path: "/",
+      element: <MenuPage />
+    },
+    {
+      path: "/exercises/css-exersises",
+      element: <MainPage excersises={excersises} />
+    },
+  ]);
+
   return (
-    <MainPage excersises={excersises} />
+    <RouterProvider router={router} />
   );
 }
 
