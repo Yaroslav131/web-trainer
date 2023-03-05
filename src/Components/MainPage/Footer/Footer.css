@@ -1,0 +1,41 @@
+.footer {
+    display: grid;
+    grid-template-columns: 4fr auto;
+    background-color: transparent;
+    width: 100%;
+    position: relative;
+     top:100;
+     padding-top: 10px;
+     padding-left: 10px;
+     padding-right: 10px;
+}
+
+.creator-text-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.creator-text {
+    color: #c8c8c8;
+    font-size: 12px;
+}
+
+.icons-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+.icon-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.icon
+{
+    width: 30px;
+    height: 30px;
+}
