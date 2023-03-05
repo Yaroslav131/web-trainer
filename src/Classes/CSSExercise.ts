@@ -1,12 +1,14 @@
 import Exercise from "./Execirse";
 
-export default class CssSelectorExercise extends Exercise {
+export default class CssExercise extends Exercise {
     title: string
     syntax: string
     hint: string
     examples: string[]
 
     constructor(
+        helpText:string,
+        answer:string[],
         imgUrl: string,
         task: string,
         name: string,
@@ -15,7 +17,7 @@ export default class CssSelectorExercise extends Exercise {
         syntax: string,
         hint: string,
         examples: string[]) {
-        super(imgUrl, name, task, isCompleted);
+        super(helpText,answer,imgUrl, name, task, isCompleted);
         this.title = title;
         this.syntax = syntax;
         this.hint = hint;
