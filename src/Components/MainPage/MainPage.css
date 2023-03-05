@@ -4,8 +4,11 @@
     grid-template-columns: 1fr 400px;
 }
 
-.Main {
-    height: 100vh;
+.main {
+    min-height: 100%;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
     overflow-x: hidden;
     overflow-y: auto;
+
 }

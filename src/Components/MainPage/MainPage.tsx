@@ -3,10 +3,8 @@ import Exercise from "../../Classes/Execirse"
 import Header from "./Header/Header";
 import SideBar from "./Sidebar/Sidebar"
 import './MainPage.css'
-import JobBlock from "./JobBlock/JobBlock";
-import ImgBlock from "./ImgBlock/ImgBlock";
-
-import CodeInput from "./CodeInput/CodeInput";
+import ExerciseBlock from "./ExerciseBlock/ExerciseBlock"
+import Footer from "./Footer/Footer"
 
 interface Iprops {
     excersises: Exercise[]
@@ -16,7 +14,16 @@ export default function MainPage(props: Iprops) {
 
     const [curentExIndex, SetCurentEx] = useState(0);
 
+    const [exercises, SetExercises] = useState(props.excersises);
+
     const [isLevelListOpen, SetLevelListOpen] = useState(false);
+
+    function onCorrectAnswer() {
+        let copyEx = exercises;
+        copyEx[curentExIndex].isCompleted = true;
+        SetExercises([]);
+        SetExercises(copyEx);
+    }
 
     function OpenLevelsNav() {
         SetLevelListOpen(true)
@@ -50,16 +57,17 @@ export default function MainPage(props: Iprops) {
 
     return (
         <div className="MainPage">
-            <div className="Main">
+            <div className="main">
                 <Header />
-                <JobBlock text={props.excersises[curentExIndex].task} />
-                <ImgBlock imgURL={props.excersises[curentExIndex].imgURL} />
-                <CodeInput/>
+                <ExerciseBlock onCorrectAnswer={onCorrectAnswer} 
+                curentExIndex={curentExIndex} 
+                excersises={exercises} />
+                <Footer/>
             </div>
             <div className="Sidebar">
                 <SideBar
                     isLevelListOpen={isLevelListOpen}
-                    exercises={props.excersises}
+                    exercises={exercises}
                     curentExIndex={curentExIndex}
                     onNextEx={OnNextEx}
                     onPreviousEx={OnPreviousEx}
