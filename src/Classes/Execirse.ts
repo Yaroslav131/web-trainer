@@ -1,16 +1,45 @@
 export default class Exercise {
-    helpText:string
+    type: string
     name: String;
-    isCompleted: boolean;
     task: String;
+    title: string
+    syntax: string
+    hint: string
+    examples: string[]
+    helpText: string
+    isCompleted: boolean;
+    answer: string;
+    htmlCode: string
+    cssCode: string
     imgURL: string
-    answer: string[]
-    constructor(helpText:string,answer: string[], imgURL: string, task: string, name: string, isCompleted: boolean) {
-        this.helpText=helpText;
-        this.answer = answer;
+    constructor(
+        type: string,
+        name: string,
+        task: string,
+        title: string,
+        syntax: string,
+        hint: string,
+        examples: string[],
+        helpText: string,
+        isCompleted: boolean,
+        answer: string,
+        htmlCode: string,
+        cssCode: string,
+        imgURL: string,
+
+    ) {
+        this.type = type;
         this.name = name;
-        this.imgURL = imgURL;
         this.task = task;
+        this.title = title;
+        this.syntax = syntax;
+        this.hint = hint;
+        this.examples = examples;
+        this.helpText = helpText;
         this.isCompleted = isCompleted;
+        this.answer = answer;
+        this.htmlCode = htmlCode;
+        this.cssCode = cssCode;
+        this.imgURL = imgURL;
     }
 }
