@@ -1,11 +1,7 @@
 import { useRouteError } from "react-router-dom";
 import './NotFound.css'
 
-
 export default function ErrorPage() {
-    const error = useRouteError();
-    console.error(error);
-
     return (
         <div id="error-page">
             <div className="error-text-container">
