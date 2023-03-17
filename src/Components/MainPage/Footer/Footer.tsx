@@ -11,7 +11,7 @@ export default function Footer() {
     return (
         <footer className="footer">
             <div className="creator-text-container">
-                <p className="creator-text">Created by Yaroslav Bubnov and Maksim ...</p>
+                <p className="creator-text">Created by Yaroslav Bubnov and Maksim Shydlovkiy</p>
             </div>
             <div className="icons-container">
                 <div className="icon-container">
