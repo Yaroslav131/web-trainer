@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Exercise from "../../../Classes/Execirse"
 import JobBlock from "./JobBlock/JobBlock";
 import ImgBlock from "./ImgBlock/ImgBlock";
-import CodeEditorWindow from "./CodeInput/CodeInput";
+import CodeInput from "./CodeInput/CodeInput";
 import SubmitButton from "./SubmitButton/SubmitButton"
 import HelpButton from "./HelpButton/HelpButton";
 import "./ExerciseBlock.css";
@@ -16,15 +16,22 @@ interface Iprops {
 
 export default function ExerciseBlock(props: Iprops) {
 
-    const [inputValue, setInput] = useState("")
+    const [answer, setAnswer] = useState(``)
 
-    function onInputUpdate(event: any) {
-        setInput(event.target.value);
+
+    function onInputAnswer(event: any) {
+        setAnswer(event.target.value);
     }
 
     useEffect(() => {
-        setInput("")
-    }, [props]);
+        setAnswer(``)
+    }, [props.curentExIndex]);
+
+    function onSubmit(event: any) {
+        if (props.excersises[props.curentExIndex].answer == answer) {
+            props.onCorrectAnswer();
+        }
+    }
 
     const [isModal, setModal] = React.useState(false)
     const onClose = () => setModal(false)
@@ -34,18 +41,19 @@ export default function ExerciseBlock(props: Iprops) {
         <div className="exerciseBlock">
             <JobBlock text={props.excersises[props.curentExIndex].task} />
             <ImgBlock imgURL={props.excersises[props.curentExIndex].imgURL} />
-            <CodeEditorWindow
-                onCorrectAnswer={props.onCorrectAnswer}
-                onInputUpdate={onInputUpdate}
-                inputValue={inputValue}
+            <CodeInput
+                onInputAnswer={onInputAnswer}
+                inputHTMLValue={props.excersises[props.curentExIndex].htmlCode}
+                inputCSSValue={props.excersises[props.curentExIndex].cssCode}
+                exerciseType={props.excersises[props.curentExIndex].type}
+                userAnswer={answer}
+                onSubmit={onSubmit}
             />
 
             <div className="buttons-container">
                 <div className="button-container">
                     <SubmitButton
-                        answer={props.excersises[props.curentExIndex].answer}
-                        inputValue={inputValue}
-                        onCorrectAnswer={props.onCorrectAnswer} />
+                        onSubmit={onSubmit} />
                 </div>
 
                 <div className="button-container">
