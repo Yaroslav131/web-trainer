@@ -7,15 +7,23 @@ hr {
     padding: 0;
 }
 
-.sidenav {
+.sidenav,
+.sidenav-close {
     width: 400px;
-    height: 100vh;
+    height: 100%;
     background-color: #1F1F1F;
     overflow-x: hidden;
     padding-top: 20px;
     padding-left: 15px;
     padding-right: 15px;
     transition: 0.5s;
+    position: fixed;
+    top: 0;
+    right: 0;
+}
+
+.sidenav-close {
+    margin-right: -400px;
 }
 
 .level-bar {
@@ -45,7 +53,7 @@ hr {
     border-top: 5px solid rgb(34, 157, 73) !important;
     border-right: 5px solid rgb(34, 157, 73) !important;
     transform: rotate(130deg);
-    transition: 0.15;
+    transition: 0.5s;
     margin-top: 1px;
     margin-left: 5px;
 }
@@ -106,6 +114,15 @@ hr {
     border-right: 3px solid gray !important;
 }
 
+.hamburger-menu-container {
+    height: 35px;
+    width: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: -2px;
+}
+
 .hamburger-menu {
     width: 32px;
     height: 32px;
@@ -114,6 +131,7 @@ hr {
     background-repeat: no-repeat;
     background-position: center center;
     transition: 0.15s;
+
 }
 
 .hamburger-menu:hover {
@@ -177,16 +195,16 @@ hr {
     color: #c8c8c8;
 }
 
-
-.level-nav-close {
+.nav-close {
     margin-right: -400px;
 }
 
 .level-nav-open {
     width: 400px;
     height: 100vh;
-    position: fixed;
+    
     z-index: 4;
+    position: fixed;
     top: 0;
     right: 0;
     background-color: #1F1F1F;
@@ -205,6 +223,10 @@ hr {
     height: 30px;
 }
 
+.close-hiden
+{
+   display: none;
+}
 .close {
     position: relative;
     margin-top: -2px;
@@ -255,12 +277,12 @@ hr {
     margin-top: 6px;
     margin-bottom: 6px;
     background-color: transparent;
-    
+
 }
 
 button>div {
     pointer-events: none;
-  }
+}
 
 .level-item {
     display: grid;
@@ -317,7 +339,7 @@ button>div {
 .item-name {
     color: #7b7b7b;
     font-size: 14px;
-text-align: start;
+    text-align: start;
 }
 
 .item-index {
@@ -325,22 +347,32 @@ text-align: start;
     font-size: 14px;
 }
 
-/* width */
-::-webkit-scrollbar {
-    width: 10px;
+
+
+.reset {
+    width: 250px;
+    height: 26px;
+    margin-top: 6px;
+    margin-bottom: 7px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(34, 157, 73);
+    word-spacing: -8px;
+    transition: 0.15s;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-    background: #f1f1f1;
+.reset:hover {
+    opacity: 0.7;
 }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-    background: #888;
+.reset:active {
+    opacity: 0.5;
 }
 
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
+.shot-screen-level-bar
+{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 15px;
 }
