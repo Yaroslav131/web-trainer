@@ -1,14 +1,34 @@
-.MainPage {
+.main-page ,
+.main-page-short{
     background-color: #171717;
     display: grid;
     grid-template-columns: 1fr 400px;
+    transition: 0.5s;
+}
+
+.main-page-short {
+    display: grid;
+    grid-template-columns: 1fr auto;
 }
 
 .main {
     min-height: 100%;
-    display: grid;
-    grid-template-rows: auto 1fr auto;
+    display: flex;
+    flex-direction: column;
     overflow-x: hidden;
     overflow-y: auto;
+    transition: 0.7s;
+}
 
+.green-flash {
+    /* -webkit-box-shadow: 1px 1px 1px 3px rgb(34, 157, 73) inset;
+    -moz-box-shadow: 1px 1px 1px 3px rgb(34, 157, 73) inset; */
+    box-shadow: inset 0px 0px 10px 13px rgb(34, 157, 73);
+}
+
+
+.sidebar-close
+{
+   margin-right: -400px;
+   transition: 0.5s;
 }
