@@ -29,22 +29,22 @@ export default function Modal(props: ModalProps) {
     })
 
     // если компонент невидим, то не отображаем его
-    if (! props.visible) return null
+    if (!props.visible) return null
 
     // или возвращаем верстку модального окна
     return (
-        <div className='modal' onClick={ props.onClose}>
+        <div className='modal' onClick={props.onClose}>
             <div className='modal-dialog' onClick={e => e.stopPropagation()}>
                 <div className='modal-header'>
-                    <h3 className='modal-title'>{ props.title}</h3>
-                    <span className='modal-close' onClick={ props.onClose}>
+                    <h3 className='modal-title'>{props.title}</h3>
+                    <span className='modal-close' onClick={props.onClose}>
                         &times;
                     </span>
                 </div>
                 <div className='modal-body'>
-                    <div className='modal-content'>{ props.content}</div>
+                    <div className='modal-content'><p>{props.content}</p></div>
                 </div>
-                { props.footer && <div className='modal-footer'><button className='close-button' onClick={props.onClose}>Закрыть</button></div>}
+                {props.footer && <div className='modal-footer'><button className='close-button' onClick={props.onClose}>Закрыть</button></div>}
             </div>
         </div>
     )

@@ -1,5 +1,5 @@
 .modal {
-  position: absolute;
+  position: fixed;
   top: 0;
   bottom: 0;
   left: 0;
@@ -46,7 +46,7 @@
 }
 
 .modal-footer {
-  border-top: 3px solid   #292929;
+  border-top: 3px solid #292929;
   justify-content: flex-end;
 }
 
@@ -63,7 +63,8 @@
 .modal-content {
   padding: 1rem;
   color: #c8c8c8;
-  ;
+  font-size: 13px;
+  white-space: pre-line;
 }
 
 .modal-title {
@@ -94,6 +95,19 @@
 .close-button {
   border-radius: 5px;
   border: none;
+  width: 150px;
+  height: 26px;
+  margin-top: 6px;
+  margin-bottom: 7px;
+  font-size: 14px;
+  border-radius: 5px;
+  border: none;
   background-color: rgb(34, 157, 73);
+  word-spacing: -8px;
+  transition: 0.15s;
+}
 
+.close-button:hover
+{
+  opacity: 0.6;
 }
