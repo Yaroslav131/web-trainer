@@ -17,7 +17,7 @@ const CodeInput = (props) => {
         return () => {
             document.body.removeChild(script);
         }
-    }, []);
+    });
 
     function run() {
         let htmlCode = props.inputHTMLValue;
