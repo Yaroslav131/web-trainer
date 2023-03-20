@@ -165,7 +165,7 @@ interface ILevelListProps {
 
 function LevelList(props: ILevelListProps) {
 
-    const levelList = props.exercises.map((x, index) => <ListItem key={index} onClick={props.onCurrentLevelChange} exercise={x} index={++index} />)
+    let levelList = props.exercises.map((x, index) => <ListItem key={index} onClick={props.onCurrentLevelChange} exercise={x} index={++index} />)
     return (
         <>
             <div className="level-header">
@@ -186,17 +186,11 @@ interface IListItemProps {
 }
 
 function ListItem(props: IListItemProps) {
-
-    let indicator = <div className={props.exercise.isCompleted ? "list-checkmark-complete" : "list-checkmark "}>
-    </div>
-    useEffect(() => {
-        indicator = <div className={props.exercise.isCompleted ? "list-checkmark-complete" : "list-checkmark "}></div>
-    })
     return (
         <button onClick={props.onClick} value={props.index - 1} className="level-item-button">
             <div className="level-item ">
                 <div className="flex-container">
-                    {indicator}
+                <div className={props.exercise.isCompleted ? "list-checkmark-complete" : "list-checkmark "}></div>
                 </div>
                 <div className="flex-container">
                     <p className="item-index">

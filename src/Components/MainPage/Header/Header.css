@@ -11,24 +11,39 @@
     display: none;
 }
 
-.home,
-.menu {
+.home {
     width: 32px;
     height: 32px;
     margin-top: -5px;
+    transition: 0.15s;
 }
 
-.home:hover,
-.menu:hover {
+.menu {
+    width: 30px;
+    height: 30px;
+    margin-top: -5px;
+    transition: 0.15s;
+}
+
+.home:hover
+{
     opacity: 0.7;
     width: 35px;
     height: 35px;
+    transition: 0.15s;
+}
+.menu:hover {
+    opacity: 0.7;
+    width: 33px;
+    height: 33px;
+    transition: 0.15s;
 }
 
 .home:active,
 .menu:active {
     width: 30px;
     height: 30px;
+    transition: 0.15s;
 }
 
 .logo-container,
