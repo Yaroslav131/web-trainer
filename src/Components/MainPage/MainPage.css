@@ -23,9 +23,14 @@
 .green-flash {
     /* -webkit-box-shadow: 1px 1px 1px 3px rgb(34, 157, 73) inset;
     -moz-box-shadow: 1px 1px 1px 3px rgb(34, 157, 73) inset; */
-    box-shadow: inset 0px 0px 10px 13px rgb(34, 157, 73);
+    box-shadow: inset 0px 0px 20px 20px rgb(34, 157, 73);
 }
 
+.red-flash {
+    /* -webkit-box-shadow: 1px 1px 1px 3px rgb(34, 157, 73) inset;
+    -moz-box-shadow: 1px 1px 1px 3px rgb(34, 157, 73) inset; */
+    box-shadow: inset 0px 0px 20px 20px rgb(199, 15, 15);
+}
 
 .sidebar-close
 {

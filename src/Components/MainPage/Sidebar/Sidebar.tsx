@@ -3,9 +3,10 @@ import ProgressBar from "@ramonak/react-progress-bar";
 import "./Sidebar.css"
 import '../../../reset.css'
 import './ProgressBar.css'
-import humburgerIcon from '../../../imgs/icons8-circled-menu-100.png'
+import humburgerIcon from '../../../imgs/icons/icons8-circled-menu-100.png'
 import Exercise from "../../../Classes/Execirse";
 import CssSelectorExercise from "../../../Classes/Execirse";
+import Button from "./Button/Button";
 
 interface Iprops {
     exercises: Exercise[]
@@ -20,6 +21,7 @@ interface Iprops {
     onPreviousEx: () => void
     onCurrentLevelChange: (event: any) => void
     onProgressReset: () => void
+    onTutorialOpen:()=>void
 }
 
 export default function SideBar(props: Iprops) {
@@ -58,13 +60,16 @@ export default function SideBar(props: Iprops) {
                     bgColor='rgb(34, 157, 73)'
                 />
                 {helpBlock}
+                <Button onClick={props.onTutorialOpen} buttonText={"Обучение"}/>
+
             </div>
+           
             <div className={props.isLevelListOpen ? "level-nav-open" : "level-nav-open nav-close"}>
                 <LevelList onCurrentLevelChange={
                     props.onCurrentLevelChange}
                     closeLevelseNav={props.closeLevelsNav}
                     exercises={props.exercises} />
-                <button onClick={props.onProgressReset} className="reset">Сбросить прогресс</button>
+                <Button onClick={props.onProgressReset} buttonText={"Сбросить прогресс"}/>
             </div>
         </>
     )
@@ -80,7 +85,6 @@ function CssSelectorHelpBlock(props: ICssSelectorHelpBlock) {
         <div className="help-block">
             <div className="selectorName">{props.exercise.name}</div>
             <div className="title">{props.exercise.title}</div>
-            <div className="syntax">{props.exercise.syntax}</div>
             <div className="hint">{props.exercise.hint}</div>
             <div className="examples-title">Примеры</div>
             <div className="examples">
@@ -147,7 +151,8 @@ function LevelCounter(props: ILevelCounterProps) {
                         </div>
                     </div>
 
-                    <div className="hamburger-menu-container" onClick={props.openLevelsNav}>
+                    <div className="hamburger-menu-container tooltip" onClick={props.openLevelsNav}>
+                    <span className="tooltiptext left-bottom-tooltip">Список заданий</span>
                         <img className="hamburger-menu" src={humburgerIcon} alt="Задания" />
                     </div>
                 </div>
@@ -190,7 +195,7 @@ function ListItem(props: IListItemProps) {
         <button onClick={props.onClick} value={props.index - 1} className="level-item-button">
             <div className="level-item ">
                 <div className="flex-container">
-                <div className={props.exercise.isCompleted ? "list-checkmark-complete" : "list-checkmark "}></div>
+                    <div className={props.exercise.isCompleted ? "list-checkmark-complete" : "list-checkmark "}></div>
                 </div>
                 <div className="flex-container">
                     <p className="item-index">

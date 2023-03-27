@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import vk from '../../../imgs/vk.png'
-import inst from '../../../imgs/instagram.png'
-import git from '../../../imgs/github.png'
-import linked from '../../../imgs/linkedin.png'
-import "../../../reset.css"
+import vk from '../../../imgs/icons/vk.png'
+import inst from '../../../imgs/icons/instagram.png'
+import git from '../../../imgs/icons/github.png'
+import linked from '../../../imgs/icons/linkedin.png'
+import '../../../reset.css'
 import './Footer.css'
 
 export default function Footer() {

@@ -1,0 +1,7 @@
+.slide-text,
+.side-img
+{
+    margin-top: 15px;
+    margin-bottom: 15px;
+    display: block !important;
+}

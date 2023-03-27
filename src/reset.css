@@ -105,3 +105,42 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  
+  font-size: 14px;
+  visibility: hidden;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 5px;
+  white-space: nowrap;
+  color: #f0f0f0;
+  background-color:#1F1F1F;
+  text-align: center;
+  border-radius: 6px;
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
+
+.right-bottom-tooltip
+{
+  margin-bottom: -80px;
+  margin-right: -70px;
+}
+
+.left-bottom-tooltip
+{
+  margin-bottom: -70px;
+  margin-left: -70px;
+}

@@ -347,29 +347,6 @@ button>div {
     font-size: 14px;
 }
 
-
-
-.reset {
-    width: 250px;
-    height: 26px;
-    margin-top: 6px;
-    margin-bottom: 7px;
-    font-size: 14px;
-    border-radius: 5px;
-    border: none;
-    background-color: rgb(34, 157, 73);
-    word-spacing: -8px;
-    transition: 0.15s;
-}
-
-.reset:hover {
-    opacity: 0.7;
-}
-
-.reset:active {
-    opacity: 0.5;
-}
-
 .shot-screen-level-bar
 {
     display: grid;

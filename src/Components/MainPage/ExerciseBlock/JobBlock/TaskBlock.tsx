@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import '../../../../reset.css'
-import './JobBlock.css'
+import './TaskBlock.css'
 import TextAnimation from "./TextAnimation";
 
 export default function JobBlock(props: any) {

@@ -1,4 +1,5 @@
-import "./JobBlock.css"
+import "./TaskBlock.css"
+import '../../../../reset.css'
 
 export default function TextAnimation(text: string) {
 

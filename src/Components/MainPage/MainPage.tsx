@@ -5,6 +5,11 @@ import SideBar from "./Sidebar/Sidebar"
 import './MainPage.css'
 import ExerciseBlock from "./ExerciseBlock/ExerciseBlock"
 import Footer from "./Footer/Footer"
+import Modal from "./HelpWindow/HelpWindow";
+import './HelpWindow/HelpWindow.css'
+import '../../reset.css'
+
+import SlideCarousel from "./Carousel/Carousel";
 
 interface Iprops {
     excersises: Exercise[]
@@ -28,10 +33,10 @@ export default function MainPage(props: Iprops) {
         copyEx[curentExIndex].isCompleted = true;
         SetExercises([]);
         SetExercises(copyEx);
-        flashingGreen();
+        flashingColorOnCorrect();
     }
 
-    function flashingGreen() {
+    function flashingColorOnCorrect() {
         let className = `${curentClassName} green-flash`
 
         SetClassName(className)
@@ -39,13 +44,15 @@ export default function MainPage(props: Iprops) {
         setTimeout(() => { SetClassName("main") }, 700)
     }
 
-    function OpenLevelsNav() {
-        SetLevelListOpen(true)
+    function flashingColorOnWrong() {
+        let className = `${curentClassName} red-flash`
+
+        SetClassName(className)
+
+        setTimeout(() => { SetClassName("main") }, 700)
     }
 
-    function CloseLevelseNav() {
-        SetLevelListOpen(false)
-    }
+  
 
     function OnNextEx() {
         let curent = curentExIndex;
@@ -69,6 +76,40 @@ export default function MainPage(props: Iprops) {
         SetLevelListOpen(false)
     }
 
+
+    function onOpenSidebar() {
+        SetSidebarOpen(true)
+    }
+
+    function onCancelSidebar() {
+        SetSidebarOpen(false)
+    }
+
+    function OpenLevelsNav() {
+        SetLevelListOpen(true)
+    }
+
+    function CloseLevelseNav() {
+        SetLevelListOpen(false)
+    }
+
+    function onProgressReset() {
+        let exCop = exercises;
+
+        for (let index = 0; index < exCop.length; index++) {
+            exCop[index].isCompleted = false;
+        }
+        SetExercises(exCop);
+
+        SetLevelListOpen(false);
+
+        SetCurentEx(0);
+    }
+
+    const [isModal, setModal] = React.useState(false)
+    const onClose = () => setModal(false)
+    const onTutorialOpen = () => setModal(true)
+
     const handleWindowSizeChange = () => {
         let screenWidth = window.screen.width;
         let documentWidth = document.documentElement.scrollWidth;
@@ -82,24 +123,6 @@ export default function MainPage(props: Iprops) {
         }
     };
 
-    function onOpenSidebar() {
-        SetSidebarOpen(true)
-    }
-
-    function onCancelSidebar() {
-        SetSidebarOpen(false)
-    }
-
-
-    function onProgressReset() {
-        let exCop = exercises;
-
-        for (let index = 0; index < exCop.length; index++) {
-            exCop[index].isCompleted = false;
-        }
-        SetExercises(exCop);
-    }
-    // call your useEffect
     useEffect(() => {
         window.addEventListener('resize', handleWindowSizeChange);
         return () => {
@@ -109,10 +132,21 @@ export default function MainPage(props: Iprops) {
 
     return (
         <div className={isShotScreen ? 'main-page-short' : "main-page"} >
+
+            <Modal
+                visible={isModal}
+                title='Обучение'
+                content={
+                  <SlideCarousel/>
+                }
+                footer={<button onClick={onClose}>Закрыть</button>}
+                onClose={onClose}
+            />
             <div className={curentClassName}>
                 <Header isSidebarOpen={isSidebarOpen}
                     onOpenSidebar={onOpenSidebar} />
                 <ExerciseBlock onCorrectAnswer={onCorrectAnswer}
+                onWrongAnswer={flashingColorOnWrong}
                     curentExIndex={curentExIndex}
                     excersises={exercises} />
                 <Footer />
@@ -130,7 +164,8 @@ export default function MainPage(props: Iprops) {
                     closeLevelsNav={CloseLevelseNav}
                     openLevelsNav={OpenLevelsNav}
                     onCurrentLevelChange={OnCurrentLevelChange}
-                    onProgressReset={onProgressReset} />
+                    onProgressReset={onProgressReset}
+                    onTutorialOpen={onTutorialOpen} />
             </div>
         </div >
     )

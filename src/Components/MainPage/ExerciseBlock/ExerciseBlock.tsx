@@ -1,17 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Exercise from "../../../Classes/Execirse"
-import JobBlock from "./JobBlock/JobBlock";
+import JobBlock from "./JobBlock/TaskBlock";
 import ImgBlock from "./ImgBlock/ImgBlock";
 import CodeInput from "./CodeInput/CodeInput";
 import SubmitButton from "./SubmitButton/SubmitButton"
 import HelpButton from "./HelpButton/HelpButton";
 import "./ExerciseBlock.css";
-import Modal from "./HelpWindow/HelpWindow";
+import Modal from "../HelpWindow/HelpWindow";
+import '../../../reset.css'
 
 interface Iprops {
     excersises: Exercise[]
     curentExIndex: number
     onCorrectAnswer: () => void
+    onWrongAnswer: () => void
 }
 
 export default function ExerciseBlock(props: Iprops) {
@@ -31,6 +33,10 @@ export default function ExerciseBlock(props: Iprops) {
         if (props.excersises[props.curentExIndex].answer == answer) {
             props.onCorrectAnswer();
         }
+        else
+        {
+            props.onWrongAnswer();
+        }
     }
 
     const [isModal, setModal] = React.useState(false)
@@ -44,6 +50,7 @@ export default function ExerciseBlock(props: Iprops) {
             <CodeInput
                 onInputAnswer={onInputAnswer}
                 inputHTMLValue={props.excersises[props.curentExIndex].htmlCode}
+                reactObj={props.excersises[props.curentExIndex].reactObj}
                 inputCSSValue={props.excersises[props.curentExIndex].cssCode}
                 exerciseType={props.excersises[props.curentExIndex].type}
                 userAnswer={answer}
