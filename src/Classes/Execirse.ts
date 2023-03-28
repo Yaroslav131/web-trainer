@@ -1,5 +1,6 @@
 export default class Exercise {
-    reactObj:Object
+    htmlCompelateCode:Object[]
+    cssCompelateCode:string
     type: string
     name: String;
     task: String;
@@ -9,12 +10,13 @@ export default class Exercise {
     helpText: string
     isCompleted: boolean;
     answer: string;
-    htmlCode: string
-    cssCode: string
+    htmlCodeOutput: string
+    cssCodeOutput: string
   
     imgURL: string
     constructor(
-        reactObj:Object,
+        htmlCompelateCode:Object[],
+        cssCompelateCode:string,
         type: string,
         name: string,
         task: string,
@@ -25,12 +27,13 @@ export default class Exercise {
      
         isCompleted: boolean,
         answer: string,
-        htmlCode: string,
-        cssCode: string,
+        htmlCodeOutput: string,
+        cssCodeOutput: string,
         imgURL: string,
 
     ) {
-        this.reactObj=reactObj;
+        this.htmlCompelateCode=htmlCompelateCode;
+        this.cssCompelateCode=cssCompelateCode;
         this.type = type;
         this.name = name;
         this.task = task;
@@ -40,8 +43,8 @@ export default class Exercise {
         this.helpText = helpText;
         this.isCompleted = isCompleted;
         this.answer = answer;
-        this.htmlCode = htmlCode;
-        this.cssCode = cssCode;
+        this.htmlCodeOutput = htmlCodeOutput;
+        this.cssCodeOutput = cssCodeOutput;
       
         this.imgURL = imgURL;
     }

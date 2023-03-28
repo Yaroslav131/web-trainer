@@ -1,18 +1,13 @@
 import React, { useEffect, useState } from "react";
 import './CodeInput.css'
-
-import cat from "./cat.png"
 import { IFrame } from "./IFrame";
+import "./IFrame.css"
 
 const CodeInput = (props) => {
 
     const [reactCode, SetReactCode] = useState(<></>);
+
     useEffect(() => {
-
-        runCompeletion();
-       // getReactCode();
-        sendAnswer();
-
         const script = document.createElement('script');
 
         script.src = "https://kit.fontawesome.com/979140767a.js";
@@ -23,35 +18,44 @@ const CodeInput = (props) => {
         return () => {
             document.body.removeChild(script);
         }
+    }, []);
 
-
-    });
-
-    function getReactCode() {
-        let reactCode = <></>
-
-        for (let value of Object.entries(props.reactObj)) {
-            reactCode += <div className={value.class}>
-                {value.imgs.map(x => <img src={require(`../../../../imgs/exercise-imgs/${x.name}.png`)} className={x.class}></img>)}
-            </div>
-        }
-
-        SetReactCode(reactCode)
-    }
+    useEffect(() => {
+        runCompeletion();
+        sendAnswer();
+    }, [props]);
 
     function runCompeletion() {
-        let htmlCode = props.inputHTMLValue;
+        //  let htmlCode = props.inputHTMLValue;
 
-        let cssCode = props.inputCSSValue;
-        let output = document.getElementById("output");
+        let cssCode = props.cssCompelateCode;
+
+        let containerList = [];
+
 
         if (props.exerciseType == "CSS") {
             cssCode = props.userAnswer + cssCode;
-            output.contentDocument.body.innerHTML =htmlCode+ "<style>" + cssCode + "</style>";
         }
-        else {
-            htmlCode = props.userAnswer + htmlCode;
+        // else {
+        //     htmlCode = props.userAnswer + htmlCode;
+        // }
+
+        for (let value of props.reactObj) {
+            let counter = 0;
+
+            containerList.push(<div className={value.class}>
+                {value.imgs.map(x => (
+                    <img key={counter++} src={require(`../../../../imgs/exercise-imgs/${x.name}.png`)} className={x.class} id={x.id}></img>
+                ))}
+            </div>)
         }
+
+        let reactCode = <>
+            <style>{cssCode}</style>
+            {containerList}
+        </>
+
+        SetReactCode(reactCode)
 
 
     }
@@ -105,7 +109,7 @@ const CodeInput = (props) => {
             <div className="right">
                 <label className="type-head"><i className="fa-solid fa-play"></i>  Output</label>
                 <IFrame>
-                <img src={cat} ></img>
+                    {reactCode}
                 </IFrame>
             </div>
         </div >

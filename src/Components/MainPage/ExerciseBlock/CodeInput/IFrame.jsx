@@ -10,7 +10,7 @@ export const IFrame = ({
       contentRef?.contentWindow?.document?.body
   
     return (
-      <iframe id='output' {...props} ref={setContentRef}>
+      <iframe  {...props} ref={setContentRef}>
         {mountNode && createPortal(children, mountNode)}
       </iframe>
     )

@@ -33,8 +33,7 @@ export default function ExerciseBlock(props: Iprops) {
         if (props.excersises[props.curentExIndex].answer == answer) {
             props.onCorrectAnswer();
         }
-        else
-        {
+        else {
             props.onWrongAnswer();
         }
     }
@@ -49,9 +48,10 @@ export default function ExerciseBlock(props: Iprops) {
             <ImgBlock imgURL={props.excersises[props.curentExIndex].imgURL} />
             <CodeInput
                 onInputAnswer={onInputAnswer}
-                inputHTMLValue={props.excersises[props.curentExIndex].htmlCode}
-                reactObj={props.excersises[props.curentExIndex].reactObj}
-                inputCSSValue={props.excersises[props.curentExIndex].cssCode}
+                inputHTMLValue={props.excersises[props.curentExIndex].htmlCodeOutput}
+                reactObj={props.excersises[props.curentExIndex].htmlCompelateCode}
+                inputCSSValue={props.excersises[props.curentExIndex].cssCodeOutput}
+                cssCompelateCode={props.excersises[props.curentExIndex].cssCompelateCode}
                 exerciseType={props.excersises[props.curentExIndex].type}
                 userAnswer={answer}
                 onSubmit={onSubmit}
