@@ -14,6 +14,7 @@ interface Iprops {
     isLevelListOpen: Boolean
     isSidebarOpen: boolean
     isShotScreen: boolean
+    compliteExCounter:number
     onCancelSidebar: () => void
     openLevelsNav: () => void
     closeLevelsNav: () => void
@@ -49,8 +50,8 @@ export default function SideBar(props: Iprops) {
                     onPreviousEx={props.onPreviousEx}
                     openLevelsNav={props.openLevelsNav} />
                 <ProgressBar
-                    completed={props.curentExIndex}
-                    maxCompleted={props.exercises.length - displayIncriment}
+                    completed={props.compliteExCounter}
+                    maxCompleted={props.exercises.length }
                     className="progress-bar"
                     baseBgColor='#808080'
                     height='6px'

@@ -18,6 +18,7 @@ interface Iprops {
 export default function MainPage(props: Iprops) {
 
     const [curentExIndex, SetCurentEx] = useState(0);
+    const [compliteExCounter, SetCompliteExCounter] = useState(0);
 
     const [curentClassName, SetClassName] = useState("main");
 
@@ -34,25 +35,23 @@ export default function MainPage(props: Iprops) {
         SetExercises([]);
         SetExercises(copyEx);
         flashingColorOnCorrect();
+
+        let counter = compliteExCounter;
+        SetCompliteExCounter(++counter)
     }
 
     function flashingColorOnCorrect() {
         let className = `${curentClassName} green-flash`
-
         SetClassName(className)
-
         setTimeout(() => { SetClassName("main") }, 700)
     }
 
     function flashingColorOnWrong() {
         let className = `${curentClassName} red-flash`
-
         SetClassName(className)
-
         setTimeout(() => { SetClassName("main") }, 700)
     }
 
-  
 
     function OnNextEx() {
         let curent = curentExIndex;
@@ -99,11 +98,11 @@ export default function MainPage(props: Iprops) {
         for (let index = 0; index < exCop.length; index++) {
             exCop[index].isCompleted = false;
         }
+
         SetExercises(exCop);
-
         SetLevelListOpen(false);
-
         SetCurentEx(0);
+        SetCompliteExCounter(0);
     }
 
     const [isModal, setModal] = React.useState(false)
@@ -137,7 +136,7 @@ export default function MainPage(props: Iprops) {
                 visible={isModal}
                 title='Обучение'
                 content={
-                  <SlideCarousel/>
+                    <SlideCarousel />
                 }
                 footer={<button onClick={onClose}>Закрыть</button>}
                 onClose={onClose}
@@ -146,7 +145,7 @@ export default function MainPage(props: Iprops) {
                 <Header isSidebarOpen={isSidebarOpen}
                     onOpenSidebar={onOpenSidebar} />
                 <ExerciseBlock onCorrectAnswer={onCorrectAnswer}
-                onWrongAnswer={flashingColorOnWrong}
+                    onWrongAnswer={flashingColorOnWrong}
                     curentExIndex={curentExIndex}
                     excersises={exercises} />
                 <Footer />
@@ -156,6 +155,7 @@ export default function MainPage(props: Iprops) {
                     isLevelListOpen={isLevelListOpen}
                     exercises={exercises}
                     curentExIndex={curentExIndex}
+                    compliteExCounter={compliteExCounter}
                     isSidebarOpen={isSidebarOpen}
                     isShotScreen={isShotScreen}
                     onCancelSidebar={onCancelSidebar}

@@ -79,7 +79,7 @@ const CodeInput = (props) => {
 
     if (props.exerciseType == "CSS") {
         cssBlock = <div className="code-constainer">
-            <textarea placeholder="Вводите ответ..." value={props.userAnswer} onInput={props.onInputAnswer} onKeyUp={runCompeletion} id="user-answer" ></textarea>
+            <textarea placeholder="Write code..." className={props.userAnswer == "" ? "user-answer-empty" : ""} value={props.userAnswer} onInput={props.onInputAnswer} onKeyUp={runCompeletion} id="user-answer" ></textarea>
             <pre className="code-text" id="html-code" disabled>{props.inputCSSValue}</pre>
         </div>
 
@@ -87,27 +87,27 @@ const CodeInput = (props) => {
             <pre className="code-text" id="html-code" disabled>{props.inputHTMLValue}</pre>
         </div>
     }
-    else if (props.exerciseType == "HTML") {
-        htmlBlock = <div className="code-constainer">
-            <textarea placeholder="Вводите код..." value={props.userAnswer} onInput={props.onInputAnswer} id="user-answer" onKeyUp={runCompeletion}></textarea>
-            <div id="html-code" className="code-text" disabled>{props.inputHTMLValue}</div>
-        </div>
+    // else if (props.exerciseType == "HTML") {
+    //     htmlBlock = <div className="code-constainer">
+    //         <textarea placeholder="Вводите код..." value={props.userAnswer} onInput={props.onInputAnswer} id="user-answer" onKeyUp={runCompeletion}></textarea>
+    //         <div id="html-code" className="code-text" disabled>{props.inputHTMLValue}</div>
+    //     </div>
 
-        cssBlock = <div className="code-constainer">
-            <div className="code-text" id="css-code" disabled>{props.inputCSSValue}</div>
-        </div>
-    }
+    //     cssBlock = <div className="code-constainer">
+    //         <div className="code-text" id="css-code" disabled>{props.inputCSSValue}</div>
+    //     </div>
+    // }
 
     return (
         <div className="textarea-container">
             <div className="left">
-                <label className="type-head"><i className="fa-brands fa-css3-alt"></i>  CSS</label>
+                <label className="type-head"><i className="fa-brands fa-css3-alt"></i>CSS</label>
                 {cssBlock}
-                <label className="type-head"><i className="fa-brands fa-html5"></i>  HTML</label>
+                <label className="type-head"><i className="fa-brands fa-html5"></i>HTML</label>
                 {htmlBlock}
             </div>
             <div className="right">
-                <label className="type-head"><i className="fa-solid fa-play"></i>  Output</label>
+                <label className="type-head"><i className="fa-solid fa-play"></i>Output</label>
                 <IFrame>
                     {reactCode}
                 </IFrame>
