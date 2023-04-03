@@ -1,7 +1,7 @@
 export default class Exercise {
-    htmlCompelateCode:Object[]
-    cssCompelateCode:string
-    type: string
+    htmlСompilationCode: Object[]
+    cssСompilationCode: string
+    ExerciseType: string
     name: String;
     task: String;
     title: string
@@ -10,31 +10,31 @@ export default class Exercise {
     helpText: string
     isCompleted: boolean;
     answer: string;
-    htmlCodeOutput: string
+    htmlCodeOutput: string[]
     cssCodeOutput: string
-  
+
     imgURL: string
     constructor(
-        htmlCompelateCode:Object[],
-        cssCompelateCode:string,
-        type: string,
+        htmlСompilationCode: Object[],
+        cssСompilationCode: string,
+        ExerciseType: string,
         name: string,
         task: string,
         title: string,
         hint: string,
         examples: string[],
         helpText: string,
-     
+
         isCompleted: boolean,
         answer: string,
-        htmlCodeOutput: string,
+        htmlCodeOutput: string[],
         cssCodeOutput: string,
         imgURL: string,
 
     ) {
-        this.htmlCompelateCode=htmlCompelateCode;
-        this.cssCompelateCode=cssCompelateCode;
-        this.type = type;
+        this.htmlСompilationCode = htmlСompilationCode;
+        this.cssСompilationCode = cssСompilationCode;
+        this.ExerciseType = ExerciseType;
         this.name = name;
         this.task = task;
         this.title = title;
@@ -45,7 +45,7 @@ export default class Exercise {
         this.answer = answer;
         this.htmlCodeOutput = htmlCodeOutput;
         this.cssCodeOutput = cssCodeOutput;
-      
+
         this.imgURL = imgURL;
     }
 }

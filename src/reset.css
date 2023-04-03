@@ -125,7 +125,7 @@ select {
   border-radius: 6px;
   /* Position the tooltip text - see examples below! */
   position: absolute;
-  z-index: 1;
+  z-index: 5;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
@@ -135,12 +135,19 @@ select {
 
 .right-bottom-tooltip
 {
-  margin-bottom: -80px;
-  margin-right: -70px;
+  margin-bottom: -70px !important ;
+  margin-right: -100px !important;
 }
+
+.right-top-tooltip
+{
+  margin-top: 10px !important ;
+  margin-left: 25px !important;
+}
+
 
 .left-bottom-tooltip
 {
-  margin-bottom: -70px;
-  margin-left: -70px;
+  margin-bottom: -85px !important;
+  margin-left: -120px !important;
 }

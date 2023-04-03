@@ -31,7 +31,7 @@ export default function SideBar(props: Iprops) {
 
     let ex = props.exercises[props.curentExIndex];
 
-    if (ex.type == "CSS") {
+    if (ex.ExerciseType == "CSS") {
         helpBlock = <CssSelectorHelpBlock exercise={ex} />
     }
 
@@ -61,7 +61,7 @@ export default function SideBar(props: Iprops) {
                     bgColor='rgb(34, 157, 73)'
                 />
                 {helpBlock}
-                <Button onClick={props.onTutorialOpen} buttonText={"Обучение"}/>
+                <Button onClick={props.onTutorialOpen} buttonText={"Как работает тренажер?"}/>
 
             </div>
            

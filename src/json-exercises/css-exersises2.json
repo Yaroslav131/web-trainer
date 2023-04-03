@@ -1,245 +1,282 @@
-{
-  "reactObj": {},
-  "answer": "#cool",
-  "cssCode": "{\n  background: blue !important;\n }\n\n.container{\nwidth: 100 %;\nheight: 90vh;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}\n.exemple-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 40px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button:hover{\ncolor: rgb(0, 0, 0);\nopacity: 0.7;\n}\n\n.exemple-button:active{\ncolor: rgb(0, 0, 0);\nopacity: 0.5;\n}\n\n",
-  "examples": [
-    "#cool выбирает любой элемент с id='cool'",
-    "ul#long выбирает <ul id='long'>"
-  ],
-  "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n #ID CSS Rule\n\n #cool {\n margin- bottom: 12px;\n }\n\nЗдесь \"#cool\" является селектором (выбирает все элементы c индефикатором #cool) и применяет стиль margin-bottom.",
-  "hint": "Выбирает элемент с определенным идентификатором. Вы также можете комбинировать селектор ID с селектором типа.",
-  "htmlCode": "  <div class='container'>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button id=\"cool\" class=\"exemple-button\">Привет</button>\n  <button class=\"exemple-button\">Нажми на меня</button>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Подпишись</button>\n  </div>",
-  "imgURL": " ",
-  "isCompleted": false,
-  "name": "Селектор идентификаторов",
-  "syntax": "#id",
-  "task": "Выбери элемент с идентификатором cool",
-  "title": "Выбор элементов по идентификатору",
-  "type": "CSS"
-},
-{
-  "reactObj": {},
-  "answer": ".bigger-button",
-  "cssCode": "{\n  background: red !important;\n }\n\n.container{\nwidth: 100 %;\nheight: 90vh;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}\n.bigger-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 45px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 40px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button:hover{\ncolor: rgb(0, 0, 0);\nopacity: 0.7;\n}\n\n.exemple-button:active{\ncolor: rgb(0, 0, 0);\nopacity: 0.5;\n}\n\n",
-  "examples": [
-    ".test выбирает все элементы <div class='test'>"
-  ],
-  "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n A CSS Rule\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
-  "hint": "Выбирает все элементы с определенным классом. Вы можете так же комбинировать селектор класса с селектором типа.",
-  "htmlCode": "  <div class='container'>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Привет</button>\n  <button class=\"exemple-button\">Нажми на меня</button>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Подпишись</button>\n  </div>",
-  "imgURL": " ",
-  "isCompleted": false,
-  "name": "Классовый селектор",
-  "syntax": ".test",
-  "task": "Выбeрете все кнопки с классом bigger-button",
-  "title": "Выбор элементов по их классу",
-  "type": "CSS"
-},
-{
-  "reactObj": {},
-  "answer": ".second-block button",
-  "cssCode": "{\n  background-color: red !important;\n }\n\n.container{\nwidth: 100 %;\nheight: 90vh;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}\n.first-block{\nwidth: 100%;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}\n.second-block{\nwidth: 100%;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}\n.exemple-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 40px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button:hover{\ncolor: rgb(0, 0, 0);\nopacity: 0.7;\n}\n\n.exemple-button:active{\ncolor: rgb(0, 0, 0);\nopacity: 0.5;\n}\n\n",
-  "examples": [
-    ".test div выбирает все элементы <div> в блоке <div class='test'>"
-  ],
-  "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n A CSS Rule\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
-  "hint": "Выбирает все элементы с определенным типом и классом. Тип относится к типу тега, поэтому <div>, <p> и <ul> — это разные типы элементов, у каждого может быть свой класс.",
-  "htmlCode": "  <div class='container'>\n<div class='first-block'>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Привет</button>\n  <button class=\"exemple-button\">Нажми на меня</button>\n</div>\n<div class='second-block'>\n<input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Подпишись</button>\n</div>\n<div>",
-  "imgURL": " ",
-  "isCompleted": false,
-  "name": "Составной селектор",
-  "syntax": ".test a",
-  "task": "Выберете все элементы <button>, входящие в состав элемента с классом second-block",
-  "title": "Выбор элементов по их типу и классу",
-  "type": "CSS"
-},
-{
-  "reactObj": {},
-  "answer": "input",
-  "cssCode": "{\n  background: red !important;\n }\n\n.container{\nwidth: 100 %;\nheight: 90vh;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}block{\nwidth: 100%;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\nbackground:gray;\n}\n.exemple-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 40px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button:hover{\ncolor: rgb(0, 0, 0);\nopacity: 0.7;\n}\n\n.exemple-button:active{\ncolor: rgb(0, 0, 0);\nopacity: 0.5;\n}\n\n",
-  "examples": [
-    "div выбирает все элементы <div>",
-    "p выбирает все элементы <p>"
-  ],
-  "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n A CSS Rule\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
-  "hint": "Выбирает все элементы типа A. Тип относится к типу тега, поэтому <div>, <p> и <ul> — это разные типы элементов.",
-  "htmlCode": "  <div class='container'>\n<div class='block'>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Привет</button>\n  <button class=\"exemple-button\">Нажми на меня</button>\n</div>\n<input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Подпишись</button>\n<div>",
-  "imgURL": " ",
-  "isCompleted": false,
-  "name": "Типовой селектор",
-  "syntax": "A",
-  "task": "Выберете все элементы <input>",
-  "title": "Выбор элементов по их типу",
-  "type": "CSS"
-},
-{
-  "reactObj": {},
-  "answer": ".block input",
-  "cssCode": "{\n  background: red !important;\n }\n\n.container{\nwidth: 100 %;\nheight: 90vh;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}block{\nwidth: 100%;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\nbackground:gray;\n}\n.exemple-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 40px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button:hover{\ncolor: rgb(0, 0, 0);\nopacity: 0.7;\n}\n\n.exemple-button:active{\ncolor: rgb(0, 0, 0);\nopacity: 0.5;\n}\n\n",
-  "examples": [
-    "div выбирает все элементы <div>",
-    "p выбирает все элементы <p>"
-  ],
-  "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n A CSS Rule\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
-  "hint": "Выбирает все элементы с определенным типом и классом. Тип относится к типу тега, поэтому <div>, <p> и <ul> — это разные типы элементов, у каждого может быть свой класс.",
-  "htmlCode": "  <div class='container'>\n<div class='block'>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Привет</button>\n  <button class=\"exemple-button\">Нажми на меня</button>\n</div>\n<input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Подпишись</button>\n<div>",
-  "imgURL": " ",
-  "isCompleted": false,
-  "name": "Составной селектор",
-  "syntax": "A",
-  "task": "Выберете только те элементы <input>, которые входят в состав <div> с классом block",
-  "title": "Выбор элементов по их типу и классу",
-  "type": "CSS"
-},
-{
-  "reactObj": {},
-  "answer": ".container",
-  "cssCode": "{\n  background: red !important;\n }\n\n.container{\nwidth: 100 %;\nheight: 90vh;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}\n.exemple-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 40px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button:hover{\ncolor: rgb(0, 0, 0);\nopacity: 0.7;\n}\n\n.exemple-button:active{\ncolor: rgb(0, 0, 0);\nopacity: 0.5;\n}\n\n",
-  "examples": [
-    "div выбирает все элементы <div>",
-    "p выбирает все элементы <p>"
-  ],
-  "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n A CSS Rule\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
-  "hint": "Выбирает все элементы с определенным классом. Вы можете так же комбинировать селектор класса с селектором типа.",
-  "htmlCode": "  <div class='container'>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Привет</button>\n  <button class=\"exemple-button\">Нажми на меня</button>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Подпишись</button>\n  </div>",
-  "imgURL": " ",
-  "isCompleted": false,
-  "name": "Классовый селектор",
-  "syntax": "A",
-  "task": "Выберете элемент, чтобы изменился только задний фон страницы",
-  "title": "Выбор элементов по их классу",
-  "type": "CSS"
-},
-{
-  "reactObj": {},
-  "answer": "button",
-  "cssCode": "{\n  background: red !important;\n }\n\n.container{\nwidth: 100 %;\nheight: 90vh;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}\n.exemple-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 40px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button:hover{\ncolor: rgb(0, 0, 0);\nopacity: 0.7;\n}\n\n.exemple-button:active{\ncolor: rgb(0, 0, 0);\nopacity: 0.5;\n}\n\n",
-  "examples": [
-    "div выбирает все элементы <div>",
-    "p выбирает все элементы <p>"
-  ],
-  "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n A CSS Rule\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
-  "hint": "Выбирает все элементы типа A. Тип относится к типу тега, поэтому <div>, <p> и <ul> — это разные типы элементов.",
-  "htmlCode": "  <div class='container'>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Привет</button>\n  <button class=\"exemple-button\">Нажми на меня</button>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Подпишись</button>\n  </div>",
-  "imgURL": " ",
-  "isCompleted": false,
-  "name": "Типовой селектор",
-  "syntax": "A",
-  "task": "Выберете все элементы <button>",
-  "title": "Выбор элементов по их типу",
-  "type": "CSS"
-},
-{
-  "reactObj": {},
-  "answer": "#cool",
-  "cssCode": "{\n  background: blue !important;\n }\n\n.container{\nwidth: 100 %;\nheight: 90vh;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}\n.exemple-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 40px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button:hover{\ncolor: rgb(0, 0, 0);\nopacity: 0.7;\n}\n\n.exemple-button:active{\ncolor: rgb(0, 0, 0);\nopacity: 0.5;\n}\n\n",
-  "examples": [
-    "#cool выбирает любой элемент с id='cool'",
-    "ul#long выбирает <ul id='long'>"
-  ],
-  "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n #ID CSS Rule\n\n #cool {\n margin- bottom: 12px;\n }\n\nЗдесь \"#cool\" является селектором (выбирает все элементы c индефикатором #cool) и применяет стиль margin-bottom.",
-  "hint": "Выбирает элемент с определенным идентификатором. Вы также можете комбинировать селектор ID с селектором типа.",
-  "htmlCode": "  <div class='container'>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button id=\"cool\" class=\"exemple-button\">Привет</button>\n  <button class=\"exemple-button\">Нажми на меня</button>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Подпишись</button>\n  </div>",
-  "imgURL": " ",
-  "isCompleted": false,
-  "name": "Селектор идентификаторов",
-  "syntax": "#id",
-  "task": "Выбери элемент с идентификатором cool",
-  "title": "Выбор элементов по идентификатору",
-  "type": "CSS"
-},
-{
-  "reactObj": {},
-  "answer": ".bigger-button",
-  "cssCode": "{\n  background: red !important;\n }\n\n.container{\nwidth: 100 %;\nheight: 90vh;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}\n.bigger-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 45px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 40px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button:hover{\ncolor: rgb(0, 0, 0);\nopacity: 0.7;\n}\n\n.exemple-button:active{\ncolor: rgb(0, 0, 0);\nopacity: 0.5;\n}\n\n",
-  "examples": [
-    "div выбирает все элементы <div>",
-    "p выбирает все элементы <p>"
-  ],
-  "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n A CSS Rule\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
-  "hint": "Выбирает все элементы с определенным классом. Вы можете так же комбинировать селектор класса с селектором типа.",
-  "htmlCode": "  <div class='container'>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Привет</button>\n  <button class=\"exemple-button\">Нажми на меня</button>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Подпишись</button>\n  </div>",
-  "imgURL": " ",
-  "isCompleted": false,
-  "name": "Классовый селектор",
-  "syntax": "A",
-  "task": "Выбeрете все кнопки с классом bigger-button",
-  "title": "Выбор элементов по их классу",
-  "type": "CSS"
-},
-{
-  "reactObj": {},
-  "answer": ".second-block button",
-  "cssCode": "{\n  background-color: red !important;\n }\n\n.container{\nwidth: 100 %;\nheight: 90vh;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}\n.first-block{\nwidth: 100%;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}\n.second-block{\nwidth: 100%;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}\n.exemple-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 40px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button:hover{\ncolor: rgb(0, 0, 0);\nopacity: 0.7;\n}\n\n.exemple-button:active{\ncolor: rgb(0, 0, 0);\nopacity: 0.5;\n}\n\n",
-  "examples": [
-    "div выбирает все элементы <div>",
-    "p выбирает все элементы <p>"
-  ],
-  "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n A CSS Rule\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
-  "hint": "Выбирает все элементы с определенным типом и классом. Тип относится к типу тега, поэтому <div>, <p> и <ul> — это разные типы элементов, у каждого может быть свой класс.",
-  "htmlCode": "  <div class='container'>\n<div class='first-block'>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Привет</button>\n  <button class=\"exemple-button\">Нажми на меня</button>\n</div>\n<div class='second-block'>\n<input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Подпишись</button>\n</div>\n<div>",
-  "imgURL": " ",
-  "isCompleted": false,
-  "name": "Составной селектор",
-  "syntax": "A",
-  "task": "Выберете все элементы <button>, входящие в состав элемента с классом second-block",
-  "title": "Выбор элементов по их типу и классу",
-  "type": "CSS"
-},
-{
-  "reactObj": {},
-  "answer": "input",
-  "cssCode": "{\n  background: red !important;\n }\n\n.container{\nwidth: 100 %;\nheight: 90vh;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}block{\nwidth: 100%;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\nbackground:gray;\n}\n.exemple-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 40px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button:hover{\ncolor: rgb(0, 0, 0);\nopacity: 0.7;\n}\n\n.exemple-button:active{\ncolor: rgb(0, 0, 0);\nopacity: 0.5;\n}\n\n",
-  "examples": [
-    "div выбирает все элементы <div>",
-    "p выбирает все элементы <p>"
-  ],
-  "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n A CSS Rule\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
-  "hint": "Выбирает все элементы типа A. Тип относится к типу тега, поэтому <div>, <p> и <ul> — это разные типы элементов.",
-  "htmlCode": "  <div class='container'>\n<div class='block'>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Привет</button>\n  <button class=\"exemple-button\">Нажми на меня</button>\n</div>\n<input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Подпишись</button>\n<div>",
-  "imgURL": " ",
-  "isCompleted": false,
-  "name": "Типовой селектор",
-  "syntax": "A",
-  "task": "Выберете все элементы <input>",
-  "title": "Выбор элементов по их типу",
-  "type": "CSS"
-},
-{
-  "reactObj": {},
-  "answer": ".block input",
-  "cssCode": "{\n  background: red !important;\n }\n\n.container{\nwidth: 100 %;\nheight: 90vh;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}block{\nwidth: 100%;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\nbackground:gray;\n}\n.exemple-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 40px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button:hover{\ncolor: rgb(0, 0, 0);\nopacity: 0.7;\n}\n\n.exemple-button:active{\ncolor: rgb(0, 0, 0);\nopacity: 0.5;\n}\n\n",
-  "examples": [
-    "div выбирает все элементы <div>",
-    "p выбирает все элементы <p>"
-  ],
-  "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n A CSS Rule\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
-  "hint": "Выбирает все элементы с определенным типом и классом. Тип относится к типу тега, поэтому <div>, <p> и <ul> — это разные типы элементов, у каждого может быть свой класс.",
-  "htmlCode": "  <div class='container'>\n<div class='block'>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Привет</button>\n  <button class=\"exemple-button\">Нажми на меня</button>\n</div>\n<input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Подпишись</button>\n<div>",
-  "imgURL": " ",
-  "isCompleted": false,
-  "name": "Составной селектор",
-  "syntax": "A",
-  "task": "Выберете только те элементы <input>, которые входят в состав <div> с классом block",
-  "title": "Выбор элементов по их типу и классу",
-  "type": "CSS"
-},
-{
-  "reactObj": {},
-  "answer": ".container",
-  "cssCode": "{\n  background: red !important;\n }\n\n.container{\nwidth: 100 %;\nheight: 90vh;\ndisplay: flex;\nflex-direction: column;\njustify-content: center;\nalign-items: center;\ngap: 15px;\n}\n.exemple-button{\nborder-radius: 10px;\nborder: none;\nbackground-color: #9e2e2e;\ncolor: #c8c8c8;\ntransition: 0.15s;\nheight: 40px;\npadding-left: 10px;\npadding-right: 10px;\n}\n\n.exemple-button:hover{\ncolor: rgb(0, 0, 0);\nopacity: 0.7;\n}\n\n.exemple-button:active{\ncolor: rgb(0, 0, 0);\nopacity: 0.5;\n}\n\n",
-  "examples": [
-    "div выбирает все элементы <div>",
-    "p выбирает все элементы <p>"
-  ],
-  "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n A CSS Rule\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
-  "hint": "Выбирает все элементы с определенным классом. Вы можете так же комбинировать селектор класса с селектором типа.",
-  "htmlCode": "  <div class='container'>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Привет</button>\n  <button class=\"exemple-button\">Нажми на меня</button>\n  <input type=\"submit\" class=\"exemple-button\">\n  <button class=\"exemple-button\">Подпишись</button>\n  </div>",
-  "imgURL": " ",
-  "isCompleted": false,
-  "name": "Классовый селектор",
-  "syntax": "A",
-  "task": "Выберете элемент, чтобы изменился только задний фон страницы",
-  "title": "Выбор элементов по их классу",
-  "type": "CSS"
-}
+[
+  {
+    "htmlCompelateCode": [
+      {
+        "class": "container",
+        "imgs": [
+          {
+            "name": "cat",
+            "class": "img cat",
+            "id": ""
+          },
+          {
+            "name": "deer",
+            "class": "img deer",
+            "id": ""
+          },
+          {
+            "name": "owl",
+            "class": "img owl",
+            "id": ""
+          }
+        ]
+      }
+    ],
+    "cssCompelateCode": "{  background: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.container{width: 90%;  border-radius: 10px; padding:5px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.img{ width: 100%;height:100%; margin-left:7px;margin-right:7px; margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.img:hover{color: rgb(0, 0, 0);opacity: 0.7;}.img:active{color: rgb(0, 0, 0);opacity: 0.5;}",
+    "answer": "img",
+    "cssCodeOutput": "{\n  background: firebrick !important;\n }\n ",
+    "examples": [
+      "div выбирает все элементы <div>",
+      "p выбирает все элементы <p>"
+    ],
+    "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n Пример:\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
+    "hint": "Селектор 'a' выбирает все элементы типа <a>. Тип относится к типу тега, поэтому <div>, <p> и <ul> — это разные типы элементов.",
+    "htmlCodeOutput": "<div class='container'>\n<img class='cat' src='./cat.png'>\n<img class='deer' src='./deer.png'>\n<img class='owl' src='./owl.png'>\n </div>",
+    "imgURL": " ",
+    "isCompleted": false,
+    "name": "Типовой селектор",
+    "task": "Выберите изображения всех животных",
+    "title": "Выбор элементов по их типу",
+    "type": "CSS"
+  }
+  ,
+  {
+    "htmlCompelateCode": [
+      {
+        "class": "container",
+        "imgs": [
+          {
+            "name": "cat",
+            "class": "img cat",
+            "id": ""
+          },
+          {
+            "name": "deer",
+            "class": "img deer",
+            "id": ""
+          },
+          {
+            "name": "owl",
+            "class": "img owl",
+            "id": ""
+          }
+        ]
+      }
+    ],
+    "cssCompelateCode": "{  background: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.container{width: 90%;  border-radius: 10px; padding:5px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.img{ width: 100%;height:100%; margin-left:7px;margin-right:7px; margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.img:hover{color: rgb(0, 0, 0);opacity: 0.7;}.img:active{color: rgb(0, 0, 0);opacity: 0.5;}",
+    "answer": ".cat",
+    "cssCodeOutput": "{\n  background: firebrick !important;\n }\n ",
+    "examples": [
+      ".class выбирает все элементы с классом 'class'"
+    ],
+    "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n Пример:\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
+    "hint": "Селектор '.a' выбирает все элементы с классом 'a'.",
+    "htmlCodeOutput": "<div class='container'>\n<img class='cat' src='./cat.png'>\n<img class='deer' src='./deer.png'>\n<img class='owl' src='./owl.png'>\n </div>",
+    "imgURL": " ",
+    "isCompleted": false,
+    "name": "Классовый селектор",
+    "task": "Выберите изображение кота",
+    "title": "Выбор элементов по их классу",
+    "type": "CSS"
+  }
+  ,
+  {
+    "htmlCompelateCode": [
+      {
+        "class": "container",
+        "imgs": [
+          {
+            "name": "cat",
+            "class": "img cat",
+            "id": ""
+          },
+          {
+            "name": "deer",
+            "class": "img deer",
+            "id": ""
+          },
+          {
+            "name": "owl",
+            "class": "img owl",
+            "id": ""
+          }
+        ]
+      }
+    ],
+    "cssCompelateCode": "{  background: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.container{width: 90%;  border-radius: 10px; padding:5px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.img{ width: 100%;height:100%; margin-left:7px;margin-right:7px; margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.img:hover{color: rgb(0, 0, 0);opacity: 0.7;}.img:active{color: rgb(0, 0, 0);opacity: 0.5;}",
+    "answer": ".deer,.owl",
+    "cssCodeOutput": "{\n  background: firebrick !important;\n }\n ",
+    "examples": [
+      ".class1,.class2 выбирает элементы с классами 'class1' и 'class2'"
+    ],
+    "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n Пример:\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
+    "hint": "Селектор '.a' выбирает все элементы с классом 'a'. Классовые селекторы можно группировать используя знак запятой.",
+    "htmlCodeOutput": "<div class='container'>\n<img class='cat' src='./cat.png'>\n<img class='deer' src='./deer.png'>\n<img class='owl' src='./owl.png'>\n </div>",
+    "imgURL": " ",
+    "isCompleted": false,
+    "name": "Комбинированный селектор",
+    "task": "Выберите изображения оленя и совы",
+    "title": "Выбор элементов по их классу",
+    "type": "CSS"
+  }
+  ,
+  {
+    "htmlCompelateCode": [
+      {
+        "class": "container",
+        "imgs": [
+          {
+            "name": "cat",
+            "class": "img cat",
+            "id": "first"
+          },
+          {
+            "name": "deer",
+            "class": "img deer",
+            "id": "second"
+          },
+          {
+            "name": "owl",
+            "class": "img owl",
+            "id": "third"
+          }
+        ]
+      }
+    ],
+    "cssCompelateCode": "{  background: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.container{width: 90%;  border-radius: 10px; padding:5px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.img{ width: 100%;height:100%; margin-left:7px;margin-right:7px; margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.img:hover{color: rgb(0, 0, 0);opacity: 0.7;}.img:active{color: rgb(0, 0, 0);opacity: 0.5;}",
+    "answer": "#second",
+    "cssCodeOutput": "{\n  background: firebrick !important;\n }\n ",
+    "examples": [
+      "#id выбирает все элементы с идентификатором 'id'"
+    ],
+    "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n Пример:\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
+    "hint": "Селектор '#a' выбирает все элементы с идентификатором 'a'.",
+    "htmlCodeOutput": "<div class='container'>\n<img class='cat' id='first' src='./cat.png'>\n<img class='deer' id='second' src='./deer.png'>\n<img class='owl' id='third' src='./owl.png'>\n </div>",
+    "imgURL": " ",
+    "isCompleted": false,
+    "name": "Селектор по идентификатору",
+    "task": "Выберите изображение с идентификатором 'second'",
+    "title": "Выбор элементов по их идентификатору",
+    "type": "CSS"
+  }
+  ,
+  {
+    "htmlCompelateCode": [
+      {
+        "class": "container",
+        "imgs": [
+          {
+            "name": "cat",
+            "class": "img cat",
+            "id": ""
+          },
+          {
+            "name": "owl",
+            "class": "img owl",
+            "id": ""
+          },
+          {
+            "name": "cat",
+            "class": "img cat",
+            "id": ""
+          }
+        ]
+      }
+    ],
+    "cssCompelateCode": "{  background: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.container{width: 90%;  border-radius: 10px; padding:5px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.img{ width: 100%;height:100%; margin-left:7px;margin-right:7px; margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.img:hover{color: rgb(0, 0, 0);opacity: 0.7;}.img:active{color: rgb(0, 0, 0);opacity: 0.5;}",
+    "answer": ".owl+.cat",
+    "cssCodeOutput": "{\n  background: firebrick !important;\n }\n ",
+    "examples": [
+      "div+p выбирает элемент p, стоящий непосредственно после div"
+    ],
+    "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n Пример:\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
+    "hint": "Селектор A+B выбирает элемент B, стоящий непосредственно после элемента A.",
+    "htmlCodeOutput": "<div class='container'>\n<img class='cat' src='./cat.png'>\n<img class='owl' src='./owl.png'>\n<img class='cat' src='./cat.png'>\n </div>",
+    "imgURL": " ",
+    "isCompleted": false,
+    "name": "Селектор по соседу",
+    "task": "Выберите изображение кота, которое стоит после совы",
+    "title": "Выбор элементов по соседу",
+    "type": "CSS"
+  }
+  ,
+  {
+    "htmlCompelateCode": [
+      {
+        "class": "container",
+        "imgs": [
+          {
+            "name": "deer",
+            "class": "img deer",
+            "id": ""
+          },
+          {
+            "name": "owl",
+            "class": "img owl",
+            "id": ""
+          },
+          {
+            "name": "owl",
+            "class": "img owl",
+            "id": ""
+          }
+        ]
+      }
+    ],
+    "cssCompelateCode": "{  background: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.container{width: 90%;  border-radius: 10px; padding:5px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.img{ width: 100%;height:100%; margin-left:7px;margin-right:7px; margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.img:hover{color: rgb(0, 0, 0);opacity: 0.7;}.img:active{color: rgb(0, 0, 0);opacity: 0.5;}",
+    "answer": ".deer~.owl",
+    "cssCodeOutput": "{\n  background: firebrick !important;\n }\n ",
+    "examples": [
+      "div~p выбирает все <p>, стоящие после элемента <div>"
+    ],
+    "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n Пример:\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
+    "hint": "Селектор A~B выбирает все элементы B, стоящие непосредственно после элемента A.",
+    "htmlCodeOutput": "<div class='container'>\n<img class='deer' src='./deer.png'>\n<img class='owl' src='./owl.png'>\n<img class='owl' src='./owl.png'>\n </div>",
+    "imgURL": " ",
+    "isCompleted": false,
+    "name": "Селектор по следованию",
+    "task": "Выберите изображения совы, которые стоят после оленя",
+    "title": "Выбор элементов по следованию",
+    "type": "CSS"
+  }
+  ,
+  {
+    "htmlCompelateCode": [
+      {
+        "class": "container",
+        "imgs": [
+          {
+            "name": "cat",
+            "class": "img cat",
+            "id": ""
+          },
+          {
+            "name": "cat",
+            "class": "img cat",
+            "id": ""
+          },
+          {
+            "name": "cat",
+            "class": "img cat",
+            "id": ""
+          }
+        ]
+      }
+    ],
+    "cssCompelateCode": "{  background: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.container{width: 90%;  border-radius: 10px; padding:5px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.img{ width: 100%;height:100%; margin-left:7px;margin-right:7px; margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.img:hover{color: rgb(0, 0, 0);opacity: 0.7;}.img:active{color: rgb(0, 0, 0);opacity: 0.5;}",
+    "answer": "img:nth-child(2)",
+    "cssCodeOutput": "{\n  background: firebrick !important;\n }\n ",
+    "examples": [
+      "div:nth-child(3) выбирает дочерний элемент <div> с номером 3"
+    ],
+    "helpText": "Вы собираетесь изучать селекторы CSS!\nСелекторы — это то, к какому элементу применяются стили. \n\n Пример:\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
+    "hint": "Псевдоселектор B:nth-child(N) выбирает дочерний элемент B, номер которого равен N",
+    "htmlCodeOutput": "<div class='container'>\n<img src='./cat.png'>\n<img src='./cat.png'>\n<img src='./cat.png'>\n </div>",
+    "imgURL": " ",
+    "isCompleted": false,
+    "name": "N-й дочерний псевдоселектор",
+    "task": "Выберите второе по очереди изображение кота",
+    "title": "Выбор элементов по дочернему номеру",
+    "type": "CSS"
+  }
+]

@@ -8,50 +8,40 @@ import Footer from "./Footer/Footer"
 import Modal from "./HelpWindow/HelpWindow";
 import './HelpWindow/HelpWindow.css'
 import '../../reset.css'
-
 import SlideCarousel from "./Carousel/Carousel";
 
 interface Iprops {
-    excersises: Exercise[]
+    excersises: Exercise[],
+    excersisesTitle: string
 }
 
 export default function MainPage(props: Iprops) {
 
     const [curentExIndex, SetCurentEx] = useState(0);
     const [compliteExCounter, SetCompliteExCounter] = useState(0);
-
-    const [curentClassName, SetClassName] = useState("main");
-
     const [exercises, SetExercises] = useState(props.excersises);
 
     const [isLevelListOpen, SetLevelListOpen] = useState(false);
-
     const [isSidebarOpen, SetSidebarOpen] = useState(true);
     const [isShotScreen, SetIsShotScreen] = useState(false);
 
+    const [isModal, setModal] = useState(false)
+    const onClose = () => setModal(false)
+    const onTutorialOpen = () => setModal(true)
+
     function onCorrectAnswer() {
         let copyEx = exercises;
-        copyEx[curentExIndex].isCompleted = true;
-        SetExercises([]);
-        SetExercises(copyEx);
-        flashingColorOnCorrect();
-
         let counter = compliteExCounter;
-        SetCompliteExCounter(++counter)
-    }
 
-    function flashingColorOnCorrect() {
-        let className = `${curentClassName} green-flash`
-        SetClassName(className)
-        setTimeout(() => { SetClassName("main") }, 700)
-    }
+        if (copyEx[curentExIndex].isCompleted == false) {
+            SetCompliteExCounter(++counter)
 
-    function flashingColorOnWrong() {
-        let className = `${curentClassName} red-flash`
-        SetClassName(className)
-        setTimeout(() => { SetClassName("main") }, 700)
-    }
+        }
 
+        copyEx[curentExIndex].isCompleted = true;
+
+        SetExercises(copyEx);
+    }
 
     function OnNextEx() {
         let curent = curentExIndex;
@@ -95,19 +85,15 @@ export default function MainPage(props: Iprops) {
     function onProgressReset() {
         let exCop = exercises;
 
-        for (let index = 0; index < exCop.length; index++) {
-            exCop[index].isCompleted = false;
-        }
+        exCop.forEach(element => {
+            element.isCompleted = false
+        });
 
         SetExercises(exCop);
         SetLevelListOpen(false);
         SetCurentEx(0);
         SetCompliteExCounter(0);
     }
-
-    const [isModal, setModal] = React.useState(false)
-    const onClose = () => setModal(false)
-    const onTutorialOpen = () => setModal(true)
 
     const handleWindowSizeChange = () => {
         let screenWidth = window.screen.width;
@@ -135,19 +121,20 @@ export default function MainPage(props: Iprops) {
             <Modal
                 visible={isModal}
                 title='Обучение'
-                content={
-                    <SlideCarousel />
-                }
+                content={<SlideCarousel />}
                 footer={<button onClick={onClose}>Закрыть</button>}
                 onClose={onClose}
             />
-            <div className={curentClassName}>
-                <Header isSidebarOpen={isSidebarOpen}
+            <div className="main">
+                <Header
+                    headerTitle={props.excersisesTitle}
+                    isSidebarOpen={isSidebarOpen}
                     onOpenSidebar={onOpenSidebar} />
-                <ExerciseBlock onCorrectAnswer={onCorrectAnswer}
-                    onWrongAnswer={flashingColorOnWrong}
+                <ExerciseBlock
+                    onCorrectAnswer={onCorrectAnswer}
                     curentExIndex={curentExIndex}
-                    excersises={exercises} />
+                    excersises={exercises}
+                />
                 <Footer />
             </div>
             <div className="Sidebar">

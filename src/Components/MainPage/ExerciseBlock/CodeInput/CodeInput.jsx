@@ -7,7 +7,16 @@ const CodeInput = (props) => {
 
     const [reactCode, SetReactCode] = useState(<></>);
 
+    let htmlBlock = <></>
+
+    let cssBlock = <></>
+
     useEffect(() => {
+
+        runCompeletion();
+
+        document.getElementById("user-answer").focus();
+
         const script = document.createElement('script');
 
         script.src = "https://kit.fontawesome.com/979140767a.js";
@@ -18,73 +27,103 @@ const CodeInput = (props) => {
         return () => {
             document.body.removeChild(script);
         }
-    }, []);
-
-    useEffect(() => {
-        runCompeletion();
-        sendAnswer();
     }, [props]);
+
+    function getHTMLString(array) {
+        return array.join("");
+    }
+
 
     function runCompeletion() {
         //  let htmlCode = props.inputHTMLValue;
 
         let cssCode = props.cssCompelateCode;
 
-        let containerList = [];
-
-
         if (props.exerciseType == "CSS") {
-            cssCode = props.userAnswer + cssCode;
-        }
-        // else {
-        //     htmlCode = props.userAnswer + htmlCode;
-        // }
 
-        for (let value of props.reactObj) {
-            let counter = 0;
+            let answer = props.userAnswer;
 
-            containerList.push(<div className={value.class}>
-                {value.imgs.map(x => (
-                    <img key={counter++} src={require(`../../../../imgs/exercise-imgs/${x.name}.png`)} className={x.class} id={x.id}></img>
-                ))}
-            </div>)
+            let splitUserAnswerString = answer.split('');
+
+            let stopBracketCompeletion = false;
+
+            for (let index = 0; index < splitUserAnswerString.length; index++) {
+                if (splitUserAnswerString[index] == "[") {
+                    stopBracketCompeletion = true;
+                }
+
+                if (splitUserAnswerString[index] == "]") {
+                    stopBracketCompeletion = false;
+                }
+            }
+
+            if (stopBracketCompeletion) {
+                answer = "";
+            }
+
+            let stopCompeletion = splitUserAnswerString.includes("'");
+
+            if (stopCompeletion) {
+                answer = "";
+            }
+
+            if (answer == "*") {
+                answer = "body *";
+            }
+            else if (answer == "'" || answer == "body") {
+                answer = "";
+            }
+
+            cssCode = answer + cssCode;
         }
+
 
         let reactCode = <>
             <style>{cssCode}</style>
-            {containerList}
+            {getContainer(props.reactObj)}
         </>
 
         SetReactCode(reactCode)
-
-
     }
 
-    function sendAnswer() {
-        document.onkeypress = function (event) {
-            let e = event || window.event;
-            if (e.keyCode == 13) {
-                e.preventDefault();
+    function getContainer(reactObj) {
 
-                props.onSubmit(event);
+        let counter = 0;
+
+        let resoult = [];
+
+        for (let i = 1; i < reactObj.length; i++) {
+
+            if (reactObj[0] != "imgs") {
+
+                if (typeof (reactObj[0]) == "object") {
+                    resoult.push(
+                        reactObj.map(x => getContainer(x)))
+                }
+                else {
+                    resoult.push(<div key={counter++} className={reactObj[0]}>
+                        {getContainer(reactObj[i])}
+                    </div>)
+                }
+            }
+            else {
+                return reactObj[i].map(x => (
+                    <img key={counter++} src={require(`../../../../imgs/exercise-imgs/${x.name}.png`)} className={x.class} id={x.id}></img>
+                ))
             }
         }
 
-        document.getElementById("user-answer").focus();
+        return resoult;
     }
-
-    let htmlBlock = <></>
-
-    let cssBlock = <></>
 
     if (props.exerciseType == "CSS") {
         cssBlock = <div className="code-constainer">
             <textarea placeholder="Write code..." className={props.userAnswer == "" ? "user-answer-empty" : ""} value={props.userAnswer} onInput={props.onInputAnswer} onKeyUp={runCompeletion} id="user-answer" ></textarea>
-            <pre className="code-text" id="html-code" disabled>{props.inputCSSValue}</pre>
+            <pre className="code-text" id="css-code" disabled>{props.inputCSSValue}</pre>
         </div>
 
         htmlBlock = <div className="code-constainer">
-            <pre className="code-text" id="html-code" disabled>{props.inputHTMLValue}</pre>
+            <pre className="code-text" id="html-code" >{getHTMLString(props.inputHTMLValue)}</pre>
         </div>
     }
     // else if (props.exerciseType == "HTML") {
@@ -108,7 +147,7 @@ const CodeInput = (props) => {
             </div>
             <div className="right">
                 <label className="type-head"><i className="fa-solid fa-play"></i>Output</label>
-                <IFrame>
+                <IFrame iFrameClassName={props.iFrameClassName}>
                     {reactCode}
                 </IFrame>
             </div>

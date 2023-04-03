@@ -18,6 +18,7 @@
 .right {
   flex-basis: 50%;
   padding: 10px;
+  
 }
 
 .code-constainer {
@@ -97,11 +98,10 @@
 
   padding: 10px 20px;
   font-size: 15px;
-  white-space: pre-line;
+  white-space: pre;
   word-spacing: normal;
+  width: 100%;
 }
-
-
 
 .type-head {
   color: #c2c2c2;
@@ -121,6 +121,7 @@ iframe {
   border: 0;
   outline: 0;
   border-radius: 15px;
+ 
 
 }
 

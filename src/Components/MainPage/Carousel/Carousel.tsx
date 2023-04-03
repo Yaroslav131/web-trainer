@@ -13,7 +13,11 @@ import submitImg from "../../../imgs/screens/submithelp.png"
 import discrubImg from "../../../imgs/screens/discribehelp.png"
 import listImg from "../../../imgs/screens/exListhelp.png"
 
-export default function SlideCarousel(props: any) {
+export default function SlideCarousel() {
+
+    // function loadImg(name: string) {
+    //     return require(`../../../imgs/screens/${name}.png`)
+    // }
 
     return (
         <Carousel>

@@ -1,10 +1,12 @@
-body {
+.main-menu {
     background-color: #171717;
     margin: 0;
     height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr;
 }
 
-.mainPage-header {
+.main-menu-header {
     height: 10%;
     background-color: #171717;
     margin: 0;
@@ -50,10 +52,40 @@ h1 {
 
 .buttons {
     width: 600px;
-    height: 80%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     column-gap: 40px;
     margin: auto;
 
+}
+
+.text-about
+{
+    color: #c2c2c2;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 18px;
+    text-align:center ;
+    line-height: 1.7em;
+}
+
+.text-about-head
+{
+    text-align:center ;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 20px;
+    margin-bottom: 15px;
+}
+
+.main-menu-main
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column ;
+    height: 50%;
+    margin-top: 100px;
+    margin-bottom: auto;
 }

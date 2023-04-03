@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Exercise from "../../../Classes/Execirse"
-import JobBlock from "./JobBlock/TaskBlock";
+import JobBlock from "./TaskBlock/TaskBlock";
 import ImgBlock from "./ImgBlock/ImgBlock";
 import CodeInput from "./CodeInput/CodeInput";
 import SubmitButton from "./SubmitButton/SubmitButton"
@@ -13,54 +13,73 @@ interface Iprops {
     excersises: Exercise[]
     curentExIndex: number
     onCorrectAnswer: () => void
-    onWrongAnswer: () => void
 }
 
 export default function ExerciseBlock(props: Iprops) {
 
     const [answer, setAnswer] = useState(``)
-
+    const [iFrameClassName, SetiFrameClassNme] = useState(``)
 
     function onInputAnswer(event: any) {
-        setAnswer(event.target.value);
+            setAnswer(event.target.value);
     }
 
     useEffect(() => {
         setAnswer(``)
     }, [props.curentExIndex]);
 
-    function onSubmit(event: any) {
-        if (props.excersises[props.curentExIndex].answer == answer) {
+    function flashingColorOnCorrect() {
+        let className = `green-flash`
+
+        SetiFrameClassNme(className)
+        setTimeout(() => { SetiFrameClassNme("") }, 700)
+    }
+
+    function flashingColorOnWrong() {
+        let className = `red-flash`
+
+        SetiFrameClassNme(className)
+        setTimeout(() => { SetiFrameClassNme("") }, 700)
+    }
+
+    function onSubmit() {
+        let splitUserAnswerString = answer.split(',');
+
+        let splitAnswerString = props.excersises[props.curentExIndex].answer.split(',');
+
+        const found = splitAnswerString.some(r => splitUserAnswerString.includes(r))
+
+        if (found) {
             props.onCorrectAnswer();
+            flashingColorOnCorrect()
         }
         else {
-            props.onWrongAnswer();
+            flashingColorOnWrong();
         }
     }
 
     const [isModal, setModal] = React.useState(false)
     const onClose = () => setModal(false)
 
-
     return (
         <div className="exerciseBlock">
             <JobBlock text={props.excersises[props.curentExIndex].task} />
-            <ImgBlock imgURL={props.excersises[props.curentExIndex].imgURL} />
             <CodeInput
+                iFrameClassName={iFrameClassName}
                 onInputAnswer={onInputAnswer}
                 inputHTMLValue={props.excersises[props.curentExIndex].htmlCodeOutput}
-                reactObj={props.excersises[props.curentExIndex].htmlCompelateCode}
+                reactObj={props.excersises[props.curentExIndex].htmlСompilationCode}
                 inputCSSValue={props.excersises[props.curentExIndex].cssCodeOutput}
-                cssCompelateCode={props.excersises[props.curentExIndex].cssCompelateCode}
-                exerciseType={props.excersises[props.curentExIndex].type}
+                cssCompelateCode={props.excersises[props.curentExIndex].cssСompilationCode}
+                exerciseType={props.excersises[props.curentExIndex].ExerciseType}
                 userAnswer={answer}
-                onSubmit={onSubmit}
             />
 
             <div className="buttons-container">
                 <div className="button-container">
                     <SubmitButton
-                        onSubmit={onSubmit} />
+                        onSubmit={onSubmit}
+                    />
                 </div>
 
                 <div className="button-container">

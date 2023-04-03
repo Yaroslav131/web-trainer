@@ -3,7 +3,7 @@
     background-color: #171717;
     display: grid;
     grid-template-columns: 1fr 400px;
-    transition: 0.5s;
+    min-height: 100vh;
 }
 
 .main-page-short {
@@ -12,24 +12,16 @@
 }
 
 .main {
-    min-height: 100%;
+  
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
     overflow-y: auto;
     transition: 0.7s;
-}
-
-.green-flash {
-    /* -webkit-box-shadow: 1px 1px 1px 3px rgb(34, 157, 73) inset;
-    -moz-box-shadow: 1px 1px 1px 3px rgb(34, 157, 73) inset; */
-    box-shadow: inset 0px 0px 20px 20px rgb(34, 157, 73);
-}
-
-.red-flash {
-    /* -webkit-box-shadow: 1px 1px 1px 3px rgb(34, 157, 73) inset;
-    -moz-box-shadow: 1px 1px 1px 3px rgb(34, 157, 73) inset; */
-    box-shadow: inset 0px 0px 20px 20px rgb(199, 15, 15);
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+   padding-bottom: 60px;
 }
 
 .sidebar-close

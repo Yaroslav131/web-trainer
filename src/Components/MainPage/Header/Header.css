@@ -7,14 +7,14 @@
     height: 35px;
 }
 
-.menu-open {
+.none-icon {
     display: none;
 }
 
 .home {
     width: 32px;
     height: 32px;
-    margin-top: -5px;
+    margin-top: -7px;
     transition: 0.15s;
 }
 
@@ -46,8 +46,8 @@
     transition: 0.15s;
 }
 
-.logo-container,
-.home-container {
+.header-logo-container,
+.header-icon-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -57,5 +57,4 @@
 .logo {
     color: rgb(34, 157, 73);
     font-size: 25px;
-
 }

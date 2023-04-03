@@ -1,5 +1,5 @@
 import React from 'react';
-import Data from "../json-exercises/css-exersises.json";
+import CssSelectors from "../json-exercises/css-selectors.json";
 import MainPage from '../Components/MainPage/MainPage';
 import NotFound from "../Components/ErrorPage/NotFound"
 import {
@@ -18,8 +18,8 @@ import MenuPage from '../Components/MenuPage/MenuPage';
       element: <MenuPage />
     },
     {
-      path: "/exercises/css-exersises",
-      element: <MainPage excersises={Data} />
+      path: "/exercises/css-selectors",
+      element: <MainPage excersises={CssSelectors} excersisesTitle={"Css селекторы"} />
     },
   ]);
 

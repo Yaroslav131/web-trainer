@@ -18,7 +18,7 @@ export default function TextAnimation(text: string) {
         if (letter.textContent.match(/\s/)) {
             letter.style.margin = 'auto 5px'
         }
-        letter.style.animationDelay = index / 15 + 's'
+        letter.style.animationDelay = index / 50 + 's'
 
         content?.appendChild(letter)
     }

@@ -20,10 +20,12 @@ hr {
     position: fixed;
     top: 0;
     right: 0;
+    z-index: 10;
 }
 
 .sidenav-close {
     margin-right: -400px;
+   
 }
 
 .level-bar {
@@ -202,8 +204,7 @@ hr {
 .level-nav-open {
     width: 400px;
     height: 100vh;
-    
-    z-index: 4;
+    z-index: 20;
     position: fixed;
     top: 0;
     right: 0;

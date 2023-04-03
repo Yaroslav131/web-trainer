@@ -21,3 +21,11 @@
     padding-right: 7px;
     box-shadow: none;
 }
+
+.pressed-button {
+    color: rgb(0, 0, 0);
+    height: 30px;
+    padding-left: 7px;
+    padding-right: 7px;
+    box-shadow: none;
+}

@@ -1,7 +1,8 @@
 .job-block {
     display: flex;
     justify-content: center;
-    margin-top: 45px;
+    margin-top: 35px;
+    min-height: 50px;
   
 }
 
