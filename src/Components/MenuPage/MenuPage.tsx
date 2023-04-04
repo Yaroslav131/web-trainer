@@ -21,6 +21,15 @@ export default function MenuPage(props: any) {
                     </div>
                 </div>
             </main>
+
+            <footer className="menu-footer">
+                <div className="text-container">
+                <p className="creators-text">Белорусско-Российский университет<br/>
+                    Кафедра Программное обеспечение информационных технологий<br/>
+                    Руководитель:старший преподователь Прудников В.М.<br/>
+                    Разработали:студенты Бубнов Я.Н., Шидловский М.А.</p>
+                </div>
+            </footer>
         </div>
     )
 }

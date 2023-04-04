@@ -230,7 +230,7 @@ hr {
 }
 .close {
     position: relative;
-    margin-top: -2px;
+    margin-top: -3px;
     width: 32px;
     height: 32px;
     opacity: 0.3;
@@ -352,5 +352,5 @@ button>div {
 {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 15px;
+    gap: 5px;
 }

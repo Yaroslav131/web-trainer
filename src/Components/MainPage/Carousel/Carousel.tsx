@@ -3,15 +3,20 @@ import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import SlideBlock from './SlideBlock/SlideBlock';
-import taskImg from "../../../imgs/screens/helptask.png"
-import ansImg from "../../../imgs/screens/helptpinput.png"
-import inputImg from "../../../imgs/screens/whereinputhelp.png"
-import outputImg from "../../../imgs/screens/whereoutputhelp.png"
-import correctImg from "../../../imgs/screens/correctAnswer.png"
-import helpImg from "../../../imgs/screens/helphelp.png"
-import submitImg from "../../../imgs/screens/submithelp.png"
-import discrubImg from "../../../imgs/screens/discribehelp.png"
-import listImg from "../../../imgs/screens/exListhelp.png"
+import taskImg from "../../../imgs/screens/taskScreen.png"
+import answerImg from "../../../imgs/screens/answerScreen.png"
+import cssBlockImg from "../../../imgs/screens/cssBlockScreen.png"
+import htmlBlockImg from "../../../imgs/screens/htmlBlockScreen.png"
+import resoultBlockImg from "../../../imgs/screens/resoultBlockScreen.png"
+import correctAnswerImg from "../../../imgs/screens/correctAnswerScreen.png"
+import wrongAnswerImg from "../../../imgs/screens/wrongAnswerScreen.png"
+import submitImg from "../../../imgs/screens/submitScreen.png"
+import hintImg from "../../../imgs/screens/hintScreen.png"
+import helpImg from "../../../imgs/screens/helpScreen.png"
+import navImg from "../../../imgs/screens/navScreen.png"
+import listImg from "../../../imgs/screens/listScreen.png"
+import navToExScreenImg from "../../../imgs/screens/navToExScreen.png"
+import resetImg from "../../../imgs/screens/resetScreen.png"
 
 export default function SlideCarousel() {
 
@@ -21,16 +26,20 @@ export default function SlideCarousel() {
 
     return (
         <Carousel>
-
-            <SlideBlock text={"Задание для решения выводится в выделеном блоке"} slideImg={taskImg} />
-            <SlideBlock text={"Поле для ввода ответа находется в выделеном блоке"} slideImg={ansImg} />
-            <SlideBlock text={"Результат выполнения формируется из выделеных полей"} slideImg={inputImg} />
-            <SlideBlock text={"Результат выполнения отражается в выделеном поле"} slideImg={outputImg} />
-            <SlideBlock text={"Для отправки ответа на задание нажмите Enter или выделеную кнопку"} slideImg={submitImg} />
-            <SlideBlock text={"Правитьный отмечается следуйщеей анимацией"} slideImg={correctImg} />
-            <SlideBlock text={"Если затрудняетесь с решение задачи, нажите навыеленый блок"} slideImg={helpImg} />
-            <SlideBlock text={"Описание и пояснение к задание нахоидтся ввыделеном блоке"} slideImg={discrubImg} />
-            <SlideBlock text={"Список всех заданий открывется по нажатию кнопки вправом левом углу, с послдуещеей навигциеей по заданиям"} slideImg={listImg} />
+            <SlideBlock text={"Для каждого задания выводится текст с задачей для выполнения."} slideImg={taskImg} />
+            <SlideBlock text={"Для каждого задания есть пояснения с дополнительной информациеей и примерами"} slideImg={hintImg} />
+            <SlideBlock text={"Ответ на задачу вводится в поле привиденное ниже."} slideImg={answerImg} />
+            <SlideBlock text={"При введении значений мы изменяем стиль background-color для тегов находищихся в HTML коде."} slideImg={cssBlockImg} />
+            <SlideBlock text={"HTML код для которогомы применяем CSS стили."} slideImg={htmlBlockImg} />
+            <SlideBlock text={"Результат применения стилей отбражается в окне приведенном ниже."} slideImg={resoultBlockImg} />
+            <SlideBlock text={"Для отправки ответа нажмите на кнопку или Enter."} slideImg={submitImg} />
+            <SlideBlock text={"Если возникли проблемы или вопросы с выполнением задания, нажмите на кнопк подсказки."} slideImg={helpImg} />
+            <SlideBlock text={"При правильном ответе на задание тренажер отреагирует следуйщим образом."} slideImg={correctAnswerImg} />
+            <SlideBlock text={"При не правильном ответе на задание тренажер отреагирует следуйщим образом."} slideImg={wrongAnswerImg} />
+            <SlideBlock text={"Для навигации по задниям используются две кнопке."} slideImg={navImg} />
+            <SlideBlock text={"Для перехода к списку заданий используется следующая кнопка."} slideImg={listImg} />
+            <SlideBlock text={"Для навигации по задания может осуществлятся нажатием на них в списке."} slideImg={navToExScreenImg} />
+            <SlideBlock text={"Для сброса прогресса используется следующая кнопка."} slideImg={resetImg} />
         </Carousel>
     );
 }

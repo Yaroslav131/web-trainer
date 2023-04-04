@@ -33,37 +33,51 @@ const CodeInput = (props) => {
         return array.join("");
     }
 
+    function IsicludeExeptionElement(answer) {
+        let splitUserAnswerString = answer.split('');
+
+        let squareBracketStopComp = false;
+
+        for (let index = 0; index < splitUserAnswerString.length; index++) {
+            if (splitUserAnswerString[index] == "[") {
+                squareBracketStopComp = true;
+            }
+
+            if (splitUserAnswerString[index] == "]") {
+                squareBracketStopComp = false;
+            }
+        }
+
+        let roundBracketStopComp = false;
+
+        for (let index = 0; index < splitUserAnswerString.length; index++) {
+            if (splitUserAnswerString[index] == "(") {
+                roundBracketStopComp = true;
+            }
+
+            if (splitUserAnswerString[index] == ")") {
+                roundBracketStopComp = false;
+            }
+        }
+
+
+
+       let slashStopComp = splitUserAnswerString.includes('\\')
+
+        let singleQuoteStopComp = splitUserAnswerString.filter(x => x == "'").length % 2 === 0;
+        let doubleQuoteStopComp = splitUserAnswerString.filter(x => x == '"').length % 2 === 0;
+
+        return slashStopComp || squareBracketStopComp || roundBracketStopComp || !singleQuoteStopComp || !doubleQuoteStopComp
+    }
 
     function runCompeletion() {
-        //  let htmlCode = props.inputHTMLValue;
-
         let cssCode = props.cssCompelateCode;
 
         if (props.exerciseType == "CSS") {
 
             let answer = props.userAnswer;
 
-            let splitUserAnswerString = answer.split('');
-
-            let stopBracketCompeletion = false;
-
-            for (let index = 0; index < splitUserAnswerString.length; index++) {
-                if (splitUserAnswerString[index] == "[") {
-                    stopBracketCompeletion = true;
-                }
-
-                if (splitUserAnswerString[index] == "]") {
-                    stopBracketCompeletion = false;
-                }
-            }
-
-            if (stopBracketCompeletion) {
-                answer = "";
-            }
-
-            let stopCompeletion = splitUserAnswerString.includes("'");
-
-            if (stopCompeletion) {
+            if (IsicludeExeptionElement(answer)) {
                 answer = "";
             }
 

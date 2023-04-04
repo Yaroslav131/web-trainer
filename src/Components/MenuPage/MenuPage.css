@@ -14,7 +14,7 @@
 
 h1 {
     color: rgb(34, 157, 73);
-    font-size: 25px;
+    font-size: 30px;
 
     text-align: center;
     padding-top: 40px;
@@ -89,3 +89,25 @@ h1 {
     margin-top: 100px;
     margin-bottom: auto;
 }
+
+.menu-footer
+{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    
+}
+
+.creators-text
+{
+    color: white;
+    font-size: 19px;
+    font-family:'Franklin Gothic Light';
+    font-weight: normal;
+}
+
+.text-container
+{
+   padding: 20px;
+}
+
