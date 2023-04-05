@@ -1,5 +1,5 @@
-.main-page ,
-.main-page-short{
+.main-page,
+.main-page-short {
     background-color: #171717;
     display: grid;
     grid-template-columns: 1fr 400px;
@@ -12,7 +12,7 @@
 }
 
 .main {
-  
+
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -21,11 +21,11 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-   padding-bottom: 60px;
+    padding-bottom: 60px;
 }
 
-.sidebar-close
-{
-   margin-right: -400px;
-   transition: 0.5s;
+.sidebar-close {
+    margin-right: -400px;
+    transition: 0.5s;
 }
+

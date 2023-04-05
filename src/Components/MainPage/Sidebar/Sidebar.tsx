@@ -14,7 +14,7 @@ interface Iprops {
     isLevelListOpen: Boolean
     isSidebarOpen: boolean
     isShotScreen: boolean
-    compliteExCounter:number
+    compliteExCounter: number
     onCancelSidebar: () => void
     openLevelsNav: () => void
     closeLevelsNav: () => void
@@ -22,7 +22,9 @@ interface Iprops {
     onPreviousEx: () => void
     onCurrentLevelChange: (event: any) => void
     onProgressReset: () => void
-    onTutorialOpen:()=>void
+    onTutorialOpen: () => void
+    onBookOpen: () => void
+
 }
 
 export default function SideBar(props: Iprops) {
@@ -46,12 +48,11 @@ export default function SideBar(props: Iprops) {
                     isSidebarOpen={props.isSidebarOpen}
                     isShotScreen={props.isShotScreen}
                     onCancelSidebar={props.onCancelSidebar}
-                    onNextEx={props.onNextEx}
-                    onPreviousEx={props.onPreviousEx}
+
                     openLevelsNav={props.openLevelsNav} />
                 <ProgressBar
                     completed={props.compliteExCounter}
-                    maxCompleted={props.exercises.length }
+                    maxCompleted={props.exercises.length}
                     className="progress-bar"
                     baseBgColor='#808080'
                     height='6px'
@@ -61,16 +62,16 @@ export default function SideBar(props: Iprops) {
                     bgColor='rgb(34, 157, 73)'
                 />
                 {helpBlock}
-                <Button onClick={props.onTutorialOpen} buttonText={"Как работает тренажер?"}/>
-
+                <Button onClick={props.onTutorialOpen} buttonText={"Как работает тренажер?"} />
+                <Button onClick={props.onBookOpen} buttonText={"О CSS"} />
             </div>
-           
+
             <div className={props.isLevelListOpen ? "level-nav-open" : "level-nav-open nav-close"}>
                 <LevelList onCurrentLevelChange={
                     props.onCurrentLevelChange}
                     closeLevelseNav={props.closeLevelsNav}
                     exercises={props.exercises} />
-                <Button onClick={props.onProgressReset} buttonText={"Сбросить прогресс"}/>
+                <Button onClick={props.onProgressReset} buttonText={"Сбросить прогресс"} />
             </div>
         </>
     )
@@ -108,8 +109,7 @@ interface ILevelCounterProps {
     isSidebarOpen: boolean
     isShotScreen: boolean
     onCancelSidebar: () => void
-    onNextEx: () => void
-    onPreviousEx: () => void
+
     openLevelsNav: () => void
 }
 
@@ -142,20 +142,10 @@ function LevelCounter(props: ILevelCounterProps) {
                     </div>
                 </div>
 
-                <div className="nav-level-bar">
-                    <div className="arrows">
-                        <div className="arrow-div">
-                            <div onClick={props.onPreviousEx} className="arrow_left" ></div>
-                        </div>
-                        <div className="arrow-div">
-                            <div onClick={props.onNextEx} className="arrow_right" ></div>
-                        </div>
-                    </div>
 
-                    <div className="hamburger-menu-container tooltip" onClick={props.openLevelsNav}>
+                <div className="hamburger-menu-container tooltip" onClick={props.openLevelsNav}>
                     <span className="tooltiptext left-bottom-tooltip">Список заданий</span>
-                        <img className="hamburger-menu" src={humburgerIcon} alt="Задания" />
-                    </div>
+                    <img className="hamburger-menu" src={humburgerIcon} alt="Задания" />
                 </div>
             </div>
         </div>

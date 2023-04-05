@@ -1,0 +1,18 @@
+
+@font-face {
+    font-family: "Code";
+    src: url(../../../../font/FontsFree-Net-MonoLisa-Regular.ttf);
+}
+
+.code {
+    font-family: 'Code';
+    font-size: 15px;
+}
+
+
+span
+{
+    font-family: 'Code';
+    display: inline;
+    font-size: 15px;
+}

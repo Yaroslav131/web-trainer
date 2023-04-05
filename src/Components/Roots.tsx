@@ -19,7 +19,7 @@ import MenuPage from '../Components/MenuPage/MenuPage';
     },
     {
       path: "/exercises/css-selectors",
-      element: <MainPage excersises={CssSelectors} excersisesTitle={"Css селекторы"} />
+      element: <MainPage excersises={CssSelectors} excersisesTitle={"CSS селекторы"} />
     },
   ]);
 

@@ -13,6 +13,8 @@ interface Iprops {
     excersises: Exercise[]
     curentExIndex: number
     onCorrectAnswer: () => void
+    onNextEx: () => void
+    onPreviousEx: () => void
 }
 
 export default function ExerciseBlock(props: Iprops) {
@@ -21,7 +23,7 @@ export default function ExerciseBlock(props: Iprops) {
     const [iFrameClassName, SetiFrameClassNme] = useState(``)
 
     function onInputAnswer(event: any) {
-            setAnswer(event.target.value);
+        setAnswer(event.target.value);
     }
 
     useEffect(() => {
@@ -76,10 +78,19 @@ export default function ExerciseBlock(props: Iprops) {
             />
 
             <div className="buttons-container">
+
+                <div className="arrow-div">
+                    <div onClick={props.onPreviousEx} className={props.curentExIndex == 0 ? "arrow-left-disable" : "arrow_left"} ></div>
+                </div>
+
                 <div className="button-container">
                     <SubmitButton
                         onSubmit={onSubmit}
                     />
+                </div>
+
+                <div className="arrow-div">
+                    <div onClick={props.onNextEx} className={props.curentExIndex == props.excersises.length-1 ? "arrow-right-disable" : "arrow_right"} ></div>
                 </div>
 
                 <div className="button-container">

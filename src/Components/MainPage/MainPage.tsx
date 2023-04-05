@@ -9,6 +9,7 @@ import Modal from "./HelpWindow/HelpWindow";
 import './HelpWindow/HelpWindow.css'
 import '../../reset.css'
 import SlideCarousel from "./Carousel/Carousel";
+import AboutCss from "./AboutBlocks/AboutCSS";
 
 interface Iprops {
     excersises: Exercise[],
@@ -24,10 +25,6 @@ export default function MainPage(props: Iprops) {
     const [isLevelListOpen, SetLevelListOpen] = useState(false);
     const [isSidebarOpen, SetSidebarOpen] = useState(true);
     const [isShotScreen, SetIsShotScreen] = useState(false);
-
-    const [isModal, setModal] = useState(false)
-    const onClose = () => setModal(false)
-    const onTutorialOpen = () => setModal(true)
 
     function onCorrectAnswer() {
         let copyEx = exercises;
@@ -115,15 +112,30 @@ export default function MainPage(props: Iprops) {
         };
     }, []);
 
+    const [isTutotialModal, setTutotialModal] = useState(false)
+    const onTutotialClose = () => setTutotialModal(false)
+    const onTutorialOpen = () => setTutotialModal(true)
+
+    const [isBookModal, setBookModal] = useState(false)
+    const onBookClose = () => setBookModal(false)
+    const onBookOpen = () => setBookModal(true)
+
     return (
         <div className={isShotScreen ? 'main-page-short' : "main-page"} >
 
             <Modal
-                visible={isModal}
+                visible={isTutotialModal}
                 title='Обучение'
                 content={<SlideCarousel />}
-                footer={<button onClick={onClose}>Закрыть</button>}
-                onClose={onClose}
+                footer={<button onClick={onTutotialClose}>Закрыть</button>}
+                onClose={onTutotialClose}
+            />
+            <Modal
+                visible={isBookModal}
+                title='О CSS'
+                content={<AboutCss/>}
+                footer={<button onClick={onBookClose}>Закрыть</button>}
+                onClose={onBookClose}
             />
             <div className="main">
                 <Header
@@ -134,6 +146,8 @@ export default function MainPage(props: Iprops) {
                     onCorrectAnswer={onCorrectAnswer}
                     curentExIndex={curentExIndex}
                     excersises={exercises}
+                    onNextEx={OnNextEx}
+                    onPreviousEx={OnPreviousEx}
                 />
                 <Footer />
             </div>
@@ -152,7 +166,8 @@ export default function MainPage(props: Iprops) {
                     openLevelsNav={OpenLevelsNav}
                     onCurrentLevelChange={OnCurrentLevelChange}
                     onProgressReset={onProgressReset}
-                    onTutorialOpen={onTutorialOpen} />
+                    onTutorialOpen={onTutorialOpen}
+                    onBookOpen={onBookOpen} />
             </div>
         </div >
     )

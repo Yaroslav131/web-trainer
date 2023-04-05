@@ -30,8 +30,11 @@
   border-radius: 15px;
 }
 
+
+
 #user-answer,
 .user-answer-empty {
+text-decoration: none;
   margin: 10px 20px;
   margin-bottom: -15px;
   width: 70%;

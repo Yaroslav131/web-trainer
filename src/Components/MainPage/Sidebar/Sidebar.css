@@ -76,46 +76,6 @@ hr {
 }
 
 
-.arrow-div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-}
-
-.arrow_right,
-.arrow_left {
-    width: 15px;
-    height: 15px;
-    border-top: 3px solid gray !important;
-    border-right: 3px solid gray !important;
-    transition: 0.15s;
-}
-
-.arrow_left {
-    transform: rotate(-135deg);
-}
-
-.arrow_right {
-    transform: rotate(45deg);
-}
-
-.arrow_left:hover,
-.arrow_right:hover {
-    border-top: 5px solid white !important;
-    border-right: 5px solid rgb(255, 255, 255) !important;
-    width: 20px;
-    height: 20px;
-}
-
-.arrow_right:active,
-.arrow_left:active {
-    width: 15px;
-    height: 15px;
-    border-top: 3px solid gray !important;
-    border-right: 3px solid gray !important;
-}
-
 .hamburger-menu-container {
     height: 35px;
     width: 35px;
@@ -352,5 +312,5 @@ button>div {
 {
     display: grid;
     grid-template-columns: auto 1fr;
-    gap: 5px;
+    gap: 15px;
 }
