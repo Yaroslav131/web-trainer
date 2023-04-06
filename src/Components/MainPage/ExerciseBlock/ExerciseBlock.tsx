@@ -64,7 +64,7 @@ export default function ExerciseBlock(props: Iprops) {
     const onClose = () => setModal(false)
 
     return (
-        <div className="exerciseBlock">
+        <main className="exercise-block">
             <JobBlock text={props.excersises[props.curentExIndex].task} />
             <CodeInput
                 iFrameClassName={iFrameClassName}
@@ -105,6 +105,6 @@ export default function ExerciseBlock(props: Iprops) {
                     onClose={onClose}
                 />
             </div>
-        </div>
+        </main>
     )
 }

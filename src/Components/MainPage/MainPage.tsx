@@ -133,7 +133,7 @@ export default function MainPage(props: Iprops) {
             <Modal
                 visible={isBookModal}
                 title='О CSS'
-                content={<AboutCss/>}
+                content={<AboutCss />}
                 footer={<button onClick={onBookClose}>Закрыть</button>}
                 onClose={onBookClose}
             />
@@ -151,24 +151,23 @@ export default function MainPage(props: Iprops) {
                 />
                 <Footer />
             </div>
-            <div className="Sidebar">
-                <SideBar
-                    isLevelListOpen={isLevelListOpen}
-                    exercises={exercises}
-                    curentExIndex={curentExIndex}
-                    compliteExCounter={compliteExCounter}
-                    isSidebarOpen={isSidebarOpen}
-                    isShotScreen={isShotScreen}
-                    onCancelSidebar={onCancelSidebar}
-                    onNextEx={OnNextEx}
-                    onPreviousEx={OnPreviousEx}
-                    closeLevelsNav={CloseLevelseNav}
-                    openLevelsNav={OpenLevelsNav}
-                    onCurrentLevelChange={OnCurrentLevelChange}
-                    onProgressReset={onProgressReset}
-                    onTutorialOpen={onTutorialOpen}
-                    onBookOpen={onBookOpen} />
-            </div>
+
+            <SideBar
+                isLevelListOpen={isLevelListOpen}
+                exercises={exercises}
+                curentExIndex={curentExIndex}
+                compliteExCounter={compliteExCounter}
+                isSidebarOpen={isSidebarOpen}
+                isShotScreen={isShotScreen}
+                onCancelSidebar={onCancelSidebar}
+                onNextEx={OnNextEx}
+                onPreviousEx={OnPreviousEx}
+                closeLevelsNav={CloseLevelseNav}
+                openLevelsNav={OpenLevelsNav}
+                onCurrentLevelChange={OnCurrentLevelChange}
+                onProgressReset={onProgressReset}
+                onTutorialOpen={onTutorialOpen}
+                onBookOpen={onBookOpen} />
         </div >
     )
 }

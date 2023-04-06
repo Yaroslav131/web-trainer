@@ -45,7 +45,7 @@ hr {
 .counter-head {
     color: #818181;
     display: block;
-    word-spacing: -11px;
+    font-size: 20px;
     white-space: nowrap;
 }
 
@@ -62,7 +62,7 @@ hr {
 
 
 
-.nav-level-bar {
+.bar-level-bar {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -115,35 +115,26 @@ hr {
 }
 
 .selectorName {
-    font-size: 15px;
+    font-size: 20px;
     color: #c8c8c8;
 }
 
 .title {
     margin-top: 10px;
-    font-size: 14px;
+    font-size: 20px;
     color: #7b7b7b;
 }
 
-.syntax {
-    margin-top: 10px;
-    background-color: #181818;
-    width: auto;
-    padding: 10px;
-    font-size: 14px;
-    display: inline-block;
-    border-radius: 5px;
-}
 
 .hint {
     margin-top: 20px;
-    font-size: 13px;
+    font-size: 18px;
     color: #848484;
 }
 
 .examples-title {
     margin-top: 40px;
-    font-size: 15px;
+    font-size: 20px;
     color: #c8c8c8;
 }
 
@@ -153,15 +144,15 @@ hr {
 
 .example-test {
     margin-top: 20px;
-    font-size: 14px;
+    font-size: 18px;
     color: #c8c8c8;
 }
 
-.nav-close {
+.bar-close {
     margin-right: -400px;
 }
 
-.level-nav-open {
+.level-bar-open {
     width: 400px;
     height: 100vh;
     z-index: 20;
@@ -299,13 +290,13 @@ button>div {
 
 .item-name {
     color: #7b7b7b;
-    font-size: 14px;
+    font-size: 18px;
     text-align: start;
 }
 
 .item-index {
     color: #7b7b7b;
-    font-size: 14px;
+    font-size: 18px;
 }
 
 .shot-screen-level-bar
@@ -313,4 +304,26 @@ button>div {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 15px;
+}
+
+.side-bar-button {
+    
+    padding: 5px;
+    margin-top: 6px;
+    margin-bottom: 7px;
+    font-size: 18px;
+    font-weight: 500;
+    border-radius: 5px;
+    border: none;
+    background-color: rgb(34, 157, 73);
+    word-spacing: -8px;
+    transition: 0.15s;
+}
+
+.side-bar-button:hover {
+    opacity: 0.7;
+}
+
+.side-bar-button:active {
+    opacity: 0.5;
 }

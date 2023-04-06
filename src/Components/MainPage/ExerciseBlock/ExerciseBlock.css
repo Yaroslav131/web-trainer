@@ -1,8 +1,9 @@
+
 .buttons-container {
     display: grid;
     grid-template-columns: 1fr 5fr 1fr 2fr;
     margin-top: 20px;
-    width: 300px;
+    width: 250px;
 
     margin-left: auto;
     margin-right: auto;
@@ -25,8 +26,8 @@
 .arrow_left,
 .arrow-right-disable,
 .arrow-left-disable {
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
     border-top: 8px solid rgb(34, 157, 73) !important;
     border-right:8px solid rgb(34, 157, 73) !important;
     border-radius: 3px;
@@ -50,14 +51,14 @@
     border-top: 8px solid #c8c8c8 !important;
     border-right: 8px solid #c8c8c8 !important;
     border-radius: 3px;
-    width: 25px;
-    height: 25px;
+    width: 23px;
+    height: 23px;
 }
 
 .arrow_right:active,
 .arrow_left:active {
-    width: 20px;
-    height: 20px;
+    width: 18px;
+    height: 18px;
     border-radius: 0px;
     border-top: 6px solid #c8c8c8 !important;
     border-right: 6px solid #c8c8c8 !important;

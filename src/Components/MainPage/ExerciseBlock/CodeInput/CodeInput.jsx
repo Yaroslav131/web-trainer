@@ -132,11 +132,11 @@ const CodeInput = (props) => {
         if (props.exerciseType == "CSS") {
             SetCssBlock(<div className="code-constainer">
                 <textarea placeholder="Write code..." className={props.userAnswer == "" ? "user-answer-empty" : ""} value={props.userAnswer} onInput={props.onInputAnswer} onKeyUp={runCompeletion} id="user-answer" ></textarea>
-                <pre className="code-text" id="css-code" disabled>{syntaxHighlighting(props.inputCSSValue,"css")}</pre>
+                <pre className="code-text" id="css-code" disabled>{syntaxHighlighting(props.inputCSSValue, "css")}</pre>
             </div>)
 
             SetHtmlBlock(<div className="code-constainer">
-                <pre className="code-text" id="html-code" >{syntaxHighlighting(props.inputHTMLValue,"html")}</pre>
+                <pre className="code-text" id="html-code" >{syntaxHighlighting(props.inputHTMLValue, "html")}</pre>
             </div>)
         }
     }
@@ -144,15 +144,36 @@ const CodeInput = (props) => {
 
     function syntaxHighlighting(arr, type) {
         if (type == "html") {
-            return arr.map(x => <SyntaxHighlighter language="html" style={okaidia}>{x}</SyntaxHighlighter>)
+            return arr.map((x,index) => <SyntaxHighlighter key={index} language="html" style={okaidia}>{x}</SyntaxHighlighter>)
         }
         else {
-            return arr.map(x => <SyntaxHighlighter language="css" style={okaidia}>{x}</SyntaxHighlighter>)
+            return arr.map((x,index) => <SyntaxHighlighter key={index} language="css" style={okaidia}>{x}</SyntaxHighlighter>)
         }
     }
 
+    const [isShortScreen, SetIsShortScreen] = useState(false);
+
+    const handleWindowSizeChange = () => {
+        let screenWidth = window.screen.width;
+        let documentWidth = document.documentElement.scrollWidth;
+        if (screenWidth / 1.9 > documentWidth) {
+            SetIsShortScreen(true)
+        }
+        else {
+            SetIsShortScreen(false)
+        }
+    };
+
+    useEffect(() => {
+        window.addEventListener('resize', handleWindowSizeChange);
+        return () => {
+            window.removeEventListener('resize', handleWindowSizeChange);
+        };
+    }, []);
+
+
     return (
-        <div className="textarea-container">
+        <div className={isShortScreen ?"short-blocks-container": "blocks-container"}>
             <div className="left">
                 <label className="type-head"><i className="fa-brands fa-css3-alt"></i>CSS</label>
                 {cssBlock}
@@ -161,7 +182,7 @@ const CodeInput = (props) => {
             </div>
             <div className="right">
                 <label className="type-head"><i className="fa-solid fa-play"></i>Output</label>
-                <IFrame iFrameClassName={props.iFrameClassName}>
+                <IFrame className={props.iFrameClassName}>
                     {reactCode}
                 </IFrame>
             </div>

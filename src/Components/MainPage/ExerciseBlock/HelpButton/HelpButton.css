@@ -3,11 +3,13 @@
     border: none;
     background-color:rgb(34, 157, 73);
     color: #c8c8c8;
-    box-shadow: 7px 5px 5px rgb(0, 0, 0);
+   
     transition: 0.15s;
     height: 40px;
     padding-left: 10px;
     padding-right: 10px;
+    font-size: 20px;
+    font-weight: 800;
 }
 
 .help-button:hover {

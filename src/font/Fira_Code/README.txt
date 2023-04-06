@@ -1,27 +1,22 @@
-Inter Variable Font
-===================
+Fira Code Variable Font
+=======================
 
-This download contains Inter as both a variable font and static fonts.
+This download contains Fira Code as both a variable font and static fonts.
 
-Inter is a variable font with these axes:
-  slnt
+Fira Code is a variable font with this axis:
   wght
 
 This means all the styles are contained in a single file:
-  Inter-VariableFont_slnt,wght.ttf
+  FiraCode-VariableFont_wght.ttf
 
 If your app fully supports variable fonts, you can now pick intermediate styles
 that aren’t available as static fonts. Not all apps support variable fonts, and
-in those cases you can use the static font files for Inter:
-  static/Inter-Thin.ttf
-  static/Inter-ExtraLight.ttf
-  static/Inter-Light.ttf
-  static/Inter-Regular.ttf
-  static/Inter-Medium.ttf
-  static/Inter-SemiBold.ttf
-  static/Inter-Bold.ttf
-  static/Inter-ExtraBold.ttf
-  static/Inter-Black.ttf
+in those cases you can use the static font files for Fira Code:
+  static/FiraCode-Light.ttf
+  static/FiraCode-Regular.ttf
+  static/FiraCode-Medium.ttf
+  static/FiraCode-SemiBold.ttf
+  static/FiraCode-Bold.ttf
 
 Get started
 -----------

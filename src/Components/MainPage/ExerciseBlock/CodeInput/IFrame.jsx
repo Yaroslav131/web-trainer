@@ -7,7 +7,7 @@ export const IFrame = ({ children, ...props }) => {
   const mountNode = contentRef?.contentWindow?.document?.body
 
   return (
-    <iframe className={props.iFrameClassName}  {...props} ref={setContentRef}>
+    <iframe className={props.className}  {...props} ref={setContentRef}>
       {mountNode && createPortal(children, mountNode)}
     </iframe>
   )

@@ -12,12 +12,11 @@
     margin: 0;
 }
 
-h1 {
+.main-menu-logo {
     color: rgb(34, 157, 73);
-    font-size: 30px;
-
+    font-size: 40px;
     text-align: center;
-    padding-top: 40px;
+    padding-top: 20px;
     margin: 0;
 }
 
@@ -27,24 +26,24 @@ h1 {
     align-items: center;
 }
 
-.buttons input {
+.buttons button {
     height: 50px;
     width: 280px;
     background-color: #1F1F1F;
     color: #c8c8c8;
-    font-size: 18px;
+    font-size: 20px;
     cursor: pointer;
 
     border-radius: 5px;
-    transition: 0.5s;
+    transition: 0.15s;
 }
 
-.buttons input:hover {
+.buttons button:hover {
     background-color: #c8c8c8;
     color: #1F1F1F;
 }
 
-.buttons input:active {
+.buttons button:active {
     height: 45px;
     width: 270px;
     transition: 0.01s;
@@ -59,55 +58,48 @@ h1 {
 
 }
 
-.text-about
-{
+.text-about {
     color: #c2c2c2;
     width: 50%;
     margin-left: auto;
     margin-right: auto;
-    font-size: 18px;
-    text-align:center ;
-    line-height: 1.7em;
+    font-size: 20px;
+    text-align: center;
+
 }
 
-.text-about-head
-{
-    text-align:center ;
+.text-about-head {
+    text-align: center;
     margin-left: auto;
     margin-right: auto;
-    font-size: 20px;
+    font-size: 25px;
     margin-bottom: 15px;
 }
 
-.main-menu-main
-{
+.main-menu-main {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column ;
+    flex-direction: column;
     height: 50%;
     margin-top: 100px;
     margin-bottom: auto;
 }
 
-.menu-footer
-{
+.menu-footer {
     display: flex;
     align-items: center;
     justify-content: end;
-    
+
 }
 
-.creators-text
-{
+.creators-text {
     color: white;
     font-size: 19px;
-    font-family:'Franklin Gothic Light';
+    font-family: 'Franklin Gothic Light';
     font-weight: normal;
 }
 
-.text-container
-{
-   padding: 20px;
+.text-container {
+    padding: 20px;
 }
-

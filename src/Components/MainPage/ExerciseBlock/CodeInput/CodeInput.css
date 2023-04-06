@@ -5,20 +5,23 @@
   box-sizing: border-box;
 }
 
-.textarea-container {
+.short-blocks-container {
   width: 100%;
+  padding:  20px 80px 20px 80px;
+  display: grid;
+}
+
+.blocks-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   padding: 20px;
-  display: flex;
-  color: #c2c2c2;
-  font-family: 'Code';
-  overflow-x: hidden;
+  width: 100%;
 }
 
 .left,
 .right {
-  flex-basis: 50%;
   padding: 10px;
-  
+
 }
 
 .code-constainer {
@@ -30,31 +33,28 @@
   border-radius: 15px;
 }
 
-.code-constainer span
-{
+.code-constainer span {
   display: inline-block;
   font-family: "Code";
   font-size: 15px;
-  
+
 }
 
-.code-text pre
-{
- padding: 0 !important;
- margin: 0 !important;
- background-color: transparent !important;
+.code-text pre {
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: transparent !important;
 }
 
- pre code
-{
- padding: 0 !important;
- margin: 0 !important;
- background-color: transparent !important;
+pre code {
+  padding: 0 !important;
+  margin: 0 !important;
+  background-color: transparent !important;
 }
 
 #user-answer,
 .user-answer-empty {
-text-decoration: none;
+  text-decoration: none;
   margin: 10px 20px;
   margin-bottom: -15px;
   width: 70%;
@@ -144,7 +144,7 @@ iframe {
   border: 0;
   outline: 0;
   border-radius: 15px;
- 
+
 
 }
 

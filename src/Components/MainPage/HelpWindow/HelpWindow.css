@@ -54,6 +54,7 @@
   cursor: pointer;
   padding: 1rem;
   margin: -1rem -1rem -1rem auto;
+  font-size: 20px;
 }
 
 .modal-body {
@@ -63,7 +64,7 @@
 .modal-content {
   padding: 1rem;
   color: #c8c8c8;
-  font-size: 13px;
+  font-size: 20px;
   white-space: pre-line;
   padding-bottom: 0;
 }
@@ -71,6 +72,7 @@
 .modal-title {
   margin: 0;
   color: rgb(34, 157, 73);
+  font-size: 25px;
 }
 
 @keyframes appear {
@@ -96,15 +98,12 @@
 .close-button {
   border-radius: 5px;
   border: none;
-  width: 150px;
-  height: 26px;
-  margin-top: 6px;
-  margin-bottom: 7px;
-  font-size: 14px;
+  padding: 5px;
+ font-weight: 500;
+  font-size: 20px;
   border-radius: 5px;
   border: none;
   background-color: rgb(34, 157, 73);
-  word-spacing: -8px;
   transition: 0.15s;
 }
 
