@@ -28,7 +28,11 @@
     ],
     "cssСompilationCode": "{  background-color: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.main-container{display: flex;align-items: center; justify-content: center; flex-direction:column; padding:15px; border-radius:10px;} .container{ margin-top: 10px;  margin-bottom: 10px; background-color: #1F1F1F; width: 90%;  border-radius: 10px; padding:15px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.cat,.deer,.owl{  max-width: 100px; width: 100%;height:100%;  margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.cat:hover,.deer:hover,.owl:hover{color: rgb(0, 0, 0);opacity: 0.7;}.cat:active,.deer:active,.owl:active{color: rgb(0, 0, 0);opacity: 0.5;}",
     "answer": "img",
-    "cssCodeOutput": "{\n    background-color: firebrick !important;\n}\n ",
+    "cssCodeOutput": [
+      "{",
+      "    background-color: firebrick !important;",
+      "}"
+    ],
     "examples": [
       "div выбирает все элементы <div>",
       "p выбирает все элементы <p>"
@@ -36,10 +40,10 @@
     "helpText": "Вы собираетесь изучать селекторы CSS!\n\nСелектор (от англ. select — выбирать) — это шаблон, который позволяет обратиться к элементу или группе элементов веб-страницы, чтобы применить к ним стили CSS. \n\n Пример:\n\n p {\n margin- bottom: 12px;\n }\n\nЗдесь \"p\" является селектором (выбирает все элементы <p>) и применяет стиль margin-bottom.",
     "hint": "Селектор 'a' выбирает все элементы типа <a>. Тип относится к типу тега, поэтому <div>, <p> и <ul> — это разные типы элементов.",
     "htmlCodeOutput": [
-      "<div class='container'>\n",
-      "        <img class='cat' src='./cat.png'>\n",
-      "        <img class='deer' src='./deer.png'>\n",
-      "        <img class='owl' src='./owl.png'>\n",
+      "<div class='container'>",
+      "        <img class='cat' src='./cat.png'>",
+      "        <img class='deer' src='./deer.png'>",
+      "        <img class='owl' src='./owl.png'>",
       "</div>"
     ],
     "imgURL": "",
@@ -98,7 +102,11 @@
     ],
     "cssСompilationCode": "{  background-color: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.main-container{display: flex;align-items: center; justify-content: center; flex-direction:column; background-color: #171717;padding:15px; border-radius:10px;} .container{ margin-top: 10px;  margin-bottom: 10px; background-color: #1F1F1F; width: 90%;  border-radius: 10px; padding:15px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.cat,.deer,.owl{  max-width: 100px; width: 100%;height:100%;  margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.cat:hover,.deer:hover,.owl:hover{color: rgb(0, 0, 0);opacity: 0.7;}.cat:active,.deer:active,.owl:active{color: rgb(0, 0, 0);opacity: 0.5;}",
     "answer": "#bird",
-    "cssCodeOutput": "{\n    background-color: firebrick !important;\n}\n ",
+    "cssCodeOutput": [
+      "{",
+      "    background-color: firebrick !important;",
+      "}"
+    ],
     "examples": [
       "div выбирает все элементы <div>",
       "p выбирает все элементы <p>"
@@ -106,16 +114,16 @@
     "helpText": "Вы собираетесь изучать селекторы CSS!\n\nСелектор (от англ. select — выбирать) — это шаблон, который позволяет обратиться к элементу или группе элементов веб-страницы, чтобы применить к ним стили CSS. \n\n #ID CSS Rule\n\n #cool {\n margin- bottom: 12px;\n }\n\nЗдесь \"#cool\" является селектором (выбирает все элементы c индефикатором #cool) и применяет стиль margin-bottom.",
     "hint": "Выбирает элемент с определенным идентификатором. Вы также можете комбинировать селектор ID с селектором типа.",
     "htmlCodeOutput": [
-      "<div class='main-container'>\n",
-      "      <div class='container'>\n",
-      "           <img class='cat' src='./cat.png'>\n",
-      "           <img class='deer' src='./deer.png'>\n",
-      "           <img class='owl' id='bird' src='./owl.png'>\n",
-      "      </div>\n",
-      "      <div class='container'>\n",
-      "           <img class='cat' src='./cat.png'>\n",
-      "           <img class='deer' src='./deer.png'>\n",
-      "      </div>\n",
+      "<div class='main-container'>",
+      "      <div class='container'>",
+      "           <img class='cat' src='./cat.png'>",
+      "           <img class='deer' src='./deer.png'>",
+      "           <img class='owl' id='bird' src='./owl.png'>",
+      "      </div>",
+      "      <div class='container'>",
+      "           <img class='cat' src='./cat.png'>",
+      "           <img class='deer' src='./deer.png'>",
+      "      </div>",
       "</div>"
     ],
     "imgURL": " ",
@@ -154,17 +162,21 @@
     ],
     "cssСompilationCode": "{  background-color: firebrick !important; } .main-container{display: flex;align-items: center; justify-content: center; flex-direction:column; padding:15px; border-radius:10px;} .big-img{ width: 100% !important; height: 100% !important} body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; } .container{ margin-top: 10px;  margin-bottom: 10px; background-color: #1F1F1F; width: 90%;     border-radius: 10px; padding:15px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.squirell,.deer,.rabbit{  width: 70%;height:70%;  margin-left:auto;margin-right:auto; margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.squirell:hover,.deer:hover,.rabbit:hover{color: rgb(0, 0, 0);opacity: 0.7;}.squirell:active,.deer:active,.rabbit:active{color: rgb(0, 0, 0);opacity: 0.5;}",
     "answer": ".big-img",
-    "cssCodeOutput": "{\n    background-color: firebrick !important;\n}\n ",
+     "cssCodeOutput": [
+      "{",
+      "    background-color: firebrick !important;",
+      "}"
+    ],
     "examples": [
       ".test выбирает все элементы <div class='test'>"
     ],
     "helpText": "Вы собираетесь изучать селекторы CSS!\n\nСелекторы — это то, к какому элементу применяются стили.\n\n .big {\n margin- bottom: 12px;\n }\n\nЗдесь \".big\" является селектором (выбирает все элементы имеющие класс big <div class=\"big\">) и применяет стиль margin-bottom.",
     "hint": "Выбирает все элементы с определенным классом. Вы можете так же комбинировать селектор класса с селектором типа.",
     "htmlCodeOutput": [
-      "<div class='container'>\n",
-      "        <img class='rabbit' src='./rabbit.png'>\n",
-      "        <img class=' big-img' src='./deer.png'>\n",
-      "        <img class='squirell' src='./squirell.png'>\n",
+      "<div class='container'>",
+      "        <img class='rabbit' src='./rabbit.png'>",
+      "        <img class=' big-img' src='./deer.png'>",
+      "        <img class='squirell' src='./squirell.png'>",
       "</div>"
     ],
     "imgURL": " ",
@@ -228,23 +240,27 @@
     ],
     "cssСompilationCode": "{  background-color: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.main-container{display: flex;align-items: center; justify-content: center; flex-direction:column; background-color: #171717;padding:15px; border-radius:10px;} .second-container,.first-container{ margin-top: 10px;  margin-bottom: 10px; background-color: #1F1F1F; width: 90%;  border-radius: 10px; padding:15px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.elephant,.lobster,.squirell,.rat,.owl,.buffalo{  max-width: 100px; width: 100%;height:100%;  margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.elephant:hover,.lobster:hover,.squirell:hover,.rat:hover,.owl:hover,.buffalo:hover{color: rgb(0, 0, 0);opacity: 0.7;}.elephant:active,.lobster:active,.squirell:active,.rat:active,.owl:active,.buffalo:active{color: rgb(0, 0, 0);opacity: 0.5;}",
     "answer": ".second-container img",
-    "cssCodeOutput": "{\n    background-color: firebrick !important;\n}\n ",
+     "cssCodeOutput": [
+      "{",
+      "    background-color: firebrick !important;",
+      "}"
+    ],
     "examples": [
       ".test div выбирает все элементы <div> в блоке <div class='test'>"
     ],
     "helpText": "Вы собираетесь изучать селекторы CSS!\n\nСелектор (от англ. select — выбирать) — это шаблон, который позволяет обратиться к элементу или группе элементов веб-страницы, чтобы применить к ним стили CSS. \n\n .cool div {\n margin- bottom: 12px;\n }\n\nЗдесь \".cool div\" является селектором (выбирает все элементы c div в элемене с классов cool) и применяет стиль margin-bottom.",
     "hint": "Выбирает все элементы с определенным типом и классом. Тип относится к типу тега, Lпоэтому <div>, <p> и <ul> — это разные типы элементов, у каждого может быть свой класс.",
     "htmlCodeOutput": [
-      "<div class='main-container'>\n",
-      "      <div class='first-container'>\n",
-      "           <img class='elephant' src='./elephant.png'>\n",
-      "           <img class='lobster' src='./lobster.png'>\n",
-      "           <img class='owl' src='./owl.png'>\n",
-      "      </div>\n",
-      "      <div class='second-container'>\n",
-      "           <img class='buffalo' src='./buffalo.png'>\n",
-      "           <img class='squirell' src='./squirell.png'>\n",
-      "      </div>\n",
+      "<div class='main-container'>",
+      "      <div class='first-container'>",
+      "           <img class='elephant' src='./elephant.png'>",
+      "           <img class='lobster' src='./lobster.png'>",
+      "           <img class='owl' src='./owl.png'>",
+      "      </div>",
+      "      <div class='second-container'>",
+      "           <img class='buffalo' src='./buffalo.png'>",
+      "           <img class='squirell' src='./squirell.png'>",
+      "      </div>",
       "</div>"
     ],
     "imgURL": " ",
@@ -292,18 +308,22 @@
     ],
     "cssСompilationCode": "{  background-color: firebrick !important; } body{  display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.main-container{display: flex;align-items: center; justify-content: center; flex-direction:column; background-color: #171717;padding:15px; border-radius:10px;} .container{ margin-top: 10px;  margin-bottom: 10px; background-color: #1F1F1F; width: 60%;  border-radius: 10px; padding:15px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.elephant,.lobster,.squirell,.rat,.owl,.buffalo{ max-height: 100px; max-width: 100px; width: 100%;height:100%;  margin-top:auto;margin-bottom:auto;  margin-left:auto;margin-right:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.elephant:hover,.lobster:hover,.squirell:hover,.rat:hover,.owl:hover,.buffalo:hover{color: rgb(0, 0, 0);opacity: 0.7;}.elephant:active,.lobster:active,.squirell:active,.rat:active,.owl:active,.buffalo:active{color: rgb(0, 0, 0);opacity: 0.5;}",
     "answer": "div img",
-    "cssCodeOutput": "{\n    background-color: firebrick !important;\n}\n ",
+     "cssCodeOutput": [
+      "{",
+      "    background-color: firebrick !important;",
+      "}"
+    ],
     "examples": [
       "p span выбирает все span элементы, которые находятся внутри любого p"
     ],
     "helpText": "Вы собираетесь изучать селекторы CSS!\n\nСелектор (от англ. select — выбирать) — это шаблон, который позволяет обратиться к элементу или группе элементов веб-страницы, чтобы применить к ним стили CSS. \n\\n div  img{\n margin- bottom: 12px;\n }\n\nЗдесь \".cool div\" является селектором (выбирает все элементыc img в элементах div) и применяет стиль margin-bottom.",
     "hint": "Выбирает все элементы с определенным типом и классом. Тип относится к типу тега, Lпоэтому <div>, <p> и <ul> — это разные типы элементов, у каждого может быть свой класс.",
     "htmlCodeOutput": [
-      "<div>\n",
-      "        <img class='elephant' src='./elephant.png'>\n",
-      "        <img class='lobster' src='./lobster.png'>\n",
-      "        <img class='buffalo' src='./buffalo.png'>\n",
-      "</div>\n",
+      "<div>",
+      "        <img class='elephant' src='./elephant.png'>",
+      "        <img class='lobster' src='./lobster.png'>",
+      "        <img class='buffalo' src='./buffalo.png'>",
+      "</div>",
       "<img class='rat' src='./rat.png'>"
     ],
     "imgURL": " ",
@@ -366,24 +386,28 @@
     ],
     "cssСompilationCode": "{  background-color: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.main-container{display: flex;align-items: center; justify-content: center; flex-direction:column; background-color: #171717;padding:15px; border-radius:10px;} .container{ margin-top: 10px;  margin-bottom: 10px; background-color: #1F1F1F; width: 90%;  border-radius: 10px; padding:15px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;} img{  max-width: 100px; width: 100%;height:100%;  margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;} img:hover{color: rgb(0, 0, 0);opacity: 0.7;} img:active{color: rgb(0, 0, 0);opacity: 0.5;}",
     "answer": ".owl,.dog",
-    "cssCodeOutput": "{\n    background-color: firebrick !important;\n}\n ",
+     "cssCodeOutput": [
+      "{",
+      "    background-color: firebrick !important;",
+      "}"
+    ],
     "examples": [
       ".class1,.class2 выбирает элементы с классами 'class1' и 'class2'"
     ],
     "helpText": "Вы собираетесь изучать селекторы CSS!\n\nСелектор (от англ. select — выбирать) — это шаблон, который позволяет обратиться к элементу или группе элементов веб-страницы, чтобы применить к ним стили CSS. \n\\n .house,.home {\n margin- bottom: 12px;\n }\n\nЗдесь \".cool div\" является селектором (выбирает все элементы c классам house и home и пременяет к ним одинаковые значения) и применяет стиль margin-bottom.",
     "hint": "Селектор '.a' выбирает все элементы с классом 'a'. Классовые селекторы можно группировать используя знак запятой.",
     "htmlCodeOutput": [
-      "<div class='main-container'>\n",
-      "      <div class='container'>\n",
-      "           <img class='dog' src='./dog.png'>\n",
-      "           <img class='rabbit' src='./rabbit.png'>\n",
-      "           <img class='squirell' id='bird' src='./squirell.png'>\n",
-      "      </div>\n",
-      "      <div class='container'>\n",
-      "           <img class='owl' src='./owl.png'>\n",
-      "           <img class='buffalo' src='./buffalo.png'>\n",
-      "           <img class='elephant' src='./elephant.png'>\n",
-      "      </div>\n",
+      "<div class='main-container'>",
+      "      <div class='container'>",
+      "           <img class='dog' src='./dog.png'>",
+      "           <img class='rabbit' src='./rabbit.png'>",
+      "           <img class='squirell' id='bird' src='./squirell.png'>",
+      "      </div>",
+      "      <div class='container'>",
+      "           <img class='owl' src='./owl.png'>",
+      "           <img class='buffalo' src='./buffalo.png'>",
+      "           <img class='elephant' src='./elephant.png'>",
+      "      </div>",
       "</div>"
     ],
     "imgURL": " ",
@@ -422,17 +446,21 @@
     ],
     "cssСompilationCode": "{  background-color: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.main-container{display: flex;align-items: center; justify-content: center; flex-direction:column; padding:15px; border-radius:10px;} .container{ margin-top: 10px;  margin-bottom: 10px; background-color: #1F1F1F; width: 90%;  border-radius: 10px; padding:15px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.cat,.deer,.owl{  max-width: 100px; width: 100%;height:100%;  margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.cat:hover,.deer:hover,.owl:hover{color: rgb(0, 0, 0);opacity: 0.7;}.cat:active,.deer:active,.owl:active{color: rgb(0, 0, 0);opacity: 0.5;}",
     "answer": ".owl+.cat",
-    "cssCodeOutput": "{\n    background-color: firebrick !important;\n}\n ",
+     "cssCodeOutput": [
+      "{",
+      "    background-color: firebrick !important;",
+      "}"
+    ],
     "examples": [
       "div+p выбирает элемент p, стоящий непосредственно после div"
     ],
     "helpText": "Вы собираетесь изучать селекторы CSS!\n\nСелектор (от англ. select — выбирать) — это шаблон, который позволяет обратиться к элементу или группе элементов веб-страницы, чтобы применить к ним стили CSS. \n\n .house+.home {\n margin- bottom: 12px;\n }\n\nЗдесь \".house+.home\" является селектором (выбирает  элемент c классом home стоящий слежующим по соседству после элемента c классом house) и применяет стиль margin-bottom.",
     "hint": "Селектор A+B выбирает элемент B, стоящий непосредственно после элемента A.",
     "htmlCodeOutput": [
-      "<div class='container'>\n",
-      "      <img class='cat' src='./cat.png'>\n",
-      "      <img class='owl' src='./owl.png'>\n",
-      "      <img class='cat' src='./cat.png'>\n ",
+      "<div class='container'>",
+      "      <img class='cat' src='./cat.png'>",
+      "      <img class='owl' src='./owl.png'>",
+      "      <img class='cat' src='./cat.png'> ",
       "</div>"
     ],
     "imgURL": " ",
@@ -471,17 +499,21 @@
     ],
     "cssСompilationCode": "{  background-color: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.main-container{display: flex;align-items: center; justify-content: center; flex-direction:column; padding:15px; border-radius:10px;} .container{ margin-top: 10px;  margin-bottom: 10px; background-color: #1F1F1F; width: 90%;  border-radius: 10px; padding:15px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.cat,.deer,.owl{  max-width: 100px; width: 100%;height:100%;  margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.cat:hover,.deer:hover,.owl:hover{color: rgb(0, 0, 0);opacity: 0.7;}.cat:active,.deer:active,.owl:active{color: rgb(0, 0, 0);opacity: 0.5;}",
     "answer": ".deer~.owl",
-    "cssCodeOutput": "{\n    background-color: firebrick !important;\n}\n ",
+     "cssCodeOutput": [
+      "{",
+      "    background-color: firebrick !important;",
+      "}"
+    ],
     "examples": [
       "div~p выбирает все <p>, стоящие после элемента <div>"
     ],
     "helpText": "Вы собираетесь изучать селекторы CSS!\n\nСелектор (от англ. select — выбирать) — это шаблон, который позволяет обратиться к элементу или группе элементов веб-страницы, чтобы применить к ним стили CSS. \n\n .house~.home {\n margin- bottom: 12px;\n }\n\nЗдесь \".house+.home\" является селектором (выбирает все элемент c классом home стоящий слежующим по соседству после элемента c классом house) и применяет стиль margin-bottom.",
     "hint": "Селектор A~B выбирает все элементы B, стоящие непосредственно после элемента A.",
     "htmlCodeOutput": [
-      "<div class='container'>\n",
-      "      <img class='deer' src='./deer.png'>\n",
-      "      <img class='owl' src='./owl.png'>\n",
-      "      <img class='owl' src='./owl.png'>\n",
+      "<div class='container'>",
+      "      <img class='deer' src='./deer.png'>",
+      "      <img class='owl' src='./owl.png'>",
+      "      <img class='owl' src='./owl.png'>",
       "</div>"
     ],
     "imgURL": " ",
@@ -520,17 +552,21 @@
     ],
     "cssСompilationCode": "{  background-color: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.main-container{display: flex;align-items: center; justify-content: center; flex-direction:column; padding:15px; border-radius:10px;} .container{ margin-top: 10px;  margin-bottom: 10px; background-color: #1F1F1F; width: 90%;  border-radius: 10px; padding:15px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.cat,.deer,.owl{  max-width: 100px; width: 100%;height:100%;  margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.cat:hover,.deer:hover,.owl:hover{color: rgb(0, 0, 0);opacity: 0.7;}.cat:active,.deer:active,.owl:active{color: rgb(0, 0, 0);opacity: 0.5;}",
     "answer": "img:nth-child(2)",
-    "cssCodeOutput": "{\n    background-color: firebrick !important;\n}\n ",
+     "cssCodeOutput": [
+      "{",
+      "    background-color: firebrick !important;",
+      "}"
+    ],
     "examples": [
       "div:nth-child(3) выбирает дочерний элемент <div> с номером 3"
     ],
     "helpText": "Вы собираетесь изучать селекторы CSS!\n\nСелектор (от англ. select — выбирать) — это шаблон, который позволяет обратиться к элементу или группе элементов веб-страницы, чтобы применить к ним стили CSS. \n\n img:nth-child(2) {\n margin- bottom: 12px;\n }\n\nЗдесь \".house+.home\" является селектором (подумать!) и применяет стиль margin-bottom.",
     "hint": "Псевдоселектор B:nth-child(N) выбирает дочерний элемент B, номер которого равен N",
     "htmlCodeOutput": [
-      "<div class='container'>\n",
-      "      <img src='./cat.png'>\n",
-      "      <img src='./cat.png'>\n",
-      "      <img src='./cat.png'>\n",
+      "<div class='container'>",
+      "      <img src='./cat.png'>",
+      "      <img src='./cat.png'>",
+      "      <img src='./cat.png'>",
       "</div>"
     ],
     "imgURL": " ",
@@ -589,23 +625,27 @@
     ],
     "cssСompilationCode": "{  background-color: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.main-container{display: flex;align-items: center; justify-content: center; flex-direction:column; background-color: #171717;padding:15px; border-radius:10px;} .container{ margin-top: 10px;  margin-bottom: 10px; background-color: #1F1F1F; width: 90%;  border-radius: 10px; padding:15px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;}.cat,.deer,.owl{  max-width: 100px; width: 100%;height:100%;  margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}.cat:hover,.deer:hover,.owl:hover{color: rgb(0, 0, 0);opacity: 0.7;}.cat:active,.deer:active,.owl:active{color: rgb(0, 0, 0);opacity: 0.5;}",
     "answer": "*",
-    "cssCodeOutput": "{\n    background-color: firebrick !important;\n}\n ",
+     "cssCodeOutput": [
+      "{",
+      "    background-color: firebrick !important;",
+      "}"
+    ],
     "examples": [
       "* выбирает все элементы  на странице"
     ],
     "helpText": "Вы собираетесь изучать селекторы CSS!\n\nСелектор (от англ. select — выбирать) — это шаблон, который позволяет обратиться к элементу или группе элементов веб-страницы, чтобы применить к ним стили CSS. \n\n #ID CSS Rule\n\n * {\n margin- bottom: 12px;\n }\n\nЗдесь \"#cool\" является селектором (выбирает все элементы) и применяет стиль margin-bottom.",
     "hint": "Выбирает все элемент на странице. Удобно использовать для сброса изночальны параметров страницы.",
     "htmlCodeOutput": [
-      "<div class='main-container'>\n",
-      "      <div class='container'>\n",
-      "           <img class='cat' src='./cat.png'>\n",
-      "           <img class='deer' src='./deer.png'>\n",
-      "      </div>\n",
-      "      <div class='container'>\n",
-      "           <img class='cat' src='./cat.png'>\n",
-      "           <img class='deer' src='./deer.png'>\n",
-      "           <img class='owl' id='bird' src='./owl.png'>\n",
-      "      </div>\n",
+      "<div class='main-container'>",
+      "      <div class='container'>",
+      "           <img class='cat' src='./cat.png'>",
+      "           <img class='deer' src='./deer.png'>",
+      "      </div>",
+      "      <div class='container'>",
+      "           <img class='cat' src='./cat.png'>",
+      "           <img class='deer' src='./deer.png'>",
+      "           <img class='owl' id='bird' src='./owl.png'>",
+      "      </div>",
       "</div>"
     ],
     "imgURL": " ",

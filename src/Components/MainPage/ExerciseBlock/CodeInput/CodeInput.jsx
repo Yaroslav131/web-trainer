@@ -2,36 +2,34 @@ import React, { useEffect, useState } from "react";
 import './CodeInput.css'
 import { IFrame } from "./IFrame";
 import "./IFrame.css"
+import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const CodeInput = (props) => {
 
     const [reactCode, SetReactCode] = useState(<></>);
-
-    let htmlBlock = <></>
-
-    let cssBlock = <></>
+    const [htmlBlock, SetHtmlBlock] = useState(<></>);
+    const [cssBlock, SetCssBlock] = useState(<></>);
 
     useEffect(() => {
 
+        setCodeBlocks();
+
         runCompeletion();
 
-        document.getElementById("user-answer").focus();
+        // document.getElementById("user-answer").focus();
 
-        const script = document.createElement('script');
+        // const script = document.createElement('script');
 
-        script.src = "https://kit.fontawesome.com/979140767a.js";
-        script.async = true;
+        // script.src = "https://kit.fontawesome.com/979140767a.js";
+        // script.async = true;
 
-        document.body.appendChild(script);
+        // document.body.appendChild(script);
 
-        return () => {
-            document.body.removeChild(script);
-        }
+        // return () => {
+        //     document.body.removeChild(script);
+        // }
     }, [props]);
-
-    function getHTMLString(array) {
-        return array.join("");
-    }
 
     function IsicludeExeptionElement(answer) {
         let splitUserAnswerString = answer.split('');
@@ -62,7 +60,7 @@ const CodeInput = (props) => {
 
 
 
-       let slashStopComp = splitUserAnswerString.includes('\\')
+        let slashStopComp = splitUserAnswerString.includes('\\')
 
         let singleQuoteStopComp = splitUserAnswerString.filter(x => x == "'").length % 2 === 0;
         let doubleQuoteStopComp = splitUserAnswerString.filter(x => x == '"').length % 2 === 0;
@@ -130,26 +128,28 @@ const CodeInput = (props) => {
         return resoult;
     }
 
-    if (props.exerciseType == "CSS") {
-        cssBlock = <div className="code-constainer">
-            <textarea placeholder="Write code..." className={props.userAnswer == "" ? "user-answer-empty" : ""} value={props.userAnswer} onInput={props.onInputAnswer} onKeyUp={runCompeletion} id="user-answer" ></textarea>
-            <pre className="code-text" id="css-code" disabled>{props.inputCSSValue}</pre>
-        </div>
+    function setCodeBlocks() {
+        if (props.exerciseType == "CSS") {
+            SetCssBlock(<div className="code-constainer">
+                <textarea placeholder="Write code..." className={props.userAnswer == "" ? "user-answer-empty" : ""} value={props.userAnswer} onInput={props.onInputAnswer} onKeyUp={runCompeletion} id="user-answer" ></textarea>
+                <pre className="code-text" id="css-code" disabled>{syntaxHighlighting(props.inputCSSValue,"css")}</pre>
+            </div>)
 
-        htmlBlock = <div className="code-constainer">
-            <pre className="code-text" id="html-code" >{getHTMLString(props.inputHTMLValue)}</pre>
-        </div>
+            SetHtmlBlock(<div className="code-constainer">
+                <pre className="code-text" id="html-code" >{syntaxHighlighting(props.inputHTMLValue,"html")}</pre>
+            </div>)
+        }
     }
-    // else if (props.exerciseType == "HTML") {
-    //     htmlBlock = <div className="code-constainer">
-    //         <textarea placeholder="Вводите код..." value={props.userAnswer} onInput={props.onInputAnswer} id="user-answer" onKeyUp={runCompeletion}></textarea>
-    //         <div id="html-code" className="code-text" disabled>{props.inputHTMLValue}</div>
-    //     </div>
 
-    //     cssBlock = <div className="code-constainer">
-    //         <div className="code-text" id="css-code" disabled>{props.inputCSSValue}</div>
-    //     </div>
-    // }
+
+    function syntaxHighlighting(arr, type) {
+        if (type == "html") {
+            return arr.map(x => <SyntaxHighlighter language="html" style={okaidia}>{x}</SyntaxHighlighter>)
+        }
+        else {
+            return arr.map(x => <SyntaxHighlighter language="css" style={okaidia}>{x}</SyntaxHighlighter>)
+        }
+    }
 
     return (
         <div className="textarea-container">

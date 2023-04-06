@@ -30,7 +30,27 @@
   border-radius: 15px;
 }
 
+.code-constainer span
+{
+  display: inline-block;
+  font-family: "Code";
+  font-size: 15px;
+  
+}
 
+.code-text pre
+{
+ padding: 0 !important;
+ margin: 0 !important;
+ background-color: transparent !important;
+}
+
+ pre code
+{
+ padding: 0 !important;
+ margin: 0 !important;
+ background-color: transparent !important;
+}
 
 #user-answer,
 .user-answer-empty {
@@ -47,7 +67,7 @@ text-decoration: none;
   font-size: 15px;
   resize: none;
   font-family: 'Code';
-  color: #c2c2c2;
+  color: rgb(230, 219, 116);
   border-bottom: none;
   height: 25px;
   transition: 0.15s;
@@ -59,7 +79,7 @@ text-decoration: none;
 }
 
 #user-answer:focus {
-  color: #c2c2c2;
+  color: rgb(230, 219, 116);
   border: none;
 }
 

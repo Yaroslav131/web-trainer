@@ -11,7 +11,7 @@ export default class Exercise {
     isCompleted: boolean;
     answer: string;
     htmlCodeOutput: string[]
-    cssCodeOutput: string
+    cssCodeOutput: string[]
 
     imgURL: string
     constructor(
@@ -28,7 +28,7 @@ export default class Exercise {
         isCompleted: boolean,
         answer: string,
         htmlCodeOutput: string[],
-        cssCodeOutput: string,
+        cssCodeOutput: string[],
         imgURL: string,
 
     ) {
