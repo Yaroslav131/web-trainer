@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Exercise from "../../Classes/Execirse"
+import Exercise from "../../classes/Execirse"
 import Header from "./Header/Header";
 import SideBar from "./Sidebar/Sidebar"
 import './MainPage.css'
@@ -10,6 +10,7 @@ import './HelpWindow/HelpWindow.css'
 import '../../reset.css'
 import SlideCarousel from "./Carousel/Carousel";
 import AboutCss from "./AboutBlocks/AboutCSS";
+import AboutCssSelectors from "./AboutBlocks/AboutCssSelectors";
 
 interface Iprops {
     excersises: Exercise[],
@@ -133,7 +134,10 @@ export default function MainPage(props: Iprops) {
             <Modal
                 visible={isBookModal}
                 title='О CSS'
-                content={<AboutCss />}
+                content={<>
+                    <AboutCss />
+                    <AboutCssSelectors />
+                </>}
                 footer={<button onClick={onBookClose}>Закрыть</button>}
                 onClose={onBookClose}
             />

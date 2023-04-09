@@ -1,6 +1,6 @@
 @font-face {
   font-family: "Inter";
-  src: url(./font/Fira_Code/FiraCode-VariableFont_wght.ttf);
+  src: url(./assets/font/Fira_Code/FiraCode-VariableFont_wght.ttf);
 }
 
 * {
@@ -13,7 +13,8 @@ body * {
 
 /* width */
 ::-webkit-scrollbar {
-  width: 10px;
+  width: 8px;
+  height: 8px;
 }
 
 /* Track */
@@ -62,6 +63,10 @@ dd {
   margin: 0;
 }
 
+span
+{
+  color: #f1f1f1;
+}
 /* Выставляем основные настройки по-умолчанию для body */
 body {
   min-height: 100vh;
@@ -139,16 +144,16 @@ select {
 
 .right-bottom-tooltip {
   margin-bottom: -70px !important;
-  margin-right: -100px !important;
+  margin-right: -140px !important;
 }
 
 .right-top-tooltip {
-  margin-top: 10px !important;
-  margin-left: 25px !important;
+  margin-top: 40px !important;
+  margin-left: 0px !important;
 }
 
 
 .left-bottom-tooltip {
   margin-bottom: -85px !important;
-  margin-left: -120px !important;
+  margin-left: -140px !important;
 }

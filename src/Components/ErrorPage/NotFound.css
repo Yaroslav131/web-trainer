@@ -18,8 +18,17 @@
 .error-headine
 {
     padding: 0;
+    color:  rgb(34, 157, 73);
+    font-size: 40px;
+}
+
+.error-404-text
+{
+    font-size: 40px;
+    color: #c8c8c8;
 }
 
 .error-text {
     color: #c8c8c8;
+    font-size: 25px;
 }

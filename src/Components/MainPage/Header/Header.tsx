@@ -1,8 +1,8 @@
 import React from "react";
 import '../../../reset.css'
 import './Header.css'
-import home from '../../../imgs/icons/home-page.png'
-import menu from '../../../imgs/icons/humburger-menu.png'
+import home from '../../../assets/imgs/icons/home-page.png'
+import menu from '../../../assets/imgs/icons/humburger-menu.png'
 import { Link } from "react-router-dom"
 
 interface Iprops {

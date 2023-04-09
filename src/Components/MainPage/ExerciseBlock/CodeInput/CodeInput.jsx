@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import './CodeInput.css'
 import { IFrame } from "./IFrame";
 import "./IFrame.css"
@@ -7,28 +7,32 @@ import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
 
 const CodeInput = (props) => {
 
+    const inputEl = useRef(null);
     const [reactCode, SetReactCode] = useState(<></>);
-    const [htmlBlock, SetHtmlBlock] = useState(<></>);
-    const [cssBlock, SetCssBlock] = useState(<></>);
+    const htmlBlock = <div className="code-constainer">
+        <pre className="code-text" id="html-code" >{syntaxHighlighting(props.inputHTMLValue, "html")}</pre>
+    </div>;
+    const cssBlock = <div className="code-constainer">
+        <textarea ref={inputEl} placeholder="Write code..." className={props.userAnswer == "" ? "user-answer-empty" : ""} value={props.userAnswer} onInput={props.onInputAnswer} onKeyUp={runCompeletion} id="user-answer" ></textarea>
+        <pre className="code-text" id="css-code" disabled>{syntaxHighlighting(props.inputCSSValue, "css")}</pre>
+    </div>;
 
     useEffect(() => {
 
-        setCodeBlocks();
+        inputEl.current.focus();
 
         runCompeletion();
 
-        // document.getElementById("user-answer").focus();
+        const script = document.createElement('script');
 
-        // const script = document.createElement('script');
+        script.src = "https://kit.fontawesome.com/979140767a.js";
+        script.async = true;
 
-        // script.src = "https://kit.fontawesome.com/979140767a.js";
-        // script.async = true;
+        document.body.appendChild(script);
 
-        // document.body.appendChild(script);
-
-        // return () => {
-        //     document.body.removeChild(script);
-        // }
+        return () => {
+            document.body.removeChild(script);
+        }
     }, [props]);
 
     function IsicludeExeptionElement(answer) {
@@ -43,6 +47,18 @@ const CodeInput = (props) => {
 
             if (splitUserAnswerString[index] == "]") {
                 squareBracketStopComp = false;
+            }
+        }
+
+        let braceBracketStopComp = false;
+
+        for (let index = 0; index < splitUserAnswerString.length; index++) {
+            if (splitUserAnswerString[index] == "{") {
+                braceBracketStopComp = true;
+            }
+
+            if (splitUserAnswerString[index] == "}") {
+                braceBracketStopComp = false;
             }
         }
 
@@ -65,7 +81,7 @@ const CodeInput = (props) => {
         let singleQuoteStopComp = splitUserAnswerString.filter(x => x == "'").length % 2 === 0;
         let doubleQuoteStopComp = splitUserAnswerString.filter(x => x == '"').length % 2 === 0;
 
-        return slashStopComp || squareBracketStopComp || roundBracketStopComp || !singleQuoteStopComp || !doubleQuoteStopComp
+        return slashStopComp ||braceBracketStopComp|| squareBracketStopComp || roundBracketStopComp || !singleQuoteStopComp || !doubleQuoteStopComp
     }
 
     function runCompeletion() {
@@ -120,7 +136,7 @@ const CodeInput = (props) => {
             }
             else {
                 return reactObj[i].map(x => (
-                    <img key={counter++} src={require(`../../../../imgs/exercise-imgs/${x.name}.png`)} className={x.class} id={x.id}></img>
+                    <img key={counter++} src={require(`../../../../assets/imgs/exercise-imgs/${x.name}.png`)} alt={x.alt} className={x.class} id={x.id}></img>
                 ))
             }
         }
@@ -128,26 +144,12 @@ const CodeInput = (props) => {
         return resoult;
     }
 
-    function setCodeBlocks() {
-        if (props.exerciseType == "CSS") {
-            SetCssBlock(<div className="code-constainer">
-                <textarea placeholder="Write code..." className={props.userAnswer == "" ? "user-answer-empty" : ""} value={props.userAnswer} onInput={props.onInputAnswer} onKeyUp={runCompeletion} id="user-answer" ></textarea>
-                <pre className="code-text" id="css-code" disabled>{syntaxHighlighting(props.inputCSSValue, "css")}</pre>
-            </div>)
-
-            SetHtmlBlock(<div className="code-constainer">
-                <pre className="code-text" id="html-code" >{syntaxHighlighting(props.inputHTMLValue, "html")}</pre>
-            </div>)
-        }
-    }
-
-
     function syntaxHighlighting(arr, type) {
         if (type == "html") {
-            return arr.map((x,index) => <SyntaxHighlighter key={index} language="html" style={okaidia}>{x}</SyntaxHighlighter>)
+            return arr.map((x, index) => <SyntaxHighlighter key={index} language="html" style={okaidia}>{x}</SyntaxHighlighter>)
         }
         else {
-            return arr.map((x,index) => <SyntaxHighlighter key={index} language="css" style={okaidia}>{x}</SyntaxHighlighter>)
+            return arr.map((x, index) => <SyntaxHighlighter key={index} language="css" style={okaidia}>{x}</SyntaxHighlighter>)
         }
     }
 
@@ -173,7 +175,7 @@ const CodeInput = (props) => {
 
 
     return (
-        <div className={isShortScreen ?"short-blocks-container": "blocks-container"}>
+        <div className={isShortScreen ? "short-blocks-container" : "blocks-container"}>
             <div className="left">
                 <label className="type-head"><i className="fa-brands fa-css3-alt"></i>CSS</label>
                 {cssBlock}

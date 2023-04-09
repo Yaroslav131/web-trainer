@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom"
-import vk from '../../../imgs/icons/vk.png'
-import inst from '../../../imgs/icons/instagram.png'
-import git from '../../../imgs/icons/github.png'
-import linked from '../../../imgs/icons/linkedin.png'
+import vk from '../../../assets/imgs/icons/vk.png'
+import inst from '../../../assets/imgs/icons/instagram.png'
+import git from '../../../assets/imgs/icons/github.png'
+import linked from '../../../assets/imgs/icons/linkedin.png'
 import '../../../reset.css'
 import './Footer.css'
 

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Exercise from "../../../Classes/Execirse"
+import Exercise from "../../../classes/Execirse"
 import JobBlock from "./TaskBlock/TaskBlock";
 import ImgBlock from "./ImgBlock/ImgBlock";
 import CodeInput from "./CodeInput/CodeInput";

@@ -3,25 +3,25 @@ import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 import SlideBlock from './SlideBlock/SlideBlock';
-import taskImg from "../../../imgs/screens/taskScreen.png"
-import answerImg from "../../../imgs/screens/answerScreen.png"
-import cssBlockImg from "../../../imgs/screens/cssBlockScreen.png"
-import htmlBlockImg from "../../../imgs/screens/htmlBlockScreen.png"
-import resoultBlockImg from "../../../imgs/screens/resoultBlockScreen.png"
-import correctAnswerImg from "../../../imgs/screens/correctAnswerScreen.png"
-import wrongAnswerImg from "../../../imgs/screens/wrongAnswerScreen.png"
-import submitImg from "../../../imgs/screens/submitScreen.png"
-import hintImg from "../../../imgs/screens/hintScreen.png"
-import helpImg from "../../../imgs/screens/helpScreen.png"
-import navImg from "../../../imgs/screens/navScreen.png"
-import listImg from "../../../imgs/screens/listScreen.png"
-import navToExScreenImg from "../../../imgs/screens/navToExScreen.png"
-import resetImg from "../../../imgs/screens/resetScreen.png"
+import taskImg from "../../../assets/imgs/screens/taskScreen.png"
+import answerImg from "../../../assets/imgs/screens/answerScreen.png"
+import cssBlockImg from "../../../assets/imgs/screens/cssBlockScreen.png"
+import htmlBlockImg from "../../../assets/imgs/screens/htmlBlockScreen.png"
+import resoultBlockImg from "../../../assets/imgs/screens/resoultBlockScreen.png"
+import correctAnswerImg from "../../../assets/imgs/screens/correctAnswerScreen.png"
+import wrongAnswerImg from "../../../assets/imgs/screens/wrongAnswerScreen.png"
+import submitImg from "../../../assets/imgs/screens/submitScreen.png"
+import hintImg from "../../../assets/imgs/screens/hintScreen.png"
+import helpImg from "../../../assets/imgs/screens/helpScreen.png"
+import navImg from "../../../assets/imgs/screens/navScreen.png"
+import listImg from "../../../assets/imgs/screens/listScreen.png"
+import navToExScreenImg from "../../../assets/imgs/screens/navToExScreen.png"
+import resetImg from "../../../assets/imgs/screens/resetScreen.png"
 
 export default function SlideCarousel() {
 
     // function loadImg(name: string) {
-    //     return require(`../../../imgs/screens/${name}.png`)
+    //     return require(`../../../assets/imgs/screens/${name}.png`)
     // }
 
     return (

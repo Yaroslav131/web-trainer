@@ -7,8 +7,8 @@
 
 .short-blocks-container {
   width: 100%;
-  padding:  20px 80px 20px 80px;
-  display: grid;
+  padding:  5% 10% 5% 10%;
+
 }
 
 .blocks-container {
@@ -28,8 +28,7 @@
   background-color: #1F1F1F;
   width: 100%;
   height: 200px;
-  overflow: scroll;
-  overflow-x: hidden;
+  overflow: auto;
   border-radius: 15px;
 }
 
@@ -44,12 +43,15 @@
   padding: 0 !important;
   margin: 0 !important;
   background-color: transparent !important;
+  overflow: visible !important;
+  
 }
 
 pre code {
   padding: 0 !important;
   margin: 0 !important;
   background-color: transparent !important;
+ 
 }
 
 #user-answer,
@@ -134,7 +136,7 @@ pre code {
 
 @font-face {
   font-family: "Code";
-  src: url(../../../../font/FontsFree-Net-MonoLisa-Regular.ttf);
+  src: url(../../../../assets/font/FontsFree-Net-MonoLisa-Regular.ttf);
 }
 
 iframe {

@@ -25,7 +25,7 @@ hr {
 
 .sidenav-close {
     margin-right: -400px;
-   
+
 }
 
 .level-bar {
@@ -55,8 +55,8 @@ hr {
     border-top: 5px solid rgb(34, 157, 73) !important;
     border-right: 5px solid rgb(34, 157, 73) !important;
     transform: rotate(130deg);
-    transition: 0.5s;
-    margin-top: 1px;
+    transition: 0.15s;
+    margin-top: -10px;
     margin-left: 5px;
 }
 
@@ -175,10 +175,10 @@ hr {
     height: 30px;
 }
 
-.close-hiden
-{
-   display: none;
+.close-hiden {
+    display: none;
 }
+
 .close {
     position: relative;
     margin-top: -3px;
@@ -299,17 +299,16 @@ button>div {
     font-size: 18px;
 }
 
-.shot-screen-level-bar
-{
+.shot-screen-level-bar {
     display: grid;
     grid-template-columns: auto 1fr;
     gap: 15px;
 }
 
 .side-bar-button {
-    
-    padding: 5px;
-    margin-top: 6px;
+
+    padding: 7px;
+    margin-top: 7px;
     margin-bottom: 7px;
     font-size: 18px;
     font-weight: 500;

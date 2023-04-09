@@ -3,9 +3,9 @@ import ProgressBar from "@ramonak/react-progress-bar";
 import "./Sidebar.css"
 import '../../../reset.css'
 import './ProgressBar.css'
-import humburgerIcon from '../../../imgs/icons/icons8-circled-menu-100.png'
-import Exercise from "../../../Classes/Execirse";
-import CssSelectorExercise from "../../../Classes/Execirse";
+import humburgerIcon from '../../../assets/imgs/icons/icons8-circled-menu-100.png'
+import Exercise from "../../../classes/Execirse";
+import CssSelectorExercise from "../../../classes/Execirse";
 
 interface Iprops {
     exercises: Exercise[]
@@ -134,8 +134,9 @@ function LevelCounter(props: ILevelCounterProps) {
             <div className="level-bar">
                 <div className="level-counter">
                     <p className="counter-head">Задание {current} из {length}</p>
-
-                    <div className={props.ex.isCompleted ? "checkmark" : ""} >
+                    <div className="flex-container">
+                        <div className={props.ex.isCompleted ? "checkmark" : ""} >
+                        </div>
                     </div>
                 </div>
 

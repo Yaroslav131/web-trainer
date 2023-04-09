@@ -1,10 +1,9 @@
 .header {
     display: grid;
     grid-template-columns: 40px 1fr 40px;
-    padding: 0 10px 20px 10px;
+    padding: 0 10px 0 10px;
     width: 100%;
-    margin-top: 17px;
-    height: 35px;
+    margin-top: 20px;
 }
 
 .none-icon {
@@ -14,14 +13,14 @@
 .home {
     width: 32px;
     height: 32px;
-    margin-top: -7px;
+   margin-top: -2px;
     transition: 0.15s;
 }
 
 .menu {
     width: 30px;
     height: 30px;
-    margin-top: -5px;
+   
     transition: 0.15s;
 }
 

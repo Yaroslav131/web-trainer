@@ -74,6 +74,7 @@
     margin-right: auto;
     font-size: 25px;
     margin-bottom: 15px;
+    display: block;
 }
 
 .main-menu-main {
@@ -94,9 +95,8 @@
 }
 
 .creators-text {
-    color: white;
-    font-size: 19px;
-    font-family: 'Franklin Gothic Light';
+    color: #c2c2c2;
+    font-size: 20px;
     font-weight: normal;
 }
 
