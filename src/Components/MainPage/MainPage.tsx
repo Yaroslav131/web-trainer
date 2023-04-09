@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Exercise from "../../classes/Execirse"
+import Exercise from "../../Classes/Execirse"
 import Header from "./Header/Header";
 import SideBar from "./Sidebar/Sidebar"
 import './MainPage.css'
