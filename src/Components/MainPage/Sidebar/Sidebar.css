@@ -144,7 +144,7 @@ hr {
     padding-top: 20px;
     padding-left: 15px;
     padding-right: 15px;
-    transition: 0.5s;
+    transition:margin 0.5s;
 }
 
 .level-header {
@@ -314,9 +314,8 @@ button>div {
     padding-top: 20px;
     padding-left: 15px;
     padding-right: 15px;
-    transition: height 4s;
-    transition: 0.5s;
    
+    transition: margin 0.5s;
     position: fixed;
     top: 0;
     right: 0;
