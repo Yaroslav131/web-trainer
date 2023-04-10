@@ -21,9 +21,6 @@ const CodeInput = (props) => {
     </div>;
 
     useEffect(() => {
-
-        inputEl.current.focus();
-
         runCompeletion();
     }, [props]);
 
