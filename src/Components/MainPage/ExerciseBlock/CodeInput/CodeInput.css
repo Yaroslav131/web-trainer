@@ -8,7 +8,7 @@
 .blocks-container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 20px;
+padding: 15px;
   width: 100%;
 }
 
@@ -17,14 +17,32 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    padding: 5% 10% 5% 10%;
+    padding: 15px 7% 15px 7%;
   }
 }
 
+@media screen and (max-width: 600px) {
+  .blocks-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    padding-top: 15px;
+    gap: 10px;
+  }
+  
+}
+
+.left
+{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 .left,
 .right {
-  padding: 10px;
-
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .code-constainer {
@@ -140,17 +158,6 @@ pre code {
 @font-face {
   font-family: "Code";
   src: url(../../../../assets/font/FontsFree-Net-MonoLisa-Regular.ttf);
-}
-
-iframe {
-  width: 100%;
-  height: 435px;
-  background: #2e2e2e;
-  border: 0;
-  outline: 0;
-  border-radius: 15px;
-
-
 }
 
 label i {

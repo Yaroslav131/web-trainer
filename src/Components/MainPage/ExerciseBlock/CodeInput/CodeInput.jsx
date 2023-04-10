@@ -70,7 +70,7 @@ const CodeInput = (props) => {
         let singleQuoteStopComp = splitUserAnswerString.filter(x => x == "'").length % 2 === 0;
         let doubleQuoteStopComp = splitUserAnswerString.filter(x => x == '"').length % 2 === 0;
 
-        return slashStopComp ||braceBracketStopComp|| squareBracketStopComp || roundBracketStopComp || !singleQuoteStopComp || !doubleQuoteStopComp
+        return slashStopComp || braceBracketStopComp || squareBracketStopComp || roundBracketStopComp || !singleQuoteStopComp || !doubleQuoteStopComp
     }
 
     function runCompeletion() {
@@ -143,12 +143,17 @@ const CodeInput = (props) => {
     }
 
     return (
-        <div className={ "blocks-container"}>
+        <div className={"blocks-container"}>
             <div className="left">
-                <label className="type-head">CSS</label>
-                {cssBlock}
-                <label className="type-head">HTML</label>
-                {htmlBlock}
+                <div className="block-container">
+                    <label className="type-head">CSS</label>
+                    {cssBlock}
+                </div>
+                <div className="block-container">
+                    <label className="type-head">HTML</label>
+                    {htmlBlock}
+                </div>
+
             </div>
             <div className="right">
                 <label className="type-head">Output</label>

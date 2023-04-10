@@ -20,7 +20,6 @@ interface Iprops {
     onPreviousEx: () => void
     onCurrentLevelChange: (event: any) => void
     onProgressReset: () => void
-    onTutorialOpen: () => void
     onBookOpen: () => void
 }
 
@@ -53,7 +52,6 @@ export default function SideBar(props: Iprops) {
                     <hr />
                 {helpBlock}
 
-                <button onClick={props.onTutorialOpen} className="side-bar-button">{"Как работает тренажер?"}</button>
                 <button onClick={props.onBookOpen} className="side-bar-button">{"Что такое CSS?"}</button>
             </div>
 

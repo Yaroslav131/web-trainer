@@ -10,17 +10,7 @@
     grid-template-columns: 1fr auto;
 }
 
-@media screen and (max-width: 1200px) {
-    .main-page {
-        background-color: #171717;
-        display: grid;
-        grid-template-columns: 1fr auto;
-        min-height: 100vh;
-    }
-}
-
 .main {
-
     display: flex;
     flex-direction: column;
     overflow-x: hidden;
@@ -29,10 +19,19 @@
     width: 100%;
     position: relative;
     overflow: hidden;
-    padding-bottom: 60px;
+    padding-bottom: 80px;
 }
 
 .sidebar-close {
     margin-right: -400px;
     transition: 0.5s;
+}
+
+@media screen and (max-width: 1200px) {
+    .main-page {
+        background-color: #171717;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        min-height: 100vh;
+    }
 }

@@ -2,7 +2,8 @@
     display: flex;
     justify-content: center;
     min-height: 60px;
-  padding: 30px 40px 0px 40px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 

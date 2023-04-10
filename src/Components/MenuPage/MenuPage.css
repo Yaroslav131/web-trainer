@@ -1,26 +1,24 @@
 .main-menu {
-    background-color: #171717;
-    height: 100%;
+    height: 100vh;
     display: flex;
-   flex-direction: column;
+    flex-direction: column;
+    background-color: #171717;
 }
 
 @font-face {
     font-family: "Pixel";
     src: url(../../assets/font/PressStart2P-Regular.ttf);
-  }
+}
 
 .main-menu-header {
-    background-color: #171717;
     margin: 15px;
-    width: auto;
 }
 
 .main-menu-logo {
     color: rgb(34, 157, 73);
     font-size: 40px;
     text-align: center;
-    padding-top: 20px;
+    padding-top: 10px;
     margin: 0;
     font-family: Pixel;
     word-spacing: -25px;
@@ -46,6 +44,8 @@
     margin-bottom: 10px;
 }
 
+
+
 .buttons button:hover {
     background-color: #c8c8c8;
     color: #1F1F1F;
@@ -58,12 +58,30 @@
 }
 
 .buttons {
-    width: 600px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr  1fr;
     column-gap: 40px;
     margin: auto;
+    margin-top: 50px;
+}
 
+#green-button
+{
+    background-color: rgb(34, 157, 73) ;
+    color: #000000 ;
+    font-weight: 450;
+}
+
+#green-button:hover
+{
+    background-color: #c8c8c8;
+    color: rgb(34, 157, 73);
+}
+
+#green-button:active {
+    height: 45px;
+    width: 270px;
+    transition: 0.01s;
 }
 
 .text-about {
@@ -94,17 +112,48 @@
     display: flex;
     align-items: center;
     justify-content: end;
-
 }
 
 .creators-text {
     color: #c2c2c2;
     font-size: 20px;
     font-weight: normal;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin: 15px;
 }
 
 .text-container {
     padding: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    .main-menu-logo {
+        color: rgb(34, 157, 73);
+        font-size: 30px;
+        text-align: center;
+        padding-top: 10px;
+        margin: 0;
+        font-family: Pixel;
+        word-spacing: -25px;
+    }
+
+    .text-about {
+        color: #c2c2c2;
+        width: 90%;
+        font-size: 20px;
+        text-align: center;
+    }
+
+    .buttons
+    {
+        margin-top: 0;
+    }
+
+    .buttons {
+        grid-template-columns: 1fr 1fr;
+    }
 }
 
 @media screen and (max-width: 600px) {
@@ -112,14 +161,14 @@
         background-color: #171717;
         height: 100vh;
         display: flex;
-       flex-direction: column;
+        flex-direction: column;
     }
 
     .buttons {
-      
         display: flex;
         flex-direction: column;
-      width: auto;
+        width: auto;
+        margin-top: 50px;
     }
 
     .main-menu-logo {
@@ -131,15 +180,12 @@
         font-family: Pixel;
         word-spacing: -25px;
     }
-    .creators-text {
-       display: none;
-    }
 
     .text-about {
         color: #c2c2c2;
         width: 90%;
         font-size: 20px;
         text-align: center;
-    
     }
-  }
+}
+

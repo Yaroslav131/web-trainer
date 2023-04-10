@@ -12,25 +12,7 @@
     z-index: 5;
 }
 
-@media screen and (max-width: 600px) {
-    .footer {
-        display: flex;
-       flex-direction: column;
-        background-color: transparent;
-        width: 100%;
-        margin-top: 30px;
-        padding-left: 10px;
-        padding-right: 10px;
-        margin-bottom: 3px;
-        position: absolute;
-        bottom: 0;
-        z-index: 5;
-    }
-    .creator-text
-    {
-        display: none;
-    }
-}
+
 
 .creator-text-container {
     display: flex;
@@ -59,4 +41,35 @@
 .icon {
     width: 30px;
     height: 30px;
+}
+
+@media screen and (max-width: 600px) {
+    .footer {
+        display: flex;
+        flex-direction: column;
+        background-color: transparent;
+        width: 100%;
+        margin-top: 30px;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-bottom: 10px;
+        position: absolute;
+        bottom: 0;
+        z-index: 5;
+    }
+
+    .creator-text {
+        display: none;
+    }
+
+    .icons-container {
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    .icon-container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

@@ -5,10 +5,10 @@ import SideBar from "./Sidebar/Sidebar"
 import './MainPage.css'
 import ExerciseBlock from "./ExerciseBlock/ExerciseBlock"
 import Footer from "./Footer/Footer"
-import Modal from "./HelpWindow/HelpWindow";
-import './HelpWindow/HelpWindow.css'
+import Modal from "../HelpWindow/HelpWindow";
+import '../HelpWindow/HelpWindow.css'
 import '../../reset.css'
-import SlideCarousel from "./Carousel/Carousel";
+
 import AboutCss from "./AboutBlocks/AboutCSS";
 import AboutCssSelectors from "./AboutBlocks/AboutCssSelectors";
 
@@ -93,9 +93,7 @@ export default function MainPage(props: Iprops) {
         SetCompliteExCounter(0);
     }
 
-    const [isTutotialModal, setTutotialModal] = useState(false)
-    const onTutotialClose = () => setTutotialModal(false)
-    const onTutorialOpen = () => setTutotialModal(true)
+  
 
     const [isBookModal, setBookModal] = useState(false)
     const onBookClose = () => setBookModal(false)
@@ -104,13 +102,7 @@ export default function MainPage(props: Iprops) {
     return (
         <div className={"main-page"} >
 
-            <Modal
-                visible={isTutotialModal}
-                title='Обучение'
-                content={<SlideCarousel />}
-                footer={<button onClick={onTutotialClose}>Закрыть</button>}
-                onClose={onTutotialClose}
-            />
+        
             <Modal
                 visible={isBookModal}
                 title='О CSS'
@@ -150,7 +142,6 @@ export default function MainPage(props: Iprops) {
                 openLevelsNav={OpenLevelsNav}
                 onCurrentLevelChange={OnCurrentLevelChange}
                 onProgressReset={onProgressReset}
-                onTutorialOpen={onTutorialOpen}
                 onBookOpen={onBookOpen} />
         </div >
     )

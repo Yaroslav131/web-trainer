@@ -284,7 +284,6 @@ button>div {
 }
 
 .side-bar-button {
-
     padding: 7px;
     margin-top: 7px;
     margin-bottom: 7px;
@@ -315,7 +314,9 @@ button>div {
     padding-top: 20px;
     padding-left: 15px;
     padding-right: 15px;
+    transition: height 4s;
     transition: 0.5s;
+   
     position: fixed;
     top: 0;
     right: 0;
@@ -329,31 +330,35 @@ button>div {
 
 @media screen and (max-width: 1200px) {
     .sidenav {
-        width: 400px;
-        height: 100%;
-        background-color: #1F1F1F;
-        overflow-x: hidden;
-        padding-top: 20px;
-        padding-left: 15px;
-        padding-right: 15px;
-        transition: 0.5s;
-        position: fixed;
-        top: 0;
-        right: 0;
-        z-index: 10;
         margin-right: -400px;
     }
+
     .counter-bar {
         display: grid;
         grid-template-columns: auto 1fr;
         gap: 15px;
     }
-   
+
 }
 
 @media screen and (min-width: 1200px) {
-    .close-short-screen{
+    .close-short-screen {
         display: none;
     }
-    
+
+}
+
+@media screen and (max-width: 499px) {
+    .sidenav {
+        width: 100%;
+        margin-right: -500px;
+    }
+
+    .bar-close {
+        margin-right: -500px;
+    }
+
+    .level-bar-open {
+        width: 100%;
+    }
 }

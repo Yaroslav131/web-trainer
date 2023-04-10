@@ -6,7 +6,7 @@ import CodeInput from "./CodeInput/CodeInput";
 import SubmitButton from "./SubmitButton/SubmitButton"
 import HelpButton from "./HelpButton/HelpButton";
 import "./ExerciseBlock.css";
-import Modal from "../HelpWindow/HelpWindow";
+import Modal from "../../HelpWindow/HelpWindow";
 import '../../../reset.css'
 
 interface Iprops {
