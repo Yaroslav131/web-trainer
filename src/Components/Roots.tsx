@@ -6,11 +6,12 @@ import {
   createBrowserRouter,
 } from "react-router-dom";
 import MenuPage from '../Components/MenuPage/MenuPage';
+import InProgressPage from './ErrorPage/InProgress';
 
  const Router = createBrowserRouter([
     {
       path: "*",
-      element: <NotFound />
+      element: <InProgressPage />
     }
     ,
     {
