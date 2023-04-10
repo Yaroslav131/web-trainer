@@ -93,28 +93,6 @@ export default function MainPage(props: Iprops) {
         SetCompliteExCounter(0);
     }
 
-    const handleWindowSizeChange = () => {
-        let screenWidth = window.screen.width;
-        let documentWidth = document.documentElement.scrollWidth;
-        if (screenWidth - 400 > documentWidth) {
-            SetSidebarOpen(false)
-            SetIsShotScreen(true)
-        }
-        else {
-            SetSidebarOpen(true)
-            SetIsShotScreen(false)
-        }
-    };
-
-
-  
-    useEffect(() => {
-        window.addEventListener('resize', handleWindowSizeChange);
-        return () => {
-            window.removeEventListener('resize', handleWindowSizeChange);
-        };
-    }, []);
-
     const [isTutotialModal, setTutotialModal] = useState(false)
     const onTutotialClose = () => setTutotialModal(false)
     const onTutorialOpen = () => setTutotialModal(true)
