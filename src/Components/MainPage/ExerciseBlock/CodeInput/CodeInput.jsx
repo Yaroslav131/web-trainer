@@ -142,27 +142,6 @@ const CodeInput = (props) => {
         }
     }
 
-    const [isShortScreen, SetIsShortScreen] = useState(false);
-
-    const handleWindowSizeChange = () => {
-        let screenWidth = window.screen.width;
-        let documentWidth = document.documentElement.scrollWidth;
-        if (screenWidth / 1.9 > documentWidth) {
-            SetIsShortScreen(true)
-        }
-        else {
-            SetIsShortScreen(false)
-        }
-    };
-
-    useEffect(() => {
-        window.addEventListener('resize', handleWindowSizeChange);
-        return () => {
-            window.removeEventListener('resize', handleWindowSizeChange);
-        };
-    }, []);
-
-
     return (
         <div className={ "blocks-container"}>
             <div className="left">
