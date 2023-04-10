@@ -118,7 +118,7 @@
     background: #1F1F1F;
     border-radius: 10px;
     position: relative;
-    max-height: calc(100vh - 50px);
+    max-height: 100vh;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -137,7 +137,7 @@
     background: #1F1F1F;
     border-radius: 10px;
     position: relative;
-    max-height: calc(100vh - 50px);
+    max-height: 100vh;
     text-align: left;
     display: flex;
     flex-direction: column;

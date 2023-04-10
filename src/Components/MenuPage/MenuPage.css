@@ -1,9 +1,8 @@
 .main-menu {
     background-color: #171717;
-    margin: 0;
-    height: 100vh;
-    display: grid;
-    grid-template-rows: auto 1fr;
+    height: 100%;
+    display: flex;
+   flex-direction: column;
 }
 
 @font-face {
@@ -12,9 +11,9 @@
   }
 
 .main-menu-header {
-    height: 10%;
     background-color: #171717;
     margin: 15px;
+    width: auto;
 }
 
 .main-menu-logo {
@@ -43,6 +42,8 @@
 
     border-radius: 5px;
     transition: 0.15s;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 .buttons button:hover {
@@ -68,8 +69,6 @@
 .text-about {
     color: #c2c2c2;
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
     font-size: 20px;
     text-align: center;
 
@@ -89,9 +88,6 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    height: 50%;
-    margin-top: 100px;
-    margin-bottom: auto;
 }
 
 .menu-footer {
@@ -110,3 +106,40 @@
 .text-container {
     padding: 20px;
 }
+
+@media screen and (max-width: 600px) {
+    .main-menu {
+        background-color: #171717;
+        height: 100vh;
+        display: flex;
+       flex-direction: column;
+    }
+
+    .buttons {
+      
+        display: flex;
+        flex-direction: column;
+      width: auto;
+    }
+
+    .main-menu-logo {
+        color: rgb(34, 157, 73);
+        font-size: 30px;
+        text-align: center;
+        padding-top: 20px;
+        margin: 0;
+        font-family: Pixel;
+        word-spacing: -25px;
+    }
+    .creators-text {
+       display: none;
+    }
+
+    .text-about {
+        color: #c2c2c2;
+        width: 90%;
+        font-size: 20px;
+        text-align: center;
+    
+    }
+  }
