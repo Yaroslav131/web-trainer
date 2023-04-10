@@ -4,6 +4,9 @@ import { IFrame } from "./IFrame";
 import "./IFrame.css"
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import play from "../../../../assets/imgs/icons/play.png"
+import html from "../../../../assets/imgs/icons/html.png"
+import css from "../../../../assets/imgs/icons/css3.png"
 
 const CodeInput = (props) => {
 
@@ -22,17 +25,6 @@ const CodeInput = (props) => {
         inputEl.current.focus();
 
         runCompeletion();
-
-        const script = document.createElement('script');
-
-        script.src = "https://kit.fontawesome.com/979140767a.js";
-        script.async = true;
-
-        document.body.appendChild(script);
-
-        return () => {
-            document.body.removeChild(script);
-        }
     }, [props]);
 
     function IsicludeExeptionElement(answer) {
@@ -175,15 +167,15 @@ const CodeInput = (props) => {
 
 
     return (
-        <div className={isShortScreen ? "short-blocks-container" : "blocks-container"}>
+        <div className={ "blocks-container"}>
             <div className="left">
-                <label className="type-head"><i className="fa-brands fa-css3-alt"></i>CSS</label>
+                <label className="type-head">CSS</label>
                 {cssBlock}
-                <label className="type-head"><i className="fa-brands fa-html5"></i>HTML</label>
+                <label className="type-head">HTML</label>
                 {htmlBlock}
             </div>
             <div className="right">
-                <label className="type-head"><i className="fa-solid fa-play"></i>Output</label>
+                <label className="type-head">Output</label>
                 <IFrame className={props.iFrameClassName}>
                     {reactCode}
                 </IFrame>

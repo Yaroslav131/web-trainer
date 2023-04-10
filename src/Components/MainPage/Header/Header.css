@@ -53,6 +53,13 @@
     height: 40px;
 }
 
+
+@media screen and (min-width: 1200px) {
+    .list-icon {
+        display: none;
+    }
+}
+
 .logo {
     color: rgb(34, 157, 73);
     font-size: 35px;

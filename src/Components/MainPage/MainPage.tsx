@@ -24,7 +24,7 @@ export default function MainPage(props: Iprops) {
     const [exercises, SetExercises] = useState(props.excersises);
 
     const [isLevelListOpen, SetLevelListOpen] = useState(false);
-    const [isSidebarOpen, SetSidebarOpen] = useState(true);
+    const [isSidebarOpen, SetSidebarOpen] = useState(false);
     const [isShotScreen, SetIsShotScreen] = useState(false);
 
     function onCorrectAnswer() {
@@ -106,6 +106,8 @@ export default function MainPage(props: Iprops) {
         }
     };
 
+
+  
     useEffect(() => {
         window.addEventListener('resize', handleWindowSizeChange);
         return () => {
@@ -122,7 +124,7 @@ export default function MainPage(props: Iprops) {
     const onBookOpen = () => setBookModal(true)
 
     return (
-        <div className={isShotScreen ? 'main-page-short' : "main-page"} >
+        <div className={"main-page"} >
 
             <Modal
                 visible={isTutotialModal}

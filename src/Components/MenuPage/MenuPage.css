@@ -6,10 +6,15 @@
     grid-template-rows: auto 1fr;
 }
 
+@font-face {
+    font-family: "Pixel";
+    src: url(../../assets/font/PressStart2P-Regular.ttf);
+  }
+
 .main-menu-header {
     height: 10%;
     background-color: #171717;
-    margin: 0;
+    margin: 15px;
 }
 
 .main-menu-logo {
@@ -18,6 +23,8 @@
     text-align: center;
     padding-top: 20px;
     margin: 0;
+    font-family: Pixel;
+    word-spacing: -25px;
 }
 
 .button__container {

@@ -22,7 +22,7 @@ export default function Header(props: Iprops) {
                 <p className="logo">{props.headerTitle}</p>
             </div>
 
-            <div onClick={props.onOpenSidebar} className={props.isSidebarOpen ? "none-icon tooltip" : "header-icon-container tooltip"}>
+            <div onClick={props.onOpenSidebar} className={ "header-icon-container list-icon tooltip"}>
                 <span className="tooltiptext left-bottom-tooltip">Меню</span>
                 <img className="menu" src={menu} alt="Меню" />
             </div>

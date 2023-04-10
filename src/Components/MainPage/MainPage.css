@@ -1,5 +1,4 @@
-.main-page,
-.main-page-short {
+.main-page {
     background-color: #171717;
     display: grid;
     grid-template-columns: 1fr 400px;
@@ -9,6 +8,15 @@
 .main-page-short {
     display: grid;
     grid-template-columns: 1fr auto;
+}
+
+@media screen and (max-width: 1200px) {
+    .main-page {
+        background-color: #171717;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        min-height: 100vh;
+    }
 }
 
 .main {
@@ -28,4 +36,3 @@
     margin-right: -400px;
     transition: 0.5s;
 }
-

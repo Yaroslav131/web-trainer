@@ -40,7 +40,7 @@ export default function SideBar(props: Iprops) {
 
     return (
         <aside>
-            <div className={props.isSidebarOpen ? "sidenav" : "sidenav sidenav-close"}>
+            <div className={props.isSidebarOpen ? "sidenav sidenav-open" : "sidenav"}>
                 <LevelCounter
                     ex={props.exercises[props.curentExIndex]}
                     curentExIndex={props.curentExIndex}
@@ -118,8 +118,8 @@ function LevelCounter(props: ILevelCounterProps) {
     }, [props.isSidebarOpen, props.isShotScreen]);
 
     return (
-        <div className={props.isShotScreen ? "shot-screen-level-bar" : ""} >
-            <div onClick={props.onCancelSidebar} className={isCancelDisplay ? "close" : "close close-hiden"}></div>
+        <div className={"counter-bar"} >
+            <div onClick={props.onCancelSidebar} className={ "close-short-screen"}></div>
             <div className="level-bar">
                 <div className="level-counter">
                     <p className="counter-head">Задание {current} из {length}</p>
