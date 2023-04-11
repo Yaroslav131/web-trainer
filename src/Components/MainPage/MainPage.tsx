@@ -19,13 +19,29 @@ interface Iprops {
 
 export default function MainPage(props: Iprops) {
 
-    const [curentExIndex, SetCurentEx] = useState(0);
+    useEffect(() => {
+
+    })
+
+    const [curentExIndex, SetCurentEx] = useState(Number(localStorage.getItem('curentExIndex')) || 0);
     const [compliteExCounter, SetCompliteExCounter] = useState(0);
-    const [exercises, SetExercises] = useState(props.excersises);
+
+    let storedArrStr = localStorage.getItem('exercises');
+    let storedArr:Exercise[];
+
+    if (storedArrStr != null) {
+        storedArr=JSON.parse(storedArrStr)
+    }
+    else
+    {
+        storedArr=props.excersises;
+    }
+
+    const [exercises, SetExercises] = useState(storedArr);
 
     const [isLevelListOpen, SetLevelListOpen] = useState(false);
     const [isSidebarOpen, SetSidebarOpen] = useState(false);
-    const [isShotScreen, SetIsShotScreen] = useState(false);
+
 
     function onCorrectAnswer() {
         let copyEx = exercises;
@@ -39,6 +55,8 @@ export default function MainPage(props: Iprops) {
         copyEx[curentExIndex].isCompleted = true;
 
         SetExercises(copyEx);
+
+        localStorage.setItem('exercises', JSON.stringify(copyEx));
     }
 
     function OnNextEx() {
@@ -46,6 +64,7 @@ export default function MainPage(props: Iprops) {
 
         if (curent < props.excersises.length - 1) {
             SetCurentEx(++curent)
+            localStorage.setItem('curentExIndex', `${curent}`);
         }
     }
 
@@ -54,6 +73,7 @@ export default function MainPage(props: Iprops) {
 
         if (curent > 0) {
             SetCurentEx(--curent)
+            localStorage.setItem('curentExIndex', `${curent}`);
         }
     }
 
@@ -88,12 +108,15 @@ export default function MainPage(props: Iprops) {
         });
 
         SetExercises(exCop);
+        localStorage.setItem('exercises', JSON.stringify(exCop));
+
         SetLevelListOpen(false);
         SetCurentEx(0);
+        localStorage.setItem('curentExIndex', `${0}`);
         SetCompliteExCounter(0);
     }
 
-  
+
 
     const [isBookModal, setBookModal] = useState(false)
     const onBookClose = () => setBookModal(false)
@@ -102,7 +125,7 @@ export default function MainPage(props: Iprops) {
     return (
         <div className={"main-page"} >
 
-        
+
             <Modal
                 visible={isBookModal}
                 title='О CSS'
@@ -134,7 +157,6 @@ export default function MainPage(props: Iprops) {
                 curentExIndex={curentExIndex}
                 compliteExCounter={compliteExCounter}
                 isSidebarOpen={isSidebarOpen}
-                isShotScreen={isShotScreen}
                 onCancelSidebar={onCancelSidebar}
                 onNextEx={OnNextEx}
                 onPreviousEx={OnPreviousEx}
