@@ -1,4 +1,4 @@
-import React, { useState, useEffect, ReactElement } from "react";
+import React, { useState, useEffect, ReactElement, useRef } from "react";
 import "./Sidebar.css"
 import '../../../reset.css'
 import './ProgressBar.css'
@@ -11,7 +11,6 @@ interface Iprops {
     curentExIndex: number
     isLevelListOpen: Boolean
     isSidebarOpen: boolean
-    isShotScreen: boolean
     compliteExCounter: number
     onCancelSidebar: () => void
     openLevelsNav: () => void
@@ -37,19 +36,34 @@ export default function SideBar(props: Iprops) {
         helpBlock = <CssSelectorHelpBlock exercise={curentExIndex} />
     }
 
+    // const sidebarRef = useRef<HTMLDivElement>(null);
+
+    // useEffect(() => {
+    //     function handleClickOutside(event: any) {
+    //         if (event.target.className!="menu" && sidebarRef.current && !sidebarRef.current.contains(event.target)) {
+    //             // закрыть aside bar, если кликнули вне его
+    //             sidebarRef.current.className="sidenav";
+    //         }
+    //     }
+
+    //     document.addEventListener('click', handleClickOutside);
+    //     return () => {
+    //         document.removeEventListener('click', handleClickOutside);
+    //     };
+    // }, [sidebarRef]);
+
     return (
-        <aside>
-            <div className={props.isSidebarOpen ? "sidenav sidenav-open" : "sidenav"}>
+        <aside >
+            <div  className={props.isSidebarOpen ? "sidenav sidenav-open" : "sidenav"}>
                 <LevelCounter
                     ex={props.exercises[props.curentExIndex]}
                     curentExIndex={props.curentExIndex}
                     excersisesCount={props.exercises.length - displayIncriment}
                     isSidebarOpen={props.isSidebarOpen}
-                    isShotScreen={props.isShotScreen}
                     onCancelSidebar={props.onCancelSidebar}
 
                     openLevelsNav={props.openLevelsNav} />
-                    <hr />
+                <hr />
                 {helpBlock}
 
                 <button onClick={props.onBookOpen} className="side-bar-button">{"Что такое CSS?"}</button>
@@ -92,7 +106,6 @@ interface ILevelCounterProps {
     excersisesCount: number,
     ex: Exercise
     isSidebarOpen: boolean
-    isShotScreen: boolean
     onCancelSidebar: () => void
     openLevelsNav: () => void
 }
@@ -107,17 +120,17 @@ function LevelCounter(props: ILevelCounterProps) {
     length++;
 
     useEffect(() => {
-        if (props.isSidebarOpen && props.isShotScreen) {
+        if (props.isSidebarOpen) {
             SetIsCancelDisplay(true);
         }
         else {
             SetIsCancelDisplay(false);
         }
-    }, [props.isSidebarOpen, props.isShotScreen]);
+    }, [props.isSidebarOpen]);
 
     return (
         <div className={"counter-bar"} >
-            <div onClick={props.onCancelSidebar} className={ "close-short-screen"}></div>
+            <div onClick={props.onCancelSidebar} className={"close-short-screen"}></div>
             <div className="level-bar">
                 <div className="level-counter">
                     <p className="counter-head">Задание {current} из {length}</p>
