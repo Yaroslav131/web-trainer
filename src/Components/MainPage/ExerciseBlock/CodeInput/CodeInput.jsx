@@ -4,9 +4,7 @@ import { IFrame } from "./IFrame";
 import "./IFrame.css"
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { okaidia } from 'react-syntax-highlighter/dist/esm/styles/prism';
-import play from "../../../../assets/imgs/icons/play.png"
-import html from "../../../../assets/imgs/icons/html.png"
-import css from "../../../../assets/imgs/icons/css3.png"
+
 
 const CodeInput = (props) => {
 
