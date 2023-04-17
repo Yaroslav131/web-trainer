@@ -17,7 +17,7 @@ iframe {
     border: 0;
     outline: 0;
     border-radius: 15px;
-    transition: 0.7s;
+    transition:box-shadow 0.7s;
 }
 
 @media screen and (max-width: 600px) {
