@@ -12,12 +12,23 @@ padding: 15px;
   width: 100%;
 }
 
+@media screen and (max-width: 1000px) {
+  .left
+  {
+    max-width: 50vw;
+  }
+}
+
 @media screen and (max-width: 800px) {
   .blocks-container {
     width: 100%;
     display: flex;
     flex-direction: column;
     padding: 15px 7% 15px 7%;
+  }
+  .left
+  {
+    max-width: 100%;
   }
 }
 
@@ -31,6 +42,10 @@ padding: 15px;
     gap: 10px;
   }
   
+  .left
+  {
+    max-width: 100%;
+  }
 }
 
 .left
