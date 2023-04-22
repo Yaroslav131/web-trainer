@@ -1,5 +1,5 @@
 import React from 'react';
-import CssSelectors from "../json-exercises/css-selectors.json";
+
 import MainPage from '../Components/MainPage/MainPage';
 import NotFound from "../Components/ErrorPage/NotFound"
 import {
@@ -20,7 +20,7 @@ import InProgressPage from './ErrorPage/InProgress';
     },
     {
       path: "/exercises/css-selectors",
-      element: <MainPage excersises={CssSelectors} excersisesTitle={"CSS селекторы"} />
+      element: <MainPage  excersisesTitle={"CSS селекторы"} />
     },
   ]);
 

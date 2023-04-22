@@ -1,40 +1,47 @@
 import React, { useState, useEffect, ReactElement, useRef } from "react";
 import "./Sidebar.css"
 import '../../../reset.css'
-import './ProgressBar.css'
-import humburgerIcon from '../../../assets/imgs/icons/icons8-circled-menu-100.png'
-import Exercise from "../../../Classes/Execirse";
-import CssSelectorExercise from "../../../Classes/Execirse";
 
+import humburgerIcon from '../../../assets/imgs/icons/icons8-circled-menu-100.png'
+import Exercise from "../../../classes/Execirse";
+import CssSelectorExercise from "../../../classes/Execirse";
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { closeAsidebar } from './asidebarSlice'
+import { openLevelList, closeLevelList } from './levelListSlice'
+import { reset, setByAmount } from '../counterSlice'
+import { resetEx } from '../exercisesSlice'
+import Modal from "../../HelpWindow/HelpWindow";
+import AboutCss from "../AboutBlocks/AboutCSS";
+import AboutCssSelectors from "../AboutBlocks/AboutCssSelectors";
 interface Iprops {
-    exercises: Exercise[]
-    curentExIndex: number
-    isLevelListOpen: Boolean
-    isSidebarOpen: boolean
-    compliteExCounter: number
-    onCancelSidebar: () => void
-    openLevelsNav: () => void
-    closeLevelsNav: () => void
-    onNextEx: () => void
-    onPreviousEx: () => void
-    onCurrentLevelChange: (event: any) => void
-    onProgressReset: () => void
-    onBookOpen: () => void
 }
 
 export default function SideBar(props: Iprops) {
     let helpBlock;
+
     const displayIncriment = 1;
-    const [curentExIndex, SetCurentExIndex] = useState(Object)
+
+    const [curentEx, SetCurentEx] = useState(Object)
+
+    const count = useAppSelector((state) => state.counter.value)
+    const isOpenAsidebar = useAppSelector((state) => state.asidebar.value)
+    const isLevelListOpen = useAppSelector((state) => state.levelList.value)
+    const exercises = useAppSelector((state) => state.exercises.value)
+
+    const [isBookModal, setBookModal] = useState(false)
+    const onBookClose = () => setBookModal(false)
+    const onBookOpen = () => setBookModal(true)
 
     useEffect(() => {
-        SetCurentExIndex(props.exercises[props.curentExIndex]);
-    }, [props])
+        SetCurentEx(exercises[count]);
+    }, [count])
 
 
-    if (curentExIndex.ExerciseType == "CSS") {
-        helpBlock = <CssSelectorHelpBlock exercise={curentExIndex} />
+    if (curentEx.ExerciseType == "CSS") {
+        helpBlock = <CssSelectorHelpBlock exercise={curentEx} />
     }
+
+    const dispatch = useAppDispatch()
 
     // const sidebarRef = useRef<HTMLDivElement>(null);
 
@@ -54,28 +61,37 @@ export default function SideBar(props: Iprops) {
 
     return (
         <aside >
-            <div  className={props.isSidebarOpen ? "sidenav sidenav-open" : "sidenav"}>
-                <LevelCounter
-                    ex={props.exercises[props.curentExIndex]}
-                    curentExIndex={props.curentExIndex}
-                    excersisesCount={props.exercises.length - displayIncriment}
-                    isSidebarOpen={props.isSidebarOpen}
-                    onCancelSidebar={props.onCancelSidebar}
+            <Modal
+                visible={isBookModal}
+                title='О CSS'
+                content={<>
+                    <AboutCss />
+                    <AboutCssSelectors />
+                </>}
+                footer={<button onClick={onBookClose}>Закрыть</button>}
+                onClose={onBookClose}
+            />
 
-                    openLevelsNav={props.openLevelsNav} />
+            <div className={isOpenAsidebar ? "sidenav sidenav-open" : "sidenav"}>
+                <LevelCounter
+                    ex={exercises[count]}
+                    excersisesCount={exercises.length - displayIncriment}
+                />
                 <hr />
                 {helpBlock}
 
-                <button onClick={props.onBookOpen} className="side-bar-button">{"Что такое CSS?"}</button>
+                <button onClick={onBookOpen} className="side-bar-button">{"Что такое CSS?"}</button>
             </div>
 
-            <div className={props.isLevelListOpen ? "level-bar-open" : "level-bar-open bar-close"}>
-                <LevelList onCurrentLevelChange={
-                    props.onCurrentLevelChange}
-                    closeLevelseNav={props.closeLevelsNav}
-                    exercises={props.exercises} />
+            <div className={isLevelListOpen ? "level-bar-open" : "level-bar-open bar-close"}>
+                <LevelList
+                />
 
-                <button onClick={props.onProgressReset} className="side-bar-button">{"Сбросить прогресс"}</button>
+                <button onClick={() => {
+                    dispatch(resetEx());
+                    dispatch(reset());
+                    dispatch(closeLevelList());
+                }} className="side-bar-button">{"Сбросить прогресс"}</button>
             </div>
         </aside>
     )
@@ -102,35 +118,23 @@ function CssSelectorHelpBlock(props: ICssSelectorHelpBlock) {
 
 
 interface ILevelCounterProps {
-    curentExIndex: number,
     excersisesCount: number,
     ex: Exercise
-    isSidebarOpen: boolean
-    onCancelSidebar: () => void
-    openLevelsNav: () => void
 }
 
 function LevelCounter(props: ILevelCounterProps) {
 
-    const [isCancelDisplay, SetIsCancelDisplay] = useState(false);
-
-    let current = props.curentExIndex;
+    const count = useAppSelector((state) => state.counter.value)
+    let current = count;
     current++;
     let length = props.excersisesCount;
     length++;
 
-    useEffect(() => {
-        if (props.isSidebarOpen) {
-            SetIsCancelDisplay(true);
-        }
-        else {
-            SetIsCancelDisplay(false);
-        }
-    }, [props.isSidebarOpen]);
+    const dispatch = useAppDispatch()
 
     return (
         <div className={"counter-bar"} >
-            <div onClick={props.onCancelSidebar} className={"close-short-screen"}></div>
+            <div onClick={() => { dispatch(closeAsidebar()) }} className={"close-short-screen"}></div>
             <div className="level-bar">
                 <div className="level-counter">
                     <p className="counter-head">Задание {current} из {length}</p>
@@ -140,7 +144,7 @@ function LevelCounter(props: ILevelCounterProps) {
                     </div>
                 </div>
 
-                <div className="hamburger-menu-container tooltip" onClick={props.openLevelsNav}>
+                <div className="hamburger-menu-container tooltip" onClick={() => { dispatch(openLevelList()) }}>
                     <span className="tooltiptext left-bottom-tooltip">Список заданий</span>
                     <img className="hamburger-menu" src={humburgerIcon} alt="Задания" />
                 </div>
@@ -150,20 +154,23 @@ function LevelCounter(props: ILevelCounterProps) {
 }
 
 interface ILevelListProps {
-    exercises: Exercise[]
-    closeLevelseNav: () => void
-    onCurrentLevelChange: (event: any) => void
 }
 
 
 function LevelList(props: ILevelListProps) {
-
-    let levelList = props.exercises.map((x, index) => <ListItem key={index} onClick={props.onCurrentLevelChange} exercise={x} index={++index} />)
+    const dispatch = useAppDispatch()
+    const exercises = useAppSelector((state) => state.exercises.value)
+    let levelList = exercises.map((x, index) => <ListItem key={index}
+        onClick={() => {
+            dispatch(setByAmount(index));
+            dispatch(closeLevelList())
+        }}
+        exercise={x} index={++index} />)
     return (
         <>
             <div className="level-header">
                 <p className="counter-head">Выберите задание</p>
-                <div onClick={props.closeLevelseNav} className="close"></div>
+                <div onClick={() => { dispatch(closeLevelList()) }} className="close"></div>
             </div>
             <div className="level-list">
                 {levelList}

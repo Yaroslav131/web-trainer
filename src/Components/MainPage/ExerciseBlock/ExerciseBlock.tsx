@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Exercise from "../../../Classes/Execirse"
+import Exercise from "../../../classes/Execirse"
 import JobBlock from "./TaskBlock/TaskBlock";
 import ImgBlock from "./ImgBlock/ImgBlock";
 import CodeInput from "./CodeInput/CodeInput";
@@ -8,19 +8,17 @@ import HelpButton from "./HelpButton/HelpButton";
 import "./ExerciseBlock.css";
 import Modal from "../../HelpWindow/HelpWindow";
 import '../../../reset.css'
+import { useAppDispatch, useAppSelector } from "../../../store/hooks";
+import { setExercises, resetEx } from '../exercisesSlice'
+import { decrement, increment } from '../counterSlice'
 
-interface Iprops {
-    excersises: Exercise[]
-    curentExIndex: number
-    onCorrectAnswer: () => void
-    onNextEx: () => void
-    onPreviousEx: () => void
-}
-
-export default function ExerciseBlock(props: Iprops) {
-
+export default function ExerciseBlock() {
     const [answer, setAnswer] = useState(``)
     const [iFrameClassName, SetiFrameClassNme] = useState(``)
+    const count = useAppSelector((state) => state.counter.value)
+    const exercises = useAppSelector((state) => state.exercises.value)
+
+    const dispatch = useAppDispatch();
 
     function onInputAnswer(event: any) {
         setAnswer(event.target.value);
@@ -28,7 +26,7 @@ export default function ExerciseBlock(props: Iprops) {
 
     useEffect(() => {
         setAnswer(``)
-    }, [props.curentExIndex]);
+    }, [count]);
 
     function flashingColorOnCorrect() {
         let className = `green-flash`
@@ -47,12 +45,17 @@ export default function ExerciseBlock(props: Iprops) {
     function onSubmit() {
         let splitUserAnswerString = answer.split(',');
 
-        let splitAnswerString = props.excersises[props.curentExIndex].answer.split(',');
+        let splitAnswerString = exercises[count].answer.split(',');
 
         const found = splitAnswerString.some(r => splitUserAnswerString.includes(r))
 
         if (found) {
-            props.onCorrectAnswer();
+            let copyEx = exercises;
+
+            copyEx[count].isCompleted = true;
+    
+            setExercises(copyEx);
+
             flashingColorOnCorrect()
         }
         else {
@@ -65,22 +68,22 @@ export default function ExerciseBlock(props: Iprops) {
 
     return (
         <main className="exercise-block">
-            <JobBlock text={props.excersises[props.curentExIndex].task} />
+            <JobBlock text={exercises[count].task} />
             <CodeInput
                 iFrameClassName={iFrameClassName}
                 onInputAnswer={onInputAnswer}
-                inputHTMLValue={props.excersises[props.curentExIndex].htmlCodeOutput}
-                reactObj={props.excersises[props.curentExIndex].htmlСompilationCode}
-                inputCSSValue={props.excersises[props.curentExIndex].cssCodeOutput}
-                cssCompelateCode={props.excersises[props.curentExIndex].cssСompilationCode}
-                exerciseType={props.excersises[props.curentExIndex].ExerciseType}
+                inputHTMLValue={exercises[count].htmlCodeOutput}
+                reactObj={exercises[count].htmlСompilationCode}
+                inputCSSValue={exercises[count].cssCodeOutput}
+                cssCompelateCode={exercises[count].cssСompilationCode}
+                exerciseType={exercises[count].ExerciseType}
                 userAnswer={answer}
             />
 
             <div className="buttons-container">
 
                 <div className="arrow-div">
-                    <div onClick={props.onPreviousEx} className={props.curentExIndex == 0 ? "arrow-left-disable" : "arrow_left"} ></div>
+                    <div onClick={()=>dispatch(count>0 ? decrement(): ()=>{})} className={count == 0 ? "arrow-left-disable" : "arrow_left"} ></div>
                 </div>
 
                 <div className="button-container">
@@ -90,7 +93,7 @@ export default function ExerciseBlock(props: Iprops) {
                 </div>
 
                 <div className="arrow-div">
-                    <div onClick={props.onNextEx} className={props.curentExIndex == props.excersises.length-1 ? "arrow-right-disable" : "arrow_right"} ></div>
+                    <div onClick={()=>dispatch(count<exercises.length-1 ? increment(): ()=>{})} className={count == exercises.length-1 ? "arrow-right-disable" : "arrow_right"} ></div>
                 </div>
 
                 <div className="button-container">
@@ -100,7 +103,7 @@ export default function ExerciseBlock(props: Iprops) {
                 <Modal
                     visible={isModal}
                     title='Подсказка'
-                    content={<p>{props.excersises[props.curentExIndex].helpText}</p>}
+                    content={<p>{exercises[count].helpText}</p>}
                     footer={<button onClick={onClose}>Закрыть</button>}
                     onClose={onClose}
                 />

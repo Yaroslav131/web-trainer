@@ -1,170 +1,24 @@
-import React, { useEffect, useState } from "react";
-import Exercise from "../../Classes/Execirse"
 import Header from "./Header/Header";
 import SideBar from "./Sidebar/Sidebar"
 import './MainPage.css'
 import ExerciseBlock from "./ExerciseBlock/ExerciseBlock"
 import Footer from "./Footer/Footer"
-import Modal from "../HelpWindow/HelpWindow";
 import '../HelpWindow/HelpWindow.css'
 import '../../reset.css'
 
-import AboutCss from "./AboutBlocks/AboutCSS";
-import AboutCssSelectors from "./AboutBlocks/AboutCssSelectors";
-
 interface Iprops {
-    excersises: Exercise[],
     excersisesTitle: string
 }
 
 export default function MainPage(props: Iprops) {
-
-    useEffect(() => {
-
-    })
-
-    const [curentExIndex, SetCurentEx] = useState(Number(localStorage.getItem('curentExIndex')) || 0);
-    const [compliteExCounter, SetCompliteExCounter] = useState(0);
-
-    let storedArrStr = localStorage.getItem('exercises');
-    let storedArr:Exercise[];
-
-    if (storedArrStr != null) {
-        storedArr=JSON.parse(storedArrStr)
-    }
-    else
-    {
-        storedArr=props.excersises;
-    }
-
-    const [exercises, SetExercises] = useState(storedArr);
-
-    const [isLevelListOpen, SetLevelListOpen] = useState(false);
-    const [isSidebarOpen, SetSidebarOpen] = useState(false);
-
-
-    function onCorrectAnswer() {
-        let copyEx = exercises;
-        let counter = compliteExCounter;
-
-        if (copyEx[curentExIndex].isCompleted == false) {
-            SetCompliteExCounter(++counter)
-
-        }
-
-        copyEx[curentExIndex].isCompleted = true;
-
-        SetExercises(copyEx);
-
-        localStorage.setItem('exercises', JSON.stringify(copyEx));
-    }
-
-    function OnNextEx() {
-        let curent = curentExIndex;
-
-        if (curent < props.excersises.length - 1) {
-            SetCurentEx(++curent)
-            localStorage.setItem('curentExIndex', `${curent}`);
-        }
-    }
-
-    function OnPreviousEx() {
-        let curent = curentExIndex;
-
-        if (curent > 0) {
-            SetCurentEx(--curent)
-            localStorage.setItem('curentExIndex', `${curent}`);
-        }
-    }
-
-    function OnCurrentLevelChange(event: any) {
-        SetCurentEx(event.target.value)
-
-        SetLevelListOpen(false)
-    }
-
-
-    function onOpenSidebar() {
-        SetSidebarOpen(true)
-    }
-
-    function onCancelSidebar() {
-        SetSidebarOpen(false)
-    }
-
-    function OpenLevelsNav() {
-        SetLevelListOpen(true)
-    }
-
-    function CloseLevelseNav() {
-        SetLevelListOpen(false)
-    }
-
-    function onProgressReset() {
-        let exCop = exercises;
-
-        exCop.forEach(element => {
-            element.isCompleted = false
-        });
-
-        SetExercises(exCop);
-        localStorage.setItem('exercises', JSON.stringify(exCop));
-
-        SetLevelListOpen(false);
-        SetCurentEx(0);
-        localStorage.setItem('curentExIndex', `${0}`);
-        SetCompliteExCounter(0);
-    }
-
-
-
-    const [isBookModal, setBookModal] = useState(false)
-    const onBookClose = () => setBookModal(false)
-    const onBookOpen = () => setBookModal(true)
-
     return (
         <div className={"main-page"} >
-
-
-            <Modal
-                visible={isBookModal}
-                title='О CSS'
-                content={<>
-                    <AboutCss />
-                    <AboutCssSelectors />
-                </>}
-                footer={<button onClick={onBookClose}>Закрыть</button>}
-                onClose={onBookClose}
-            />
             <div className="main">
-                <Header
-                    headerTitle={props.excersisesTitle}
-                    isSidebarOpen={isSidebarOpen}
-                    onOpenSidebar={onOpenSidebar} />
-                <ExerciseBlock
-                    onCorrectAnswer={onCorrectAnswer}
-                    curentExIndex={curentExIndex}
-                    excersises={exercises}
-                    onNextEx={OnNextEx}
-                    onPreviousEx={OnPreviousEx}
-                />
+                <Header headerTitle={props.excersisesTitle} />
+                <ExerciseBlock/>
                 <Footer />
             </div>
-
-            <SideBar
-                isLevelListOpen={isLevelListOpen}
-                exercises={exercises}
-                curentExIndex={curentExIndex}
-                compliteExCounter={compliteExCounter}
-                isSidebarOpen={isSidebarOpen}
-                onCancelSidebar={onCancelSidebar}
-                onNextEx={OnNextEx}
-                onPreviousEx={OnPreviousEx}
-                closeLevelsNav={CloseLevelseNav}
-                openLevelsNav={OpenLevelsNav}
-                onCurrentLevelChange={OnCurrentLevelChange}
-                onProgressReset={onProgressReset}
-                onBookOpen={onBookOpen} />
+            <SideBar />
         </div >
     )
 }
