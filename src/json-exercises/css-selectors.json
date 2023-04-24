@@ -49,7 +49,7 @@
     "imgURL": "",
     "isCompleted": false,
     "name": "Типовой селектор",
-    "task": "Выберите извображения всех животных",
+    "task": "Напишите селектор который выберет изображения всех животных",
     "title": "Выбор элементов по их типу",
     "ExerciseType": "CSS"
   },
@@ -129,7 +129,7 @@
     "imgURL": " ",
     "isCompleted": false,
     "name": "Селектор идентификаторов",
-    "task": "Выбери изображение животных с идентификатором bird",
+    "task": "Напишите селектор который выберет изображения животных с идентификатором bird",
     "title": "Выбор элементов по идентификатору",
     "ExerciseType": "CSS"
   },
@@ -182,7 +182,7 @@
     "imgURL": " ",
     "isCompleted": false,
     "name": "Классовый селектор",
-    "task": "Выбeрете все изображения с классом big-img",
+    "task": "Напишите селектор который выберет все изображения с классом big-img",
     "title": "Выбор элементов по их классу",
     "ExerciseType": "CSS"
   },
@@ -266,7 +266,7 @@
     "imgURL": " ",
     "isCompleted": false,
     "name": "Составной селектор",
-    "task": "Выберете все изображения животных, входящие в состав контейнера с классом second-container",
+    "task": "Напишите селектор который выберет все изображения животных, входящие в состав контейнера с классом second-container",
     "title": "Выбор элементов по их типу и классу",
     "ExerciseType": "CSS"
   },
@@ -329,7 +329,7 @@
     "imgURL": " ",
     "isCompleted": false,
     "name": "Селектор потомков",
-    "task": "Выберете все изображения, находяшиеся внутри блока div",
+    "task": "Напишите селектор который выберет все изображения, находяшиеся внутри блока div",
     "title": "Выбор элемента внутри другого элемента",
     "ExerciseType": "CSS"
   },
@@ -413,7 +413,7 @@
     "imgURL": " ",
     "isCompleted": false,
     "name": "Комбинированный селектор",
-    "task": "Выберите изображения собаки и совы",
+    "task": "Напишите селектор который выберет изображения собаки и совы",
     "title": "Выбор элементов по их классу",
     "ExerciseType": "CSS"
   },
@@ -454,7 +454,7 @@
     "examples": [
       "div+p выбирает элемент p, стоящий непосредственно после div"
     ],
-    "helpText": "Вы собираетесь изучать селекторы CSS!\n\nКаскадные таблицы стилей (CSS – Cascading Style Sheets), представляют собой технологию определения и присоединения стилей к Web-документам.n\n .house+.home {\n margin- bottom: 12px;\n }\n\nЗдесь \".house+.home\" является селектором (выбирает  элемент c классом home стоящий слежующим по соседству после элемента c классом house) и применяет стиль margin-bottom.",
+    "helpText": "Вы собираетесь изучать селекторы CSS!\n\nКаскадные таблицы стилей (CSS – Cascading Style Sheets), представляют собой технологию определения и присоединения стилей к Web-документам.n\n\n .house+.home {\n margin- bottom: 12px;\n }\n\nЗдесь \".house+.home\" является селектором (выбирает  элемент c классом home стоящий слежующим по соседству после элемента c классом house) и применяет стиль margin-bottom.",
     "hint": "Селектор A+B выбирает элемент B, стоящий непосредственно после элемента A.",
     "htmlCodeOutput": [
       "<div class='container'>",
@@ -466,7 +466,7 @@
     "imgURL": " ",
     "isCompleted": false,
     "name": "Селектор по соседу",
-    "task": "Выберите изображение кота, которое стоит после изображения совы",
+    "task": "Напишите селектор который выберет изображение кота, которое стоит после изображения совы",
     "title": "Выбор элементов по соседу",
     "ExerciseType": "CSS"
   },
@@ -519,7 +519,7 @@
     "imgURL": " ",
     "isCompleted": false,
     "name": "Селектор по следованию",
-    "task": "Выберите изображения совы, которые стоят после оленя",
+    "task": "Напишите селектор который выберет изображения совы, которые стоят после оленя",
     "title": "Выбор элементов по следованию",
     "ExerciseType": "CSS"
   },
@@ -572,7 +572,7 @@
     "imgURL": " ",
     "isCompleted": false,
     "name": "N-й дочерний псевдоселектор",
-    "task": "Выберите второе по очереди изображение кота",
+    "task": "Напишите селектор который выберет второе по очереди изображение кота",
     "title": "Выбор элементов по дочернему номеру",
     "ExerciseType": "CSS"
   },
@@ -650,7 +650,7 @@
     "imgURL": " ",
     "isCompleted": false,
     "name": "Универсальный селектор",
-    "task": "Выбери все элементы(избражения и контейнеры)",
+    "task": "Напишите селектор который выберет все элементы(избражения и контейнеры)",
     "title": "Выбор всех элементов",
     "ExerciseType": "CSS"
   },
@@ -734,7 +734,7 @@
     "imgURL": " ",
     "isCompleted": false,
     "name": "Дочерние селекторы",
-    "task": "Выбирите элементы которые находятся на первом уровне вложения в контейнер с классом main-container",
+    "task": "Напишите селектор который выберет элементы которые находятся на первом уровне вложения в контейнер с классом main-container",
     "title": "Выбор дочерних элементов  с помощью >",
     "ExerciseType": "CSS"
   },
@@ -819,7 +819,7 @@
     "imgURL": " ",
     "isCompleted": false,
     "name": "Дочерние селекторы",
-    "task": "Выбирите изображения которые является первым доерним элеменом в контейнерах.",
+    "task": "Напишите селектор который выберет изображения которые является первым доерним элеменом в контейнерах.",
     "title": "Выбор дочерних элементов с помощью :first-child",
     "ExerciseType": "CSS"
   },
@@ -892,7 +892,7 @@
     "imgURL": " ",
     "isCompleted": false,
     "name": "Дочерние селекторы",
-    "task": "Выбирите изображение являющееся единственным потомпом.",
+    "task": "Напишите селектор который выберет изображение являющееся единственным потомпом.",
     "title": "Выбор дочерних элементов с помощью :only-child",
     "ExerciseType": "CSS"
   },
@@ -935,7 +935,7 @@
     "examples": [
       "a[target] выбирает ссылки с атибутом target"
     ],
-    "helpText": "Вы собираетесь изучать селекторы CSS!\n\nКаскадные таблицы стилей (CSS – Cascading Style Sheets), представляют собой технологию определения и присоединения стилей к Web-документам.\n\n Пример:\n\n a[target]{\n margin- bottom: 12px;\n }\n\nЗдесь \"[target]\" является селектором (выбирает все элементы а иеющих атрибут target) и применяет стиль margin-bottom.",
+    "helpText": "Вы собираетесь изучать селекторы CSS!\n\nКаскадные таблицы стилей (CSS – Cascading Style Sheets), представляют собой технологию определения и присоединения стилей к Web-документам.\n\n a[target]{\n margin- bottom: 12px;\n }\n\nЗдесь \"[target]\" является селектором (выбирает все элементы а иеющих атрибут target) и применяет стиль margin-bottom.",
     "hint": "[attribute] Селектор используется для выбора элементов с указанным атрибутом.",
     "htmlCodeOutput": [
       "<div class='container'>",
@@ -947,10 +947,11 @@
     "imgURL": "",
     "isCompleted": false,
     "name": "Атрибутный селектор",
-    "task": "Выберите извображения животных имеющих трибут alt",
+    "task": "Напишите селектор который выберет извображения животных имеющих трибут alt",
     "title": "Выбор элементов по их атрибутам",
     "ExerciseType": "CSS"
-  },{
+  },
+  {
     "htmlСompilationCode": [
       "main-container",
       [
@@ -1002,7 +1003,7 @@
         ]
       ]
     ],
-    "cssСompilationCode": "{  background-color: firebrick !important; } body{ height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.main-container{display: flex;align-items: center; justify-content: center; flex-direction:column; background-color: #171717;padding:15px; border-radius:10px;} .container{ margin-top: 10px;  margin-bottom: 10px; background-color: #1F1F1F; width: 90%;  border-radius: 10px; padding:15px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;} img{  max-width: 100px; width: 100%;height:100%;  margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}img:hover{color: rgb(0, 0, 0);opacity: 0.7;}img:active{color: rgb(0, 0, 0);opacity: 0.5;}",
+    "cssСompilationCode": "{  background-color: firebrick !important; } body{  height:95%; display:flex; gap:15px; flex-direction: column; align-items: center; justify-content: center; }.main-container{display: flex;align-items: center; justify-content: center; flex-direction:column; background-color: #171717;padding:15px; border-radius:10px;} .container{ margin-top: 10px;  margin-bottom: 10px; background-color: #1F1F1F; width: 90%;  border-radius: 10px; padding:15px; display: grid; grid-template-columns:1fr 1fr 1fr; gap:15px;} img{  max-width: 100px; width: 100%;height:100%;  margin-top:auto;margin-bottom:auto; border-radius: 10px;border: none;background-color: rgb(34, 157, 73);color: black;transition: 0.15s;}img:hover{color: rgb(0, 0, 0);opacity: 0.7;}img:active{color: rgb(0, 0, 0);opacity: 0.5;}",
     "answer": "img:not(.animal)",
     "cssCodeOutput": [
       "{",
@@ -1032,7 +1033,7 @@
     "imgURL": " ",
     "isCompleted": false,
     "name": "Отрицательный cелектор",
-    "task": "Выбери изображение животных не имеющих класс animal",
+    "task": "Напишите селектор который выберет изображение животных не имеющих класс animal",
     "title": "Выбор элементов по не соответствующему селектору.",
     "ExerciseType": "CSS"
   }
