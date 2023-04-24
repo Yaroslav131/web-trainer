@@ -31,7 +31,7 @@ export const counterSlice = createSlice({
     },
     // Использование типа PayloadAction для объявления содержимого `action.payload`
     setByAmount: (state, action: PayloadAction<number>) => {
-      state.value = action.payload
+      state.value = action.payload-1
     },
     reset: (state) => {
       state.value = 0;

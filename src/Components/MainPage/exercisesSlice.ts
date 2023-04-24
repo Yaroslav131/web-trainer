@@ -29,18 +29,21 @@ export const exercisesSlice = createSlice({
         // Использование типа PayloadAction для объявления содержимого `action.payload`
         setExercises: (state, action: PayloadAction<Exercise[]>) => {
             state.value = action.payload
-            localStorage.setItem('exercises', JSON.stringify( state.value));
+            localStorage.setItem('exercises', JSON.stringify(state.value));
         },
         resetEx: (state) => {
-
-            state.value = CssSelectors;  
-              localStorage.setItem('exercises', JSON.stringify( state.value));
+            state.value = CssSelectors;
+            localStorage.setItem('exercises', JSON.stringify(state.value));
+        },
+        setCorectAnswer: (state,action:PayloadAction<number>) => {
+            state.value[action.payload].isCompleted = true;
+            localStorage.setItem('exercises', JSON.stringify(state.value));
         }
     },
 })
 
 // Сгенерированные Создатели Действий/ action creators
-export const { setExercises,resetEx } = exercisesSlice.actions
+export const { setExercises, resetEx,setCorectAnswer } = exercisesSlice.actions
 
 // Весь остальной код может использовать тип `RootState`
 export const selectCount = (state: RootState) => state.counter.value
