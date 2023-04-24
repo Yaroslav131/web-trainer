@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Exercise from "../../../classes/Execirse"
 import JobBlock from "./TaskBlock/TaskBlock";
-import ImgBlock from "./ImgBlock/ImgBlock";
 import CodeInput from "./CodeInput/CodeInput";
 import SubmitButton from "./SubmitButton/SubmitButton"
 import HelpButton from "./HelpButton/HelpButton";
@@ -9,7 +7,7 @@ import "./ExerciseBlock.css";
 import Modal from "../../HelpWindow/HelpWindow";
 import '../../../reset.css'
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import { setExercises, setCorectAnswer } from '../exercisesSlice'
+import {  setCorectAnswer } from '../exercisesSlice'
 import { decrement, increment } from '../counterSlice'
 
 export default function ExerciseBlock() {
@@ -79,7 +77,7 @@ export default function ExerciseBlock() {
             <div className="buttons-container">
 
                 <div className="arrow-div">
-                    <div onClick={()=>dispatch(count>0 ? decrement(): ()=>{})} className={count == 0 ? "arrow-left-disable" : "arrow_left"} ></div>
+                    <div onClick={() => dispatch(count > 0 ? decrement() : () => { })} className={count == 0 ? "arrow-left-disable" : "arrow_left"} ></div>
                 </div>
 
                 <div className="button-container">
@@ -89,7 +87,7 @@ export default function ExerciseBlock() {
                 </div>
 
                 <div className="arrow-div">
-                    <div onClick={()=>dispatch(count<exercises.length-1 ? increment(): ()=>{})} className={count == exercises.length-1 ? "arrow-right-disable" : "arrow_right"} ></div>
+                    <div onClick={() => dispatch(count < exercises.length - 1 ? increment() : () => { })} className={count == exercises.length - 1 ? "arrow-right-disable" : "arrow_right"} ></div>
                 </div>
 
                 <div className="button-container">
