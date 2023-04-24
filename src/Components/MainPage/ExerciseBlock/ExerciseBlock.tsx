@@ -7,7 +7,7 @@ import "./ExerciseBlock.css";
 import Modal from "../../HelpWindow/HelpWindow";
 import '../../../reset.css'
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import {  setCorectAnswer } from '../exercisesSlice'
+import { setCorectAnswer } from '../exercisesSlice'
 import { decrement, increment } from '../counterSlice'
 
 export default function ExerciseBlock() {
@@ -41,12 +41,16 @@ export default function ExerciseBlock() {
     }
 
     function onSubmit() {
-        let splitUserAnswerString = answer.split(',');
+        const splitUserAnswerString = answer.split(',');
+        const splitAnswerString = exercises[count].answer.split(',');
 
-        let splitAnswerString = exercises[count].answer.split(',');
-
-        const found = splitAnswerString.some(r => splitUserAnswerString.includes(r))
-
+        let found = false;
+        for (let r of splitAnswerString) {
+            if (splitUserAnswerString.includes(r)) {
+                found = true;
+                break;
+            }
+        }
         if (found) {
             dispatch(setCorectAnswer(count))
 
