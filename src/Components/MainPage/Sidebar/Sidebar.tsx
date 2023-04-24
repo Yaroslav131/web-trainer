@@ -3,8 +3,8 @@ import "./Sidebar.css"
 import '../../../reset.css'
 
 import humburgerIcon from '../../../assets/imgs/icons/icons8-circled-menu-100.png'
-import Exercise from "../../../classes/Execirse";
-import CssSelectorExercise from "../../../classes/Execirse";
+import Exercise from "../../../Classes/Execirse";
+import CssSelectorExercise from "../../../Classes/Execirse";
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
 import { closeAsidebar } from './asidebarSlice'
 import { openLevelList, closeLevelList } from './levelListSlice'

@@ -1,6 +1,6 @@
 import { createSlice, configureStore, PayloadAction } from '@reduxjs/toolkit'
 import type { RootState } from '../../store/store'
-import Exercise from '../../classes/Execirse'
+import Exercise from '../../Classes/Execirse'
 import CssSelectors from "../../json-exercises/css-selectors.json";
 // Определяем тип части состояния(среза/slice)
 interface ExerciseState {
