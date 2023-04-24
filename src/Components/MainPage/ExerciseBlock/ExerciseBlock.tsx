@@ -9,7 +9,7 @@ import "./ExerciseBlock.css";
 import Modal from "../../HelpWindow/HelpWindow";
 import '../../../reset.css'
 import { useAppDispatch, useAppSelector } from "../../../store/hooks";
-import { setExercises, resetEx } from '../exercisesSlice'
+import { setExercises, setCorectAnswer } from '../exercisesSlice'
 import { decrement, increment } from '../counterSlice'
 
 export default function ExerciseBlock() {
@@ -50,11 +50,7 @@ export default function ExerciseBlock() {
         const found = splitAnswerString.some(r => splitUserAnswerString.includes(r))
 
         if (found) {
-            let copyEx = exercises;
-
-            copyEx[count].isCompleted = true;
-    
-            setExercises(copyEx);
+            dispatch(setCorectAnswer(count))
 
             flashingColorOnCorrect()
         }

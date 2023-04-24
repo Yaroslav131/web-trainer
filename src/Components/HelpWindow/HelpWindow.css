@@ -16,7 +16,7 @@
 
 .modal-dialog {
   width: 58%;
-  
+
   background: #1F1F1F;
   border-radius: 10px;
   position: relative;
@@ -67,6 +67,7 @@
   font-size: 20px;
   white-space: pre-line;
   padding-bottom: 0;
+  max-height: min-content;
 }
 
 .modal-title {

@@ -22,7 +22,7 @@ iframe {
 
 @media screen and (max-width: 600px) {
     iframe {
-        height: 320px;
+        height: 350px;
         overflow-y: hidden;
     }
     

@@ -8,7 +8,7 @@ export default function InProgressPage() {
         <div id="error-page">
             <div className="error-text-container">
              <img src={worker}  className="worker-img"/>
-                <p className="error-text">Мы работаем над эти расделом.</p>
+                <p className="error-text">Мы работаем над эти разделом.</p>
             </div>
         </div>
     );
