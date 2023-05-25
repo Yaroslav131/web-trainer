@@ -5,7 +5,7 @@ export default function AboutCssSelectors() {
         <p className="css-text">
             <br />
             <span className="css-title">Селекторы</span><br />
-            <span className="css-title">Типы селекторов:</span><br />
+           Типы селекторов:<br />
             <span className="css-title">1.</span>Селектор по элементу (селектор типа);  <br />
             <span className="css-title">2.</span>Универсальный селектор;  <br />
             <span className="css-title">3.</span>Контекстный селектор;  <br />
@@ -104,7 +104,7 @@ export default function AboutCssSelectors() {
             <span className="css-title">Селекторы псевдоклассов и псевдоэлементов (pseudo-selectors)
             </span>
             <br />
-            &nbsp;&nbsp;<span className="css-title">Селекторы псевдоклассов</span> (pseudo-class selectors) и селекторы псевдоэлементов
+            &nbsp;&nbsp;Селекторы псевдоклассов (pseudo-class selectors) и селекторы псевдоэлементов
             (pseudo-element selectors) позволяют назначать стили структурам, существование которых в документе необязательно, или фантомным классам, наличие которых зависит от
             состояния элемента или даже от состояния документа в целом
             < br />

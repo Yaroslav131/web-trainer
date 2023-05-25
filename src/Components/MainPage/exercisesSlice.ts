@@ -7,15 +7,15 @@ interface ExerciseState {
     value: Exercise[]
 }
 
-let storedArrStr = localStorage.getItem('exercises');
-let storedArr: Exercise[];
+// let storedArrStr = localStorage.getItem('exercises');
+ let storedArr: Exercise[];
 
-if (storedArrStr != null) {
-    storedArr = JSON.parse(storedArrStr)
-}
-else {
+// if (storedArrStr != null) {
+//     storedArr = JSON.parse(storedArrStr)
+// }
+// else {
     storedArr = CssSelectors;
-}
+// }
 // Определение начального состояния, используя тип
 const initialState: ExerciseState = {
     value: storedArr,

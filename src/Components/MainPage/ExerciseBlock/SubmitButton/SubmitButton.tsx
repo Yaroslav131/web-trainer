@@ -27,7 +27,7 @@ export default function SubmitButton(props: Iprops) {
 
     return (
         <button onClick={props.onSubmit} className={ispressedButton ? "submit  pressed-button" : "submit"} >
-            Отправить
+            Ответить
         </button>
     );
 }
